@@ -1,5 +1,5 @@
-baseURL = "https://alknopfler.github.io"
-title = "Soho"
+baseURL = "https://alknopfler.github.io/blog"
+title = "Blog"
 languageCode = "en"
 enableInlineShortcodes = true
 
