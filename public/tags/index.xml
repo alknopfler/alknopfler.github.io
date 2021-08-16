@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My New Hugo Site</title>
+    <link>http://example.org/tags/</link>
+    <description>Recent content in Tags on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>alexa-skills</title>
+      <link>http://example.org/tags/alexa-skills/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/alexa-skills/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>alkalarm</title>
+      <link>http://example.org/tags/alkalarm/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/alkalarm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>http://example.org/tags/aws/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws-lambda</title>
+      <link>http://example.org/tags/aws-lambda/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/aws-lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>microservice</title>
+      <link>http://example.org/tags/microservice/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/microservice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>notifications</title>
+      <link>http://example.org/tags/notifications/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/notifications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>send-notifications</title>
+      <link>http://example.org/tags/send-notifications/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/send-notifications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ses</title>
+      <link>http://example.org/tags/ses/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/ses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sns</title>
+      <link>http://example.org/tags/sns/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/sns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deployment</title>
+      <link>http://example.org/tags/deployment/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infrastructure-as-code</title>
+      <link>http://example.org/tags/infrastructure-as-code/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/infrastructure-as-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>http://example.org/tags/opensource/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ceph</title>
+      <link>http://example.org/tags/ceph/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/ceph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>http://example.org/tags/kubernetes/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
+      <link>http://example.org/tags/api/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>driver</title>
+      <link>http://example.org/tags/driver/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/driver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logging</title>
+      <link>http://example.org/tags/logging/</link>
+      <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/logging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logrus</title>
+      <link>http://example.org/tags/logrus/</link>
+      <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/logrus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cypher</title>
+      <link>http://example.org/tags/cypher/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/cypher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource-cultural-change</title>
+      <link>http://example.org/tags/opensource-cultural-change/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tags/opensource-cultural-change/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

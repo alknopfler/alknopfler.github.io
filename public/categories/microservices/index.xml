@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>microservices on My New Hugo Site</title>
+    <link>http://example.org/categories/microservices/</link>
+    <description>Recent content in microservices on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/microservices/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alexa Skills with Golang</title>
+      <link>http://example.org/alexa-skills-with-golang/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/alexa-skills-with-golang/</guid>
+      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
+After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.
+This week, I bought a new Amazon Echo Dot, and today, the new functionality is ready to share with all of you ;)</description>
+    </item>
+    
+    <item>
+      <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</title>
+      <link>http://example.org/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
+      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.CustomData.Name}}) and store that template in the database to be used after that by the notification endpoint.
+Created by Alknopfler in https://github.</description>
+    </item>
+    
+    <item>
+      <title>Working with Microservices</title>
+      <link>http://example.org/working-with-microservices/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/working-with-microservices/</guid>
+      <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.
+At the beginning, the first contact with microservice is like a piece of cake, but when you are getting deep under the hood, sometimes, you will be able to find some commons problems that you could solve just preparing your mind, your application and your infrastructure to be successfull in your tasks.</description>
+    </item>
+    
+  </channel>
+</rss>

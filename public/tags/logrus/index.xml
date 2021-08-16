@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logrus on My New Hugo Site</title>
+    <link>http://example.org/tags/logrus/</link>
+    <description>Recent content in logrus on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/logrus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GoLogger - Module to Log with formatting in Golang</title>
+      <link>http://example.org/gologger-module-to-log-with-formatting-in-golang/</link>
+      <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/gologger-module-to-log-with-formatting-in-golang/</guid>
+      <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:
+ Init() : initialize the logrus params Print(): Print an error with the base fields  Usage:
+** Import package **
+import ( &amp;quot;github.com/alknopfler/Gologger/gologger&amp;quot; ) Init with stdout and info level:
+gologger.Init(os.Stdout, logrus.InfoLevel) Print to show the error message:
+gologger.Print(&amp;quot;WARN&amp;quot;,7,&amp;quot;Description to show&amp;quot;,&amp;quot;filename.go&amp;quot;) </description>
+    </item>
+    
+  </channel>
+</rss>

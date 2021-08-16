@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cypher on My New Hugo Site</title>
+    <link>http://example.org/tags/cypher/</link>
+    <description>Recent content in cypher on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/cypher/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gocypherator - Module to cypher string in Golang easily</title>
+      <link>http://example.org/gocypherator-module-to-cypher-string-in-golang-easily/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
+      <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
+ AES-128, AES-192, or AES-256.  Usage:
+First of all, you need to import the module:
+import &amp;quot;github.com/alknopfler/gocypherator/cypher&amp;quot; Then you have to initialize the cypher module with the type of algorithm:
+func InitKeyCypher(cypherType int) { cypherType could be:
+ 16 ==&amp;gt; AES 128 24 ==&amp;gt; AES 192 32 ==&amp;gt; AES 256  The following example shows all the features available:</description>
+    </item>
+    
+  </channel>
+</rss>

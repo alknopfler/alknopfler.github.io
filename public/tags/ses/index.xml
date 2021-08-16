@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ses on My New Hugo Site</title>
+    <link>http://example.org/tags/ses/</link>
+    <description>Recent content in ses on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/tags/ses/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</title>
+      <link>http://example.org/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
+      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.CustomData.Name}}) and store that template in the database to be used after that by the notification endpoint.
+Created by Alknopfler in https://github.</description>
+    </item>
+    
+  </channel>
+</rss>
