@@ -1,6 +1,0 @@
-[submodule "themes/--force"]
-	path = themes/--force
-	url = https://github.com/alexandrevicenzi/soho.git
-[submodule "themes/soho"]
-	path = themes/soho
-	url = https://github.com/alexandrevicenzi/soho.git

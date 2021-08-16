@@ -72,4 +72,3 @@ customJs = ["js/blog.js"]
   noClasses = true # if false, you need to provide you own custom CSS
   style = "monokai"
   tabWidth = 4
-
