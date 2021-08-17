@@ -24,7 +24,7 @@ Before that, I worked as a Cloud Computing & Innovation Engineer at BBVA. I was 
 
 Previusly, I worked as a Cloud Computing & Security Engineer at Telefonica de España using security platforms and Cloud platform in order to define new cloud services based on Openstack and Amazon AWS.
 
-### Specialties:
+### Specialities:
 
   *  **Architecture & Lead Skills**: Architecture Designs (from Infrastructure to Microservice architectures designs, cqrs, event sourcing, and develop patterns), Team Lead Player, Team building, Team Management (+10)
 
