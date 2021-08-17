@@ -1,4 +1,4 @@
-baseURL = "https://alknopfler.github.io"
+baseURL = "https://alknopfler.github.io/blog"
 title = "Blog"
 languageCode = "en"
 enableInlineShortcodes = true
