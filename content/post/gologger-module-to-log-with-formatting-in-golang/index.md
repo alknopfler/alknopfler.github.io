@@ -15,9 +15,9 @@ tags:
 
 **Usage:**
 
-\*\* Import package \*\*
+**Import package**
 
-```
+```golang
 import (
 
     "github.com/alknopfler/Gologger/gologger"
@@ -26,12 +26,12 @@ import (
 
 **Init with stdout and info level:**
 
-```
+```golang
 gologger.Init(os.Stdout, logrus.InfoLevel)
 ```
 
 **Print to show the error message:**
 
-```
+```golang
 gologger.Print("WARN",7,"Description to show","filename.go")
 ```

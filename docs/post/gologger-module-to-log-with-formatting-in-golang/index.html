@@ -14,7 +14,7 @@
 <meta itemprop="name" content="GoLogger - Module to Log with formatting in Golang">
 <meta itemprop="description" content="GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:"><meta itemprop="datePublished" content="2017-07-11T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-07-11T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="67">
+<meta itemprop="wordCount" content="65">
 <meta itemprop="keywords" content="logging,logrus," />
 
 <meta name="twitter:card" content="summary"/>
@@ -226,16 +226,16 @@
 <li>Print(): Print an error with the base fields</li>
 </ul>
 <p><strong>Usage:</strong></p>
-<p>** Import package **</p>
-<pre><code>import (
+<p><strong>Import package</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">import</span> (
 
-    &quot;github.com/alknopfler/Gologger/gologger&quot;
+    <span style="color:#e6db74">&#34;github.com/alknopfler/Gologger/gologger&#34;</span>
     )
-</code></pre><p><strong>Init with stdout and info level:</strong></p>
-<pre><code>gologger.Init(os.Stdout, logrus.InfoLevel)
-</code></pre><p><strong>Print to show the error message:</strong></p>
-<pre><code>gologger.Print(&quot;WARN&quot;,7,&quot;Description to show&quot;,&quot;filename.go&quot;)
-</code></pre>
+</code></pre></div><p><strong>Init with stdout and info level:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">gologger</span>.<span style="color:#a6e22e">Init</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Stdout</span>, <span style="color:#a6e22e">logrus</span>.<span style="color:#a6e22e">InfoLevel</span>)
+</code></pre></div><p><strong>Print to show the error message:</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">gologger</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;WARN&#34;</span>,<span style="color:#ae81ff">7</span>,<span style="color:#e6db74">&#34;Description to show&#34;</span>,<span style="color:#e6db74">&#34;filename.go&#34;</span>)
+</code></pre></div>
   </div>
 
   
