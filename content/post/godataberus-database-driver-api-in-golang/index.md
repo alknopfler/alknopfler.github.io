@@ -43,7 +43,7 @@ By now, the drivers available are:
 
 First of all, you have to register the information to connect to an external database:
 
-```
+```curl
 curl --request PUT \
   --url http://localhost:8080/v0/connections/mongo \
   --header 'content-type: application/json' \
@@ -62,7 +62,7 @@ curl --request PUT \
 
 Output:
 
-```
+```shell
 "6edaa6e0-454e-11e7-88fa-3c15c2d66294"
 ```
 
@@ -72,7 +72,7 @@ For instance, we are going to use the driver "mongo" with a local Database, so w
 
 ### [](https://github.com/alknopfler/GoDataberus#insert-item)Insert Item
 
-```
+```curl
 curl --request PUT \
   --url http://localhost:8080/v0/databerus/mongo/resources/6edaa6e0-454e-11e7-88fa-3c15c2d66294 \
   --header 'content-type: application/json' \
@@ -91,7 +91,7 @@ curl --request PUT \
 
 For ETCD should be:
 
-```
+```curl
 curl --request PUT \
   --url http://localhost:8080/v0/databerus/etcd/resources/ad7be5ba-46cb-11e7-bfb2-3c15c2d66294 \
   --header 'content-type: application/json' \
@@ -107,14 +107,14 @@ curl --request PUT \
 
 ### [](https://github.com/alknopfler/GoDataberus#get-item)Get Item
 
-```
+```curl
 curl --request GET \
   --url http://localhost:8080/v0/databerus/mongo/resources/6edaa6e0-454e-11e7-88fa-3c15c2d66294/fields/foo/items/bar \
 ```
 
 In the case of ETCD:
 
-```
+```curl
 curl --request GET \
   --url http://localhost:8080/v0/databerus/etcd/resources/8d1c6082-478d-11e7-9396-3c15c2d66294/fields/root/items/key20 \
 
@@ -122,7 +122,7 @@ curl --request GET \
 
 The output depend on the database query:
 
-```
+```json
 [
   {
     "_id": "5931980038136fc848d94b23",
@@ -137,14 +137,15 @@ The output depend on the database query:
 
 In the case of ETCD, for instance, if the key does not exists the output could be:
 
-```
+```json
 {
   "error": "100: Key not found (/rootkey20) [25]"
 }
 ```
 
-# Build Dockerfile
 
-```
+# Build Dockerfile
+
+```shell
 docker build -t $REPO:$VERSION -f Dockerfile .;
 ```

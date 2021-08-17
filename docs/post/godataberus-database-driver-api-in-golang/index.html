@@ -14,7 +14,7 @@
 <meta itemprop="name" content="GoDataberus - Database Driver API in Golang">
 <meta itemprop="description" content="GoDataberus is a &ldquo;Database Driver API&rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database"><meta itemprop="datePublished" content="2017-07-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-07-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="451">
+<meta itemprop="wordCount" content="450">
 <meta itemprop="keywords" content="api,driver," />
 
 <meta name="twitter:card" content="summary"/>
@@ -270,7 +270,7 @@
 </ul>
 <h2 id="httpsgithubcomalknopflergodataberusregister-a-database-backend-connectionregister-a-database-backend-connection"><a href="https://github.com/alknopfler/GoDataberus#register-a-database-backend-connection"></a>Register a Database Backend connection</h2>
 <p>First of all, you have to register the information to connect to an external database:</p>
-<pre><code>curl --request PUT \
+<pre><code class="language-curl" data-lang="curl">curl --request PUT \
   --url http://localhost:8080/v0/connections/mongo \
   --header 'content-type: application/json' \
   --data '{
@@ -285,11 +285,11 @@
         }
     }' 
 </code></pre><p>Output:</p>
-<pre><code>&quot;6edaa6e0-454e-11e7-88fa-3c15c2d66294&quot;
-</code></pre><p>For instance, we are going to use the driver &ldquo;mongo&rdquo; with a local Database, so we use the &ldquo;mongo&rdquo; driver, and the connection data to use a local database. It return an uuid that will be use in the next calls in order to use this connection to the database.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#e6db74">&#34;6edaa6e0-454e-11e7-88fa-3c15c2d66294&#34;</span>
+</code></pre></div><p>For instance, we are going to use the driver &ldquo;mongo&rdquo; with a local Database, so we use the &ldquo;mongo&rdquo; driver, and the connection data to use a local database. It return an uuid that will be use in the next calls in order to use this connection to the database.</p>
 <h2 id="httpsgithubcomalknopflergodataberususe-the-backend-with-basic-crud-operationsuse-the-backend-with-basic-crud-operations"><a href="https://github.com/alknopfler/GoDataberus#use-the-backend-with-basic-crud-operations"></a>Use the Backend with basic CRUD operations</h2>
 <h3 id="httpsgithubcomalknopflergodataberusinsert-iteminsert-item"><a href="https://github.com/alknopfler/GoDataberus#insert-item"></a>Insert Item</h3>
-<pre><code>curl --request PUT \
+<pre><code class="language-curl" data-lang="curl">curl --request PUT \
   --url http://localhost:8080/v0/databerus/mongo/resources/6edaa6e0-454e-11e7-88fa-3c15c2d66294 \
   --header 'content-type: application/json' \
   --data '{
@@ -304,7 +304,7 @@
         }
         }'
 </code></pre><p>For ETCD should be:</p>
-<pre><code>curl --request PUT \
+<pre><code class="language-curl" data-lang="curl">curl --request PUT \
   --url http://localhost:8080/v0/databerus/etcd/resources/ad7be5ba-46cb-11e7-bfb2-3c15c2d66294 \
   --header 'content-type: application/json' \
   --data '{
@@ -316,30 +316,30 @@
         }
         }'
 </code></pre><h3 id="httpsgithubcomalknopflergodataberusget-itemget-item"><a href="https://github.com/alknopfler/GoDataberus#get-item"></a>Get Item</h3>
-<pre><code>curl --request GET \
+<pre><code class="language-curl" data-lang="curl">curl --request GET \
   --url http://localhost:8080/v0/databerus/mongo/resources/6edaa6e0-454e-11e7-88fa-3c15c2d66294/fields/foo/items/bar \
 </code></pre><p>In the case of ETCD:</p>
-<pre><code>curl --request GET \
+<pre><code class="language-curl" data-lang="curl">curl --request GET \
   --url http://localhost:8080/v0/databerus/etcd/resources/8d1c6082-478d-11e7-9396-3c15c2d66294/fields/root/items/key20 \
 
 </code></pre><p>The output depend on the database query:</p>
-<pre><code>[
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
-    &quot;_id&quot;: &quot;5931980038136fc848d94b23&quot;,
-    &quot;foo10&quot;: &quot;bar10&quot;,
-    &quot;foo11&quot;: &quot;bar11&quot;,
-    &quot;set&quot;: {
-      &quot;pass1&quot;: &quot;password&quot;
+    <span style="color:#f92672">&#34;_id&#34;</span>: <span style="color:#e6db74">&#34;5931980038136fc848d94b23&#34;</span>,
+    <span style="color:#f92672">&#34;foo10&#34;</span>: <span style="color:#e6db74">&#34;bar10&#34;</span>,
+    <span style="color:#f92672">&#34;foo11&#34;</span>: <span style="color:#e6db74">&#34;bar11&#34;</span>,
+    <span style="color:#f92672">&#34;set&#34;</span>: {
+      <span style="color:#f92672">&#34;pass1&#34;</span>: <span style="color:#e6db74">&#34;password&#34;</span>
     }
   }
 ]
-</code></pre><p>In the case of ETCD, for instance, if the key does not exists the output could be:</p>
-<pre><code>{
-  &quot;error&quot;: &quot;100: Key not found (/rootkey20) [25]&quot;
+</code></pre></div><p>In the case of ETCD, for instance, if the key does not exists the output could be:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;100: Key not found (/rootkey20) [25]&#34;</span>
 }
-</code></pre><p># Build Dockerfile</p>
-<pre><code>docker build -t $REPO:$VERSION -f Dockerfile .;
-</code></pre>
+</code></pre></div><h1 id="build-dockerfile">Build Dockerfile</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t $REPO:$VERSION -f Dockerfile .;
+</code></pre></div>
   </div>
 
   
