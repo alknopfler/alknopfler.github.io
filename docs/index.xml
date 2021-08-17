@@ -149,7 +149,7 @@ At the beginning, the first contact with microservice is like a piece of cake, b
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
  AES-128, AES-192, or AES-256.  Usage:
 First of all, you need to import the module:
-import &amp;quot;github.com/alknopfler/gocypherator/cypher&amp;quot; Then you have to initialize the cypher module with the type of algorithm:</description>
+import &amp;#34;github.com/alknopfler/gocypherator/cypher&amp;#34; Then you have to initialize the cypher module with the type of algorithm:</description>
     </item>
     
     <item>

@@ -18,13 +18,13 @@ tags:
 
 First of all, you need to import the module:
 
-```
+```golang
 import "github.com/alknopfler/gocypherator/cypher"
 ```
 
 Then you have to initialize the cypher module with the type of algorithm:
 
-```
+```golang
 func InitKeyCypher(cypherType int) {
 ```
 
@@ -36,7 +36,7 @@ func InitKeyCypher(cypherType int) {
 
 The following example shows all the features available:
 
-```
+```golang
 func main (){
     var cypherType = 16
     var baseText = "helloWorld"
