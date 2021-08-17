@@ -61,5 +61,14 @@
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Alexa Skills with Golang</title>
+      <link>https://alknopfler.github.io/post/alexa-skills-with-golang/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
+      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
+    </item>
+    
   </channel>
 </rss>

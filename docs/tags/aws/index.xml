@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on Alknopfler&#39;s Blog</title>
+    <link>https://alknopfler.github.io/tags/aws/</link>
+    <description>Recent content in aws on Alknopfler&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alexa Skills with Golang</title>
+      <link>https://alknopfler.github.io/post/alexa-skills-with-golang/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
+      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
+    </item>
+    
+  </channel>
+</rss>

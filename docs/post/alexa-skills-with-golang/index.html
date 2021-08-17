@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Alexa Skills with Golang &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Alexa Skills with Golang">
+<meta itemprop="description" content="Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here )."><meta itemprop="datePublished" content="2018-11-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-11-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1183">
+<meta itemprop="keywords" content="alexa-skills,alkalarm,aws,aws-lambda," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Alexa Skills with Golang"/>
+<meta name="twitter:description" content="Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here )."/>
+
+
+<meta property="og:title" content="Alexa Skills with Golang" />
+<meta property="og:description" content="Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here )." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/alexa-skills-with-golang/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-11-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2018-11-04T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/alexa-skills-with-golang/#webpage",
+      "url": "https://alknopfler.github.io/post/alexa-skills-with-golang/",
+      "name": "Alexa Skills with Golang",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2018-11-04T00:00:00+00:00",
+      "dateModified": "2018-11-04T00:00:00+00:00",
+      "description": "Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/alexa-skills-with-golang/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/alexa-skills-with-golang/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/alexa-skills-with-golang/#webpage"
+      },
+      "headline": "Alexa Skills with Golang",
+      "datePublished": "2018-11-04T00:00:00+00:00",
+      "dateModified": "2018-11-04T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "alexa-skills",
+        "alkalarm",
+        "aws",
+        "aws-lambda"
+      ],
+      "articleSection": [
+        "golang",
+        "microservices",
+        "opensource"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/alexa-skills-with-golang/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Alexa Skills with Golang</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2018-11-04T00:00:00Z">Nov 4, 2018</time> <span class="readtime">&middot; 6 min read</span>
+  </div>
+
+  <div>
+  <p>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( <a href="https://alknopfler.wordpress.com/2018/09/29/design-your-own-home-alarm-system-using-go/">see again here</a> ).</p>
+<p>After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.</p>
+<p>This week, I bought a new Amazon Echo Dot, and today, the new functionality is ready to share with all of you ;)</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/schema.jpg"><img src="images/schema.jpg" alt="Alarm System "></a></p>
+<p>For example, we could manage the alarm system using:</p>
+<p><em><strong>Alexa, open the alarm system, and activate it, after 30 second</strong></em></p>
+<p><em><strong>Alexa, open the alarm system, and activate it just for the perimeter</strong></em></p>
+<p><em><strong>Alexa, open the alarm system, and stop it</strong></em></p>
+<p><em><strong>Alexa, tell me the alarm system state</strong></em></p>
+<p> </p>
+<h2 id="httpsgithubcomalknopfleralkalarm-alexa-skillsalexa-skills-voice-processing-architecturealexa-skills-voice-processing-architecture"><a href="https://github.com/alknopfler/alkalarm-alexa-skills#alexa-skills-voice-processing-architecture"></a>Alexa Skills Voice Processing Architecture</h2>
+<p>Just to keep in mind the steps that we have to do in order to create and integrate custom skills with the alkalarm project, we&rsquo;re gonna review the main architecture of alexa skills processing:</p>
+<p><a href="https://camo.githubusercontent.com/8bcb3cd3c11bf934079a38cfb3c67d83c7dbc87e/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a324b3853395a6a68325a5156795245336742484b2d412e6a706567"><img src="https://camo.githubusercontent.com/8bcb3cd3c11bf934079a38cfb3c67d83c7dbc87e/68747470733a2f2f63646e2d696d616765732d312e6d656469756d2e636f6d2f6d61782f313630302f312a324b3853395a6a68325a5156795245336742484b2d412e6a706567" alt="Alexa Architecture"></a></p>
+<p>As you can see, we have to define 3 things:</p>
+<p>1-. Create your voice user interface for Alexa skill</p>
+<p>2-. Create the lambda code to response the skills questions integrating that with your service.</p>
+<p>3-. Create the skills definition in AWS Alexa development console.</p>
+<h2 id="httpsgithubcomalknopfleralkalarm-alexa-skills1---create-your-voice-user-interface-for-alexa-skills1---create-your-voice-user-interface-for-alexa-skills"><a href="https://github.com/alknopfler/alkalarm-alexa-skills#1---create-your-voice-user-interface-for-alexa-skills"></a>1 - Create your voice user interface for alexa skills</h2>
+<p>First of all, reading the aws alexa development documentation you could find the voice structure in order to create the skill. It&rsquo;s important to define a human language to make easy interact with Alexa without forcing the language. In our skill we&rsquo;re gonna explain in two language (currently english and spanish), but the idea is the same for both of them:</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/voice-schema.jpg"><img src="images/voice-schema.jpg" alt="Voice schema"></a></p>
+<p>The fields are:</p>
+<ul>
+<li><strong>control word</strong>: It&rsquo;s the main wake up word for alexa devices</li>
+<li><strong>On Launch</strong>: It&rsquo;s quite rare the first time, but if you&rsquo;re not developing an special built-in skill, you have to create OnLaunch intent to &ldquo;open&rdquo; the skill with alexa. It was the most un-happpy thing that I&rsquo;ve discovered, but if you define something like &ldquo;open&rdquo; make sense for the human language perspective.</li>
+<li><strong>Invocation Name</strong>: It&rsquo;s the name which alexa will use to know as the reference to your skill. It&rsquo;s recommend something that make sense and also with good pronunciation. At this point, the first approach was &ldquo;alkAlarm&rdquo;, but doing tests, I discovered that it has a non-natural pronunciation in spanish for alexa. I changed it to &ldquo;alarm system&rdquo; which is more easy to understand for alexa.</li>
+<li><strong>Utterances</strong>: That&rsquo;s the most important part because it&rsquo;s your own creation to interact with the system. I recommend to create over 10 or more examples with synonymous</li>
+<li><strong>Slots</strong>: It&rsquo;s so important if you want to create different behaviours of your system based on time, date, size, and so on.</li>
+</ul>
+<h2 id="httpsgithubcomalknopfleralkalarm-alexa-skills2---create-the-lambda-code-in-golang2---create-the-lambda-code-in-golang"><a href="https://github.com/alknopfler/alkalarm-alexa-skills#2---create-the-lambda-code-in-golang"></a>2 - Create the lambda code in Golang</h2>
+<p>For that phase we&rsquo;re using the next library (thanks to Eric for the contribution to the golang community):</p>
+<p><a href="http://github.com/ericdaugherty/alexa-skills-kit-golang">http://github.com/ericdaugherty/alexa-skills-kit-golang</a></p>
+<p>Using the library we&rsquo;re able to use all the aws-skills sdk but with golang language:</p>
+<p>From the library, we&rsquo;ve to implement the next interface functions to adapt to our needs:</p>
+<pre><code>type RequestHandler interface {
+    OnSessionStarted(context.Context, *Request, *Session, *Context, *Response) error
+    OnLaunch(context.Context, *Request, *Session, *Context, *Response) error
+    OnIntent(context.Context, *Request, *Session, *Context, *Response) error
+    OnSessionEnded(context.Context, *Request, *Session, *Context, *Response) error
+}
+</code></pre><p>For the <strong>OnSessionStarted</strong> function you could create some auth steps before anything happen with alexa. In my case, we don&rsquo;t have any special task to do</p>
+<p>For the <strong>OnLaunch</strong> function we are gonna give the user the welcome to the alarm system. Also, we&rsquo;re gonna finish the session. It that make sense because in our voice interface definition we decided join all the action in one phrase.</p>
+<pre><code>response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnLaunch, cfg.ImageSmall, cfg.ImageLong)
+    response.SetOutputText(cfg.SpeechOnLaunch)
+    response.SetRepromptSSML(cfg.SpeechOnLaunch)
+
+    response.ShouldSessionEnd = true
+</code></pre><p>For the <strong>OnSessionEnded</strong> function we don&rsquo;t have any special information to do with Alexa.</p>
+<p>The <strong>OnIntent</strong> function will be checked here a little bit later in the same section.</p>
+<p>To do that and with the main idea of organize the code we define the next structure:</p>
+<ul>
+<li>
+<p><strong>config/message.go</strong>: With the list of messages to the speech function library</p>
+<pre><code>const (
+    SpeechOnLaunch          = &quot;Bienvenido al sistema de alarma de seguridad&quot;
+    SpeechOnActivateFull    = &quot;Alarma de Seguridad Activada Completamente. Tienes 30 segundos para salir de casa&quot;
+    SpeechOnActivatePartial = &quot;Alarma de Seguridad Activada solo para el perímetro. Dentro de 30 segundos los detectores de presencia serán desactivados&quot;
+    SpeechOnDeactivate      = &quot;Alarma de Seguridad Desactivada. Puedes entrar con seguridad en casa&quot;
+    SpeechOnStatusONFull    = &quot;La alarma está activada completamente&quot;
+    SpeechOnStatusONPartial = &quot;La alarma está activada sólo en modo perímetro&quot;
+    SpeechOnStatusOFF       = &quot;La alarma está desactivada&quot;
+)
+</code></pre></li>
+<li>
+<p><strong>config/config.go</strong>: With the app configuration and the alkalarm endpoint config params</p>
+<pre><code>...
+    PathActivateFull        = &quot;/activate/full&quot;
+    PathActivatePartial     = &quot;/activate/partial&quot;
+    PathDeactivate          = &quot;/deactivate&quot;
+    PathStatus              = &quot;/status&quot;
+    CardTitle               = &quot;AlkAlarm Alarma Seguridad&quot; 
+...
+</code></pre></li>
+<li>
+<p><strong>function/functions.go</strong>: Implementation of the interface with the alkalarm endpoints logic</p>
+<p>For example, with the activation, we have to do the request to alkalarm activation api, and then, create the dialog with alexa in the response:</p>
+<pre><code>func ActivateAlarmFull(request *alexa.Request, response *alexa.Response){
+    log.Println(&quot;ActiveAlarm Full triggered&quot;)
+
+    respNew := doRequest(http.MethodPost, cfg.URL + cfg.PathActivateFull)
+
+    if respNew.StatusCode == http.StatusOK {
+        response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnActivateFull, cfg.ImageSmall, cfg.ImageLong)
+        response.SetOutputText(cfg.SpeechOnActivateFull)
+    }else{
+        response.SetSimpleCard(cfg.CardTitle, &quot;ERROR DOING THE ACTIVATION ALARM&quot;)
+        response.SetOutputText(&quot;ERROR DOING THE ACTIVATION ALARM &quot;)
+    }
+
+    log.Printf(&quot;Set Output speech, value now: %s&quot;, response.OutputSpeech.Text)
+}
+</code></pre></li>
+</ul>
+<p>Obviously, we have to join all the functions into a handler router to know which intent we have to use. This is the most important phase in order to create an effective interaction with alexa:</p>
+<pre><code>func (h *AlkAlarm) OnIntent(context context.Context, request *alexa.Request, session *alexa.Session, aContext *alexa.Context, response *alexa.Response) error {
+    log.Printf(&quot;OnIntent requestId=%s, sessionId=%s, intent=%s&quot;, request.RequestID, session.SessionID, request.Intent.Name)
+
+    switch request.Intent.Name {
+    case cfg.ActiveFullIntent:
+        f.ActivateAlarmFull(request,response)
+    case cfg.ActivePartialIntent:
+        f.ActivateAlarmPartial(request,response)
+    case cfg.DeactiveIntent:
+        f.DeactivateAlarm(request,response)
+    case cfg.StatusIntent:
+        f.StatusAlarm(request,response)
+    default:
+        return errors.New(&quot;Invalid Intent&quot;)
+    }
+
+    return nil
+}
+</code></pre><p>Now, the last step is to upload the code to lambda aws service. To do that, we use an example code using the makefile. The important part of the makefile is the way to build, create the lambda file and upload to aws service:</p>
+<pre><code>ROLE_ARN=`aws iam get-role --role-name lambda_basic_execution --query 'Role.Arn' --output text`
+
+all: build pack
+
+build:
+    @GOARCH=amd64 GOOS=linux go build -o $(HANDLER)
+
+pack:
+    @zip $(PACKAGE).zip $(HANDLER)
+
+clean:
+    @rm -rf $(HANDLER) $(PACKAGE).zip
+
+create:
+    @aws lambda create-function                                                  \
+      --function-name AlkAlarmAlexa                                                 \
+      --zip-file fileb://handler.zip                                             \
+      --role $(ROLE_ARN)                                                         \
+      --runtime go1.x                                                       \
+      --handler handler
+
+</code></pre><h2 id="httpsgithubcomalknopfleralkalarm-alexa-skills3---create-the-skill-in-aws-alexa-development-console3---create-the-skill-in-aws-alexa-development-console"><a href="https://github.com/alknopfler/alkalarm-alexa-skills#3---create-the-skill-in-aws-alexa-development-console"></a>3 - Create the Skill in AWS Alexa development console</h2>
+<p>The first thing that you have to do is create an account in Alexa development console (it&rsquo;s totally free):</p>
+<p>After the first point, you could create a new skill: <a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev1.png"><img src="images/dev1.png" alt="dev1"></a></p>
+<p>The first point is create the next elements:</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev2.png"><img src="images/dev2.png" alt="dev2"></a></p>
+<p>For the intent, you have to select the name keeping in mind the recommendation done before:</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev3.png"><img src="images/dev3.png" alt="dev3"></a></p>
+<p>After that, we have to define the language to interact with alexa:</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev4.png"><img src="images/dev4.png" alt="dev4"></a></p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev5.png"><img src="images/dev5.png" alt="dev5"></a></p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev6.png"><img src="images/dev6.png" alt="dev6"></a></p>
+<p>After we have all the phrases to interact with alexa, we have to define the reference to lambda using the endpoint section: Let&rsquo;s came back here in the next session (after lambda creation phase)</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev7.png"><img src="images/dev7.png" alt="dev7"></a></p>
+<p>Wow!!! Right now, we can test the application with the test feature console:</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev8.png"><img src="images/dev8.png" alt="dev8"></a></p>
+<p>and test if the skill has any error to distribute to the real world ;)</p>
+<p><a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev9.png"><img src="images/dev9.png" alt="dev9"></a></p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/alexa-skills/" class="tag-link">alexa-skills</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/alkalarm/" class="tag-link">alkalarm</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/aws/" class="tag-link">aws</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/aws-lambda/" class="tag-link">aws-lambda</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/alexa-skills-with-golang/"
+     data-text="Alexa Skills with Golang"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/alexa-skills-with-golang/"
+     data-text="Alexa Skills with Golang"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/alexa-skills-with-golang/"
+     data-text="Alexa Skills with Golang"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/alexa-skills-with-golang/"
+     data-text="Alexa Skills with Golang"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/alexa-skills-with-golang/"
+     data-text="Alexa Skills with Golang"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>
