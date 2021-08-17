@@ -5,7 +5,7 @@ enableInlineShortcodes = true
 publishDir = "docs"
 theme = "soho"
 
-summarylength = 20
+summarylength = 40
 enableEmoji = true
 
 [params]

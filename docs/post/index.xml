@@ -13,7 +13,8 @@
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/</guid>
-      <description>Sometimes you&amp;rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine.</description>
+      <description>Sometimes you&amp;rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine.
+Golang has a powerful feature known by all, based on goroutines (concurrency) and channels (messaging) that define totally the Fanin - Fanout pattern.</description>
     </item>
     
     <item>
@@ -22,7 +23,7 @@
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/</guid>
-      <description>When you&amp;rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month.</description>
+      <description>When you&amp;rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month. Obviously you could do it manually but, I will offer a very simple way to do that automatically directly running a code using just a gitlab-ci pipeline.</description>
     </item>
     
     <item>
@@ -49,7 +50,8 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
-      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
+      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
+After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.</description>
     </item>
     
     <item>
@@ -58,7 +60,7 @@
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
-      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services.</description>
+      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.</description>
     </item>
     
     <item>
@@ -76,7 +78,8 @@
       <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/infrastructure-as-code/</guid>
-      <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.</description>
+      <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.
+I&amp;rsquo;ve been working with infrastructure as code for a long time, using code to deploy and manage infrastructure.</description>
     </item>
     
     <item>
@@ -85,7 +88,8 @@
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/new-features-in-openstack-ceph/</guid>
-      <description>In my opinion, this video shows all the new features that the openstackers were usually asking for the project roadmap for several years:</description>
+      <description>In my opinion, this video shows all the new features that the openstackers were usually asking for the project roadmap for several years:
+https://youtu.be/NqOFWGUvA9A</description>
     </item>
     
     <item>
@@ -94,7 +98,8 @@
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/working-with-microservices/</guid>
-      <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.</description>
+      <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.
+At the beginning, the first contact with microservice is like a piece of cake, but when you are getting deep under the hood, sometimes, you will be able to find some commons problems that you could solve just preparing your mind, your application and your infrastructure to be successfull in your tasks.</description>
     </item>
     
     <item>
@@ -112,7 +117,8 @@
       <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</guid>
-      <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:</description>
+      <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:
+ Init() : initialize the logrus params Print(): Print an error with the base fields  Usage:</description>
     </item>
     
     <item>
@@ -122,7 +128,9 @@
       
       <guid>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
- AES-128, AES-192, or AES-256.</description>
+ AES-128, AES-192, or AES-256.  Usage:
+First of all, you need to import the module:
+import &amp;quot;github.com/alknopfler/gocypherator/cypher&amp;quot; Then you have to initialize the cypher module with the type of algorithm:</description>
     </item>
     
     <item>
@@ -132,7 +140,7 @@
       
       <guid>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</guid>
       <description>Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
-This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers.</description>
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers. The openstack distribution is based on the upstream code, and you can deploy a specific openstack version changing the &amp;ldquo;version&amp;rdquo; param in the dockerfile for each Openstack service.</description>
     </item>
     
     <item>

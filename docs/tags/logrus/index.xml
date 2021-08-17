@@ -13,7 +13,8 @@
       <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</guid>
-      <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:</description>
+      <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:
+ Init() : initialize the logrus params Print(): Print an error with the base fields  Usage:</description>
     </item>
     
   </channel>

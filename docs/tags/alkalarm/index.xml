@@ -13,7 +13,8 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
-      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
+      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
+After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.</description>
     </item>
     
   </channel>
