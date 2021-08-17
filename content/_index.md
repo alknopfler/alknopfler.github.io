@@ -1,5 +1,10 @@
-asdfasdfasdf
-asdfasdfasdf
-asdfasdfasdfas
-asdfasdfads
-asdfasdfasdf
+---
+title: Labs index
+tags: ["labs"]
+TableOfContents: true
+weight: 30
+---
+
+## Disclaimer
+
+aaaaa
