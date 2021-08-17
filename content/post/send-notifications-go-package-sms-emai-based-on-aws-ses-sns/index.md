@@ -48,7 +48,7 @@ This part of the API offer the possibility of create, delete and get the templat
 
 [http://notification-app:8080/templates](http://notification-app:8080/templates)
 
-```
+```json
 - Method: POST
 - Json example:
 
@@ -64,7 +64,7 @@ This part of the API offer the possibility of create, delete and get the templat
 
 [http://notification-app:8080/templates/{templateID}](http://notification-app:8080/templates/%7BtemplateID%7D)
 
-```
+```json
 - Method: GET | DELETE
 - Json response:
 
@@ -92,7 +92,7 @@ The main points will be:
 
 [http://notification-app:8080/notifications](http://notification-app:8080/notifications)
 
-```
+```json
 {
 "AccountId":"evento1",     
 "Subject":"Sending mail",    
@@ -112,37 +112,37 @@ The main points will be:
 
 In that case the translation of this message to human language should be:
 
-#### [](https://github.com/alknopfler/notificationapp#account-id)Account Id:
+### [](https://github.com/alknopfler/notificationapp#account-id)Account Id:
 
 Represent an identificator for the message
 
-#### [](https://github.com/alknopfler/notificationapp#subject)Subject:
+### [](https://github.com/alknopfler/notificationapp#subject)Subject:
 
 Represent the subject for the email
 
-#### [](https://github.com/alknopfler/notificationapp#recipient)Recipient:
+### [](https://github.com/alknopfler/notificationapp#recipient)Recipient:
 
 The list of recipient to send the notification. Could be different type of recipient (email, sms, etc..) but in that case, the notification sent will be just the available if match with the channel. In the example, the notification will not be sent to the telephone number as sms, because the channel is one of the list to send the notification
 
-#### [](https://github.com/alknopfler/notificationapp#templatetype)TemplateType:
+### [](https://github.com/alknopfler/notificationapp#templatetype)TemplateType:
 
 This is the name of the template loaded previously
 
-#### [](https://github.com/alknopfler/notificationapp#channel)Channel:
+### [](https://github.com/alknopfler/notificationapp#channel)Channel:
 
 This is the way to specify the channel or channels to use in the notification (By default if a available channel not appear here, the value will be False. In the example, the sms channel will not be available)
 
-#### [](https://github.com/alknopfler/notificationapp#language)Language:
+### [](https://github.com/alknopfler/notificationapp#language)Language:
 
 This is the language for the notification. If there are several templates available for a notification, with the language will be select the correct one.
 
-#### [](https://github.com/alknopfler/notificationapp#custom-data)Custom data:
+### [](https://github.com/alknopfler/notificationapp#custom-data)Custom data:
 
 This is the value of the variables in order to be matched into the {{.CustomData.XXXX}} templates placesholder
 
 ## [](https://github.com/alknopfler/notificationapp#build)Build
 
-```
+```shell
 docker-compose -d up .
 ```
 
@@ -150,6 +150,6 @@ docker-compose -d up .
 
 Need the special environment var in order to mock the mongo and email channel:
 
-```
+```shell
 MOCK=MOCK
 ```

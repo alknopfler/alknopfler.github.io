@@ -254,30 +254,30 @@
 <p>This part of the API offer the possibility of create, delete and get the templates available to send notifications</p>
 <h3 id="httpsgithubcomalknopflernotificationappapiapi"><a href="https://github.com/alknopfler/notificationapp#api"></a>API:</h3>
 <p><a href="http://notification-app:8080/templates">http://notification-app:8080/templates</a></p>
-<pre><code>- Method: POST
-- Json example:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">Method:</span> <span style="color:#960050;background-color:#1e0010">POST</span>
+<span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">Json</span> <span style="color:#960050;background-color:#1e0010">example:</span>
 
-    ```
+    <span style="color:#960050;background-color:#1e0010">```</span>
     {
-    &quot;TemplateId&quot;: &quot;template1&quot;,
-    &quot;Channel&quot;: &quot;Email&quot;,
-    &quot;Lang&quot;: &quot;ES&quot;,
-    &quot;Content&quot;: &quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; Hola {{.CustomData.Name}}, Gracias por contratar {{.CustomData.ItemName}}.&lt;br&gt;&lt;br&gt;Pulse &lt;a href={{.CustomData.ActivationLink}}&gt;aquí&lt;/a&gt; para activar de su cuenta &lt;/body&gt;&lt;/html&gt;&quot;
+    <span style="color:#f92672">&#34;TemplateId&#34;</span>: <span style="color:#e6db74">&#34;template1&#34;</span>,
+    <span style="color:#f92672">&#34;Channel&#34;</span>: <span style="color:#e6db74">&#34;Email&#34;</span>,
+    <span style="color:#f92672">&#34;Lang&#34;</span>: <span style="color:#e6db74">&#34;ES&#34;</span>,
+    <span style="color:#f92672">&#34;Content&#34;</span>: <span style="color:#e6db74">&#34;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; Hola {{.CustomData.Name}}, Gracias por contratar {{.CustomData.ItemName}}.&lt;br&gt;&lt;br&gt;Pulse &lt;a href={{.CustomData.ActivationLink}}&gt;aquí&lt;/a&gt; para activar de su cuenta &lt;/body&gt;&lt;/html&gt;&#34;</span>
     }
-    ```
-</code></pre><p><a href="http://notification-app:8080/templates/%7BtemplateID%7D">http://notification-app:8080/templates/{templateID}</a></p>
-<pre><code>- Method: GET | DELETE
-- Json response:
+    <span style="color:#960050;background-color:#1e0010">```</span>
+</code></pre></div><p><a href="http://notification-app:8080/templates/%7BtemplateID%7D">http://notification-app:8080/templates/{templateID}</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">Method:</span> <span style="color:#960050;background-color:#1e0010">GET</span> <span style="color:#960050;background-color:#1e0010">|</span> <span style="color:#960050;background-color:#1e0010">DELETE</span>
+<span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">Json</span> <span style="color:#960050;background-color:#1e0010">response:</span>
 
-    ```
+    <span style="color:#960050;background-color:#1e0010">```</span>
     [
         {
-            &quot;Template&quot;: &quot;template1&quot;,
-            &quot;Content&quot;: &quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; Hola {{.CustomData.Name}}, Gracias por contratar {{.CustomData.ItemName}}.&lt;br&gt;&lt;br&gt;Pulse &lt;a href={{.CustomData.ActivationLink}}&gt;aquí&lt;/a&gt; para activar de su cuenta &lt;/body&gt;&lt;/html&gt;&quot;
+            <span style="color:#f92672">&#34;Template&#34;</span>: <span style="color:#e6db74">&#34;template1&#34;</span>,
+            <span style="color:#f92672">&#34;Content&#34;</span>: <span style="color:#e6db74">&#34;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; Hola {{.CustomData.Name}}, Gracias por contratar {{.CustomData.ItemName}}.&lt;br&gt;&lt;br&gt;Pulse &lt;a href={{.CustomData.ActivationLink}}&gt;aquí&lt;/a&gt; para activar de su cuenta &lt;/body&gt;&lt;/html&gt;&#34;</span>
         }
     ]
-    ``` 
-</code></pre><p>As you can see, the template key store in mongo will be the concatenation of:</p>
+    <span style="color:#960050;background-color:#1e0010">```</span> 
+</code></pre></div><p>As you can see, the template key store in mongo will be the concatenation of:</p>
 <ul>
 <li>TemplateType</li>
 <li>Channel</li>
@@ -289,42 +289,42 @@
 <li>First, any microservice could generate the Notification Message json:</li>
 </ul>
 <p><a href="http://notification-app:8080/notifications">http://notification-app:8080/notifications</a></p>
-<pre><code>{
-&quot;AccountId&quot;:&quot;evento1&quot;,     
-&quot;Subject&quot;:&quot;Sending mail&quot;,    
-&quot;Recipient&quot;:[&quot;albertoxxxxx@mail.es&quot;,&quot;22222222&quot;],
-&quot;TemplateType&quot;:&quot;template1&quot;,
-&quot;Channel&quot;:{
-    &quot;Email&quot;: true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#f92672">&#34;AccountId&#34;</span>:<span style="color:#e6db74">&#34;evento1&#34;</span>,     
+<span style="color:#f92672">&#34;Subject&#34;</span>:<span style="color:#e6db74">&#34;Sending mail&#34;</span>,    
+<span style="color:#f92672">&#34;Recipient&#34;</span>:[<span style="color:#e6db74">&#34;albertoxxxxx@mail.es&#34;</span>,<span style="color:#e6db74">&#34;22222222&#34;</span>],
+<span style="color:#f92672">&#34;TemplateType&#34;</span>:<span style="color:#e6db74">&#34;template1&#34;</span>,
+<span style="color:#f92672">&#34;Channel&#34;</span>:{
+    <span style="color:#f92672">&#34;Email&#34;</span>: <span style="color:#66d9ef">true</span>
 },
-&quot;Language&quot;: &quot;EN&quot;,
-&quot;CustomData&quot;:{
-    &quot;Name&quot;:     &quot;Peter&quot;,
-    &quot;ItemName&quot;: &quot;Product1&quot;,
-    &quot;ActivationLink&quot;: &quot;http://www.google.es&quot;
+<span style="color:#f92672">&#34;Language&#34;</span>: <span style="color:#e6db74">&#34;EN&#34;</span>,
+<span style="color:#f92672">&#34;CustomData&#34;</span>:{
+    <span style="color:#f92672">&#34;Name&#34;</span>:     <span style="color:#e6db74">&#34;Peter&#34;</span>,
+    <span style="color:#f92672">&#34;ItemName&#34;</span>: <span style="color:#e6db74">&#34;Product1&#34;</span>,
+    <span style="color:#f92672">&#34;ActivationLink&#34;</span>: <span style="color:#e6db74">&#34;http://www.google.es&#34;</span>
 }
 }
-</code></pre><p>In that case the translation of this message to human language should be:</p>
-<h4 id="httpsgithubcomalknopflernotificationappaccount-idaccount-id"><a href="https://github.com/alknopfler/notificationapp#account-id"></a>Account Id:</h4>
+</code></pre></div><p>In that case the translation of this message to human language should be:</p>
+<h3 id="httpsgithubcomalknopflernotificationappaccount-idaccount-id"><a href="https://github.com/alknopfler/notificationapp#account-id"></a>Account Id:</h3>
 <p>Represent an identificator for the message</p>
-<h4 id="httpsgithubcomalknopflernotificationappsubjectsubject"><a href="https://github.com/alknopfler/notificationapp#subject"></a>Subject:</h4>
+<h3 id="httpsgithubcomalknopflernotificationappsubjectsubject"><a href="https://github.com/alknopfler/notificationapp#subject"></a>Subject:</h3>
 <p>Represent the subject for the email</p>
-<h4 id="httpsgithubcomalknopflernotificationapprecipientrecipient"><a href="https://github.com/alknopfler/notificationapp#recipient"></a>Recipient:</h4>
+<h3 id="httpsgithubcomalknopflernotificationapprecipientrecipient"><a href="https://github.com/alknopfler/notificationapp#recipient"></a>Recipient:</h3>
 <p>The list of recipient to send the notification. Could be different type of recipient (email, sms, etc..) but in that case, the notification sent will be just the available if match with the channel. In the example, the notification will not be sent to the telephone number as sms, because the channel is one of the list to send the notification</p>
-<h4 id="httpsgithubcomalknopflernotificationapptemplatetypetemplatetype"><a href="https://github.com/alknopfler/notificationapp#templatetype"></a>TemplateType:</h4>
+<h3 id="httpsgithubcomalknopflernotificationapptemplatetypetemplatetype"><a href="https://github.com/alknopfler/notificationapp#templatetype"></a>TemplateType:</h3>
 <p>This is the name of the template loaded previously</p>
-<h4 id="httpsgithubcomalknopflernotificationappchannelchannel"><a href="https://github.com/alknopfler/notificationapp#channel"></a>Channel:</h4>
+<h3 id="httpsgithubcomalknopflernotificationappchannelchannel"><a href="https://github.com/alknopfler/notificationapp#channel"></a>Channel:</h3>
 <p>This is the way to specify the channel or channels to use in the notification (By default if a available channel not appear here, the value will be False. In the example, the sms channel will not be available)</p>
-<h4 id="httpsgithubcomalknopflernotificationapplanguagelanguage"><a href="https://github.com/alknopfler/notificationapp#language"></a>Language:</h4>
+<h3 id="httpsgithubcomalknopflernotificationapplanguagelanguage"><a href="https://github.com/alknopfler/notificationapp#language"></a>Language:</h3>
 <p>This is the language for the notification. If there are several templates available for a notification, with the language will be select the correct one.</p>
-<h4 id="httpsgithubcomalknopflernotificationappcustom-datacustom-data"><a href="https://github.com/alknopfler/notificationapp#custom-data"></a>Custom data:</h4>
+<h3 id="httpsgithubcomalknopflernotificationappcustom-datacustom-data"><a href="https://github.com/alknopfler/notificationapp#custom-data"></a>Custom data:</h3>
 <p>This is the value of the variables in order to be matched into the {{.CustomData.XXXX}} templates placesholder</p>
 <h2 id="httpsgithubcomalknopflernotificationappbuildbuild"><a href="https://github.com/alknopfler/notificationapp#build"></a>Build</h2>
-<pre><code>docker-compose -d up .
-</code></pre><h2 id="httpsgithubcomalknopflernotificationapptestingtesting"><a href="https://github.com/alknopfler/notificationapp#testing"></a>Testing:</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-compose -d up .
+</code></pre></div><h2 id="httpsgithubcomalknopflernotificationapptestingtesting"><a href="https://github.com/alknopfler/notificationapp#testing"></a>Testing:</h2>
 <p>Need the special environment var in order to mock the mongo and email channel:</p>
-<pre><code>MOCK=MOCK
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">MOCK<span style="color:#f92672">=</span>MOCK
+</code></pre></div>
   </div>
 
   
