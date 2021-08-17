@@ -1,5 +1,5 @@
 baseURL = "https://alknopfler.github.io/"
-title = "Alknopfler's Blog"
+title = "Alknopfler's Site"
 languageCode = "en"
 enableInlineShortcodes = true
 publishDir = "docs"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>microservices on Alknopfler&#39;s Blog</title>
+    <title>microservices on Alknopfler&#39;s Site</title>
     <link>https://alknopfler.github.io/categories/microservices/</link>
-    <description>Recent content in microservices on Alknopfler&#39;s Blog</description>
+    <description>Recent content in microservices on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/microservices/index.xml" rel="self" type="application/rss+xml" />
