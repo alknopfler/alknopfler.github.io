@@ -2,77 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://alknopfler.github.io/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/</loc>
+    <lastmod>2021-01-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://alknopfler.github.io/about/</loc>
     <lastmod>2021-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alknopfler.github.io/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <loc>https://alknopfler.github.io/post/como-afrontar-el-reto-de-ganar-a-la-mente/</loc>
+    <lastmod>2020-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alknopfler.github.io/post/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <loc>https://alknopfler.github.io/categories/</loc>
+    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alknopfler.github.io/post/soho/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <loc>https://alknopfler.github.io/categories/culture/</loc>
+    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alknopfler.github.io/tags/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/theme/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <loc>https://alknopfler.github.io/post/principio-de-excelencia/</loc>
+    <lastmod>2019-06-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/categories/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/css/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/html/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/markdown/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/series/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/series/themes-guide/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/privacy/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/rich-content/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/shortcodes/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/math-typesetting/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/post/alexa-skills-with-golang/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
@@ -98,6 +56,104 @@
     <loc>https://alknopfler.github.io/categories/opensource/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://alknopfler.github.io/tags/</loc>
+    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/microservice/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/notifications/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/send-notifications/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/ses/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/sns/</loc>
+    <lastmod>2018-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</loc>
+    <lastmod>2018-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/security/</loc>
+    <lastmod>2018-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/deployment/</loc>
+    <lastmod>2017-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/infrastructure/</loc>
+    <lastmod>2017-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/infrastructure-as-code/</loc>
+    <lastmod>2017-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/infrastructure-as-code/</loc>
+    <lastmod>2017-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/opensource/</loc>
+    <lastmod>2017-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/ceph/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/kubernetes/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/new-features-in-openstack-ceph/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/openstack/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/working-with-microservices/</loc>
+    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/api/</loc>
+    <lastmod>2017-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/database/</loc>
+    <lastmod>2017-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/driver/</loc>
+    <lastmod>2017-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</loc>
+    <lastmod>2017-07-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</loc>
+    <lastmod>2017-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/logging/</loc>
+    <lastmod>2017-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/logrus/</loc>
+    <lastmod>2017-07-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/cypher/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/kubernetes/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/opensource-cultural-change/</loc>
+    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://alknopfler.github.io/tags/index/</loc>
+  </url><url>
+    <loc>https://alknopfler.github.io/series/</loc>
   </url>
 </urlset>

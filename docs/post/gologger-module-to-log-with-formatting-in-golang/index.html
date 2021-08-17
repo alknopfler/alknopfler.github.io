@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>GoLogger - Module to Log with formatting in Golang &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="GoLogger - Module to Log with formatting in Golang">
+<meta itemprop="description" content="GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:"><meta itemprop="datePublished" content="2017-07-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-07-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="67">
+<meta itemprop="keywords" content="logging,logrus," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GoLogger - Module to Log with formatting in Golang"/>
+<meta name="twitter:description" content="GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:"/>
+
+
+<meta property="og:title" content="GoLogger - Module to Log with formatting in Golang" />
+<meta property="og:description" content="GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-07-11T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2017-07-11T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/#webpage",
+      "url": "https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/",
+      "name": "GoLogger - Module to Log with formatting in Golang",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2017-07-11T00:00:00+00:00",
+      "dateModified": "2017-07-11T00:00:00+00:00",
+      "description": "GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/#webpage"
+      },
+      "headline": "GoLogger - Module to Log with formatting in Golang",
+      "datePublished": "2017-07-11T00:00:00+00:00",
+      "dateModified": "2017-07-11T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "logging",
+        "logrus"
+      ],
+      "articleSection": [
+        "golang"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">GoLogger - Module to Log with formatting in Golang</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-07-11T00:00:00Z">Jul 11, 2017</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <p><a href="https://github.com/alknopfler/Gologger">GoLogger</a> is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:</p>
+<ul>
+<li>Init() : initialize the logrus params</li>
+<li>Print(): Print an error with the base fields</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<p>** Import package **</p>
+<pre><code>import (
+
+    &quot;github.com/alknopfler/Gologger/gologger&quot;
+    )
+</code></pre><p><strong>Init with stdout and info level:</strong></p>
+<pre><code>gologger.Init(os.Stdout, logrus.InfoLevel)
+</code></pre><p><strong>Print to show the error message:</strong></p>
+<pre><code>gologger.Print(&quot;WARN&quot;,7,&quot;Description to show&quot;,&quot;filename.go&quot;)
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/logging/" class="tag-link">logging</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/logrus/" class="tag-link">logrus</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/"
+     data-text="GoLogger - Module to Log with formatting in Golang"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/"
+     data-text="GoLogger - Module to Log with formatting in Golang"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/"
+     data-text="GoLogger - Module to Log with formatting in Golang"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/"
+     data-text="GoLogger - Module to Log with formatting in Golang"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/"
+     data-text="GoLogger - Module to Log with formatting in Golang"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>

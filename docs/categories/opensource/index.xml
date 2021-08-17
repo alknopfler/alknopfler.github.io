@@ -16,5 +16,23 @@
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     
+    <item>
+      <title>Working with Microservices</title>
+      <link>https://alknopfler.github.io/post/working-with-microservices/</link>
+      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/working-with-microservices/</guid>
+      <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.</description>
+    </item>
+    
+    <item>
+      <title>Open Source is a Cultural change</title>
+      <link>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</link>
+      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</guid>
+      <description>Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.</description>
+    </item>
+    
   </channel>
 </rss>

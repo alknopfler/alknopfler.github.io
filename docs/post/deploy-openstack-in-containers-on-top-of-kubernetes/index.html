@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Deploy Openstack in containers on top of Kubernetes &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Deploy Openstack in containers on top of Kubernetes">
+<meta itemprop="description" content="Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers."><meta itemprop="datePublished" content="2017-07-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-07-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="773">
+<meta itemprop="keywords" content="deployment," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deploy Openstack in containers on top of Kubernetes"/>
+<meta name="twitter:description" content="Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers."/>
+
+
+<meta property="og:title" content="Deploy Openstack in containers on top of Kubernetes" />
+<meta property="og:description" content="Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-07-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2017-07-04T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/#webpage",
+      "url": "https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/",
+      "name": "Deploy Openstack in containers on top of Kubernetes",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2017-07-04T00:00:00+00:00",
+      "dateModified": "2017-07-04T00:00:00+00:00",
+      "description": "Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment\nThis Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/#webpage"
+      },
+      "headline": "Deploy Openstack in containers on top of Kubernetes",
+      "datePublished": "2017-07-04T00:00:00+00:00",
+      "dateModified": "2017-07-04T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "deployment"
+      ],
+      "articleSection": [
+        "kubernetes",
+        "openstack"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Deploy Openstack in containers on top of Kubernetes</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-07-04T00:00:00Z">Jul 4, 2017</time> <span class="readtime">&middot; 4 min read</span>
+  </div>
+
+  <div>
+  <p>Based on my repo in github:  <a href="https://github.com/alknopfler/openstack-k8s">Openstack-k8s: Openstack Kubernetes deployment</a></p>
+<p>This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers. The openstack distribution is based on the upstream code, and you can deploy a specific openstack version changing the &ldquo;version&rdquo; param in the dockerfile for each Openstack service. The project requires kubernetes and uses Rancher to deploy the k8s cluster faster.</p>
+<h2 id="requirements">Requirements:</h2>
+<ul>
+<li>A k8s cluster ready is needed to deploy all the services (including the Etcd service)</li>
+<li>A DNS services is needed to resolve the k8s services name</li>
+</ul>
+<h2 id="features">Features:</h2>
+<ul>
+<li>Fast Openstack release upgrade: version is parameterized in Dockerfiles getting the code directly from upstream.</li>
+<li>Configuration files live only in the k8s ETCD. Just get them from Etcd !!</li>
+<li>Kubernetes cluster is distributed automatically between all the hosts (using rancher to deploy it).</li>
+<li>Openstack Service definition is developed in k8s to be scaled (only the first time launched should create the db scheme and tables in keystone), so you can modify the replica parameter to scale up.</li>
+</ul>
+<h2 id="openstack-services-ready">Openstack Services ready:</h2>
+<ul>
+<li>Keystone</li>
+<li>Glance</li>
+<li>Neutron</li>
+<li>Horizon</li>
+<li>Cinder</li>
+<li>Mysql (Community - Galera cluster)</li>
+<li>Rabbitmq (Community - Rabbitmq cluster)</li>
+<li>Heat</li>
+<li>Nova-Controller</li>
+<li>Nova-Compute</li>
+</ul>
+<p>Partially based on <a href="https://github.com/rancher">Rancher</a> project: - We use Rancher DNS service to simplify the kubernetes deployment. As an alternative, you can use skydns in k8s or whatever you want. - Rancher deploy automatically full kubernetes cluster distributed on all the hosts. - Rancher is just a tool to manage the Openstack deployment as well as other platforms based on containers. - Moreover, the kubernetes deployments files are used to generate Rancher catalogs in order to simplify the way to deploy it.</p>
+<h2 id="running">Running:</h2>
+<p>The order needed to deploy the platform should be:</p>
+<ol>
+<li>Load the config loader in order to get all the environment and configuration params to the Etcd service</li>
+</ol>
+<ul>
+<li>Configure the <a href="https://github.com/BBVA/openstack-k8s/tree/master/config-loader/data/bootstrap/general">config-loader</a> renaming the file (without -sample)</li>
+<li>Configuring the password variables for all the services in the same file to adapt to your environment.</li>
+</ul>
+<p>In the following ETCD section you can get more information about the Etcd scheme.</p>
+<ol>
+<li>Deploy each service in the following sequence:</li>
+</ol>
+<ul>
+<li>Mysql using the pxc-cluster</li>
+<li>Rabbitmq cluster</li>
+<li>Keystone (Must be the first openstack service to establish all the endpoint tables)</li>
+<li>Glance</li>
+<li>Nova-Controller</li>
+<li>Neutron</li>
+<li>Nova-Compute</li>
+<li>The rest of services (cinder, swift, horizon&hellip;)</li>
+</ul>
+<p>You can use [k8s-configs] (<a href="https://github.com/BBVA/k8s-configs">https://github.com/BBVA/k8s-configs</a>) in order to deploy each service manually in kubernetes, or if you are using Rancher, you can load this folder as a Rancher Catalog.</p>
+<h2 id="etcd-config-loader">ETCD: Config loader</h2>
+<p>The idea is to provide a way to get all the configuration files params and environment variables to the openstack services containers. The config-loader is a Pod launched just one time, which load all the params to the Etcd previously loaded:</p>
+<ol>
+<li>General Environment by changing the file <a href="https://github.com/BBVA/openstack-k8s/tree/master/config-loader/data/bootstrap/general">config-loader</a></li>
+<li>Openstack service configuration (For instance, just change the params needed for <a href="https://github.com/BBVA/openstack-k8s/tree/master/config-loader/data/bootstrap/glance/">Glance</a>. If you need some params extra for configure your environment, just add the line with the param needed. The config-loader process will do a merge between the default config-file params and the configuration params loaded here.</li>
+</ol>
+<p>The Etcd scheme is configured in different branches to keep the information:</p>
+<ol>
+<li>General Environment: Will be created a new branch in the Etcd named <code>general</code> where will be loaded all the enviroment params shown below. An example:</li>
+</ol>
+<p>[code lang=&ldquo;text&rdquo;] general/MYSQL_ROOT_PASSWORD=mysql_password [/code]</p>
+<ol>
+<li>Openstack service configuration: Will be created a branch with the next structure:</li>
+</ol>
+<ul>
+<li>Node Role: Useful to separate into controller node, storage node or compute node</li>
+<li>Service Name: The name of the service</li>
+<li>Filename: The name of the configuration file which is needed to modify</li>
+<li>Section: Inside the file, the section&rsquo;s name</li>
+<li>Key=value: the key/value param will be modified</li>
+</ul>
+<p>For instance, in a controller node with the glance service, if we need to modify the connection url inside the database section in the glance-api.conf file should be:</p>
+<p>[code lang=&ldquo;text&rdquo;] controller/glance/glance-api.conf/database/connection=mysql://glance:$GLANCE_DB_PASSWORD@$MYSQL_HOST/glance [/code]</p>
+<h2 id="kubernetes-deployment">Kubernetes Deployment</h2>
+<p>For each service, you can use [k8s-configs] (<a href="https://github.com/BBVA/k8s-configs">https://github.com/BBVA/k8s-configs</a>) in order to deploy each service manually in kubernetes. The deployment is based on: - Services - Replication Controllers - Pods</p>
+<p>Manually you can deploy all the services as usual in kubernetes following the sequence shown above. For instance:</p>
+<p>[code lang=&ldquo;text&rdquo;] $ kubectl create -f k8s-configs/kubernetes-templates/glance/0/glance-service.yaml $ kubectl create -f k8s-configs/kubernetes-templates/glance/0/glance-rc.yaml [/code]</p>
+<p>Obviously, you can deploy manually in kubernetes loading the service, and replication controller yaml files. If you are using Rancher to deploy the stack, just add this repo in the Rancher Catalog gui, to get it available. After that, all the services will be shown available to deploy just with one click!</p>
+<h2 id="work-in-progress">Work In Progress:</h2>
+<p>We&rsquo;re working on the next services:</p>
+<ul>
+<li>cinder (debugging NFS driver connection)</li>
+<li>Swift (debugging)</li>
+<li>Sahara</li>
+<li>Magnum</li>
+<li>Trove</li>
+<li>Designate</li>
+</ul>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/deployment/" class="tag-link">deployment</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/"
+     data-text="Deploy Openstack in containers on top of Kubernetes"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/"
+     data-text="Deploy Openstack in containers on top of Kubernetes"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/"
+     data-text="Deploy Openstack in containers on top of Kubernetes"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/"
+     data-text="Deploy Openstack in containers on top of Kubernetes"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/"
+     data-text="Deploy Openstack in containers on top of Kubernetes"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>

@@ -16,5 +16,51 @@
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     
+    <item>
+      <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</title>
+      <link>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
+      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services.</description>
+    </item>
+    
+    <item>
+      <title>Design your own Home Alarm System using Go</title>
+      <link>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</link>
+      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</guid>
+      <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like:</description>
+    </item>
+    
+    <item>
+      <title>GoDataberus - Database Driver API in Golang</title>
+      <link>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</guid>
+      <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</description>
+    </item>
+    
+    <item>
+      <title>GoLogger - Module to Log with formatting in Golang</title>
+      <link>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</link>
+      <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</guid>
+      <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:</description>
+    </item>
+    
+    <item>
+      <title>Gocypherator - Module to cypher string in Golang easily</title>
+      <link>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
+      <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
+ AES-128, AES-192, or AES-256.</description>
+    </item>
+    
   </channel>
 </rss>

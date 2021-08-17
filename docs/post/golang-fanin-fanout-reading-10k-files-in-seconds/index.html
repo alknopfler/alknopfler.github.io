@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Golang Fanin - Fanout  Reading 10k files in seconds &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Golang Fanin - Fanout  Reading 10k files in seconds">
+<meta itemprop="description" content="Sometimes you&rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine."><meta itemprop="datePublished" content="2021-01-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-01-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="540">
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang Fanin - Fanout  Reading 10k files in seconds"/>
+<meta name="twitter:description" content="Sometimes you&rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine."/>
+
+
+<meta property="og:title" content="Golang Fanin - Fanout  Reading 10k files in seconds" />
+<meta property="og:description" content="Sometimes you&rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-01-27T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-01-27T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/#webpage",
+      "url": "https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/",
+      "name": "Golang Fanin - Fanout  Reading 10k files in seconds",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2021-01-27T00:00:00+00:00",
+      "dateModified": "2021-01-27T00:00:00+00:00",
+      "description": "Sometimes you\u0026rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/#webpage"
+      },
+      "headline": "Golang Fanin - Fanout  Reading 10k files in seconds",
+      "datePublished": "2021-01-27T00:00:00+00:00",
+      "dateModified": "2021-01-27T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Golang Fanin - Fanout  Reading 10k files in seconds</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-01-27T00:00:00Z">Jan 27, 2021</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p>Sometimes you&rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine.</p>
+<p>Golang has a powerful feature known by all, based on goroutines (concurrency) and channels (messaging) that define totally the Fanin - Fanout pattern.</p>
+<p>The main idea is to paralelize jobs based on I/O and CPU execution doing the next tasks, but using the concurrency to launch severals goroutines to paralize the execution flow:</p>
+<p>1-. Read file -&gt; Actually, using concurrency we&rsquo;ll read 10k files in few seconds launching goroutines</p>
+<p>2-. Using Channels we&rsquo;ll create the pdf after reading the file and get the buffer data into the channel</p>
+<p>3-. Using bool channel we&rsquo;ll control the whole process to finish the execution (into main function)</p>
+<p>Let&rsquo;s go with the example:</p>
+<p>First of all, we&rsquo;ll create the structs which will support the information as well as generic functions just to read a file and then write a pdf in golang:</p>
+<p>const (
+path = &ldquo;/tmp/files&rdquo;
+)</p>
+<p>type (
+<strong>StreamData struct</strong> {
+data     []byte
+fileName string
+}
+)</p>
+<p>func <strong>loadFileNames()</strong> []string {
+info, err := ioutil.ReadDir(path)
+if err != nil {
+panic(err)
+}</p>
+<p>var fileNames []string
+for _, i := range info {
+fileNames = append(fileNames, path+&quot;/&quot;+i.Name())
+}
+return fileNames
+}</p>
+<p>func <strong>generatePdf</strong>(data []byte, fileName string) {<br>
+pdfFile := gofpdf.New(&ldquo;P&rdquo;, &ldquo;mm&rdquo;, &ldquo;A4&rdquo;, &ldquo;arial&rdquo;)<br>
+pdfFile.AddPage()<br>
+pdfFile.SetFont(&ldquo;arial&rdquo;, &ldquo;&rdquo;, 12)<br>
+pdfFile.Cell(40,10, string(data))<br>
+if err := pdfFile.OutputFileAndClose(fileName + &ldquo;.pdf&rdquo;); err != nil{                fmt.Println(err)<br>
+}
+}</p>
+<p>First of all, we&rsquo;re going to create the first read file function using goroutines and channels:</p>
+<p>func openFiles(paths []string) &lt;-chan StreamData {
+streamOut := make(chan StreamData)     //create the channel type Data with the information once has been loaded
+go func() {                           // goroutine to read from dir
+for _, p := range paths {
+f, err := os.Open(p)
+if err != nil {
+fmt.Println(err)
+}
+b, _ := ioutil.ReadAll(f)
+streamData := StreamData{data: b, fileName: f.Name()}
+streamOut &lt;- streamData      //send data to the channel
+}
+close(streamOut)
+}()
+return streamOut.                 //return the channel info
+}</p>
+<p>The idea is to share information between concurrent routines using channels to do that. That&rsquo;s the sense of the pattern name -&gt; Fanin - fanout</p>
+<p>As you can, imagine we have to implement the second part of the solution. We are going to create just a function to build a pdf file getting the information from the channel as return the function openFile:</p>
+<p>func convertToPdf(done chan bool, <strong>streamIn &lt;-chan StreamData</strong>) &lt;-chan StreamData {
+streamOut := make(chan StreamData)
+go func() {.                     <br>
+for stream := range streamIn {
+generatePdf(stream.data, stream.fileName)
+}
+close(streamOut)
+done &lt;- true
+}()
+return streamOut
+}</p>
+<p>Using the same structure we&rsquo;re launching the goroutine to generate the pdf, using the information for the IN channel to generate the OUT information in the channel.</p>
+<p>Just to finish our main function creates a bool channel to know when the file processing has been finished. This is another important thing to keep in mind, because goroutines are running in background so that&rsquo;s one of the controls that you have to control the execution.</p>
+<p>func main() {
+start := time.Now()
+files := loadFileNames()</p>
+<p><strong>done := make(chan bool)</strong></p>
+<p>inputStream := <strong>openFiles</strong>(files)
+<strong>convertToPdf</strong>(done, inputStream)
+<strong>&lt;-done</strong></p>
+<p>fmt.Printf(&quot;\nTime finished in %f\n&quot;, time.Since(start).Seconds())
+}</p>
+
+  </div>
+
+  
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/"
+     data-text="Golang Fanin - Fanout  Reading 10k files in seconds"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/"
+     data-text="Golang Fanin - Fanout  Reading 10k files in seconds"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/"
+     data-text="Golang Fanin - Fanout  Reading 10k files in seconds"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/"
+     data-text="Golang Fanin - Fanout  Reading 10k files in seconds"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/"
+     data-text="Golang Fanin - Fanout  Reading 10k files in seconds"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>

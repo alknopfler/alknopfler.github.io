@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>GoDataberus - Database Driver API in Golang &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="GoDataberus - Database Driver API in Golang">
+<meta itemprop="description" content="GoDataberus is a &ldquo;Database Driver API&rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database"><meta itemprop="datePublished" content="2017-07-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-07-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="451">
+<meta itemprop="keywords" content="api,driver," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GoDataberus - Database Driver API in Golang"/>
+<meta name="twitter:description" content="GoDataberus is a &ldquo;Database Driver API&rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database"/>
+
+
+<meta property="og:title" content="GoDataberus - Database Driver API in Golang" />
+<meta property="og:description" content="GoDataberus is a &ldquo;Database Driver API&rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2017-07-12T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2017-07-12T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/#webpage",
+      "url": "https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/",
+      "name": "GoDataberus - Database Driver API in Golang",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2017-07-12T00:00:00+00:00",
+      "dateModified": "2017-07-12T00:00:00+00:00",
+      "description": "GoDataberus is a \u0026ldquo;Database Driver API\u0026rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/#webpage"
+      },
+      "headline": "GoDataberus - Database Driver API in Golang",
+      "datePublished": "2017-07-12T00:00:00+00:00",
+      "dateModified": "2017-07-12T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "api",
+        "driver"
+      ],
+      "articleSection": [
+        "database",
+        "golang"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">GoDataberus - Database Driver API in Golang</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-07-12T00:00:00Z">Jul 12, 2017</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p><a href="https://github.com/alknopfler/GoDataberus">GoDataberus</a> is a &ldquo;Database Driver API&rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</p>
+<h1 id="httpsgithubcomalknopflergodataberusarchitecturearchitecture"><a href="https://github.com/alknopfler/GoDataberus#architecture"></a>Architecture</h1>
+<p>GoDataberus has been developed in Golang and contains:</p>
+<ul>
+<li>Connection Redis store: Redis to store the database&rsquo;s connection data. It return an uuid to use in the following api calls. The connection data could be a local database, external cloud provider, or whatever.</li>
+<li>GoDataberus go package: API to use the basic CRUD with the common databases. It based on different drivers for the databases and implements the basic functions for these databases.</li>
+</ul>
+<p><a href="https://github.com/alknopfler/GoDataberus/blob/master/architecture.png"><img src="images/architecture.png" alt="Image of architecture"></a></p>
+<h1 id="httpsgithubcomalknopflergodataberushow-to-use-godataberushow-to-use-godataberus"><a href="https://github.com/alknopfler/GoDataberus#how-to-use-godataberus"></a>How to use GoDataberus</h1>
+<h2 id="httpsgithubcomalknopflergodataberusapi-definitionapi-definition"><a href="https://github.com/alknopfler/GoDataberus#api-definition"></a>API Definition</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Endpoint</th>
+<th style="text-align:left">Method</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>/v0/connections/{dbType}</code></td>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left">Register a new Database connection entry. Return uuid to use in the following calls to this database</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/v0/databerus/{dbType}/resources/{uuid}</code></td>
+<td style="text-align:left">PUT</td>
+<td style="text-align:left">Insert an item in the database associated to the uuid</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/v0/databerus/{dbType}/resources/{uuid}/fields/{field}/items/{item}</code></td>
+<td style="text-align:left">GET</td>
+<td style="text-align:left">Search for an item in the database associated to the uuid</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>/v0/databerus/{dbType}/resources/{uuid}/fields/{field}/items/{item}</code></td>
+<td style="text-align:left">Delete</td>
+<td style="text-align:left">Delete an item exists in the database associated to the uuid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="httpsgithubcomalknopflergodataberusavailable-db-backend-connectionsavailable-db-backend-connections"><a href="https://github.com/alknopfler/GoDataberus#available-db-backend-connections"></a>Available DB Backend connections</h2>
+<p>By now, the drivers available are:</p>
+<ul>
+<li>**MongoDB (dbType: mongo)**Example:<code>'{ &quot;DBconnection&quot;: { &quot;Proto&quot;:&quot;http&quot;, &quot;Ipaddress&quot;:&quot;localhost&quot;, &quot;Port&quot;:&quot;27017&quot;, &quot;Name&quot;:&quot;Databerus&quot;, &quot;Username&quot;:&quot;&quot;, &quot;Password&quot;:&quot;&quot;, &quot;Collection&quot;:&quot;Test&quot; } }'</code></li>
+<li>**ETCD (dbType: etcd)**Example:<code>{ &quot;DBconnection&quot;: { &quot;Proto&quot;:&quot;http&quot;, &quot;Ipaddress&quot;:&quot;localhost&quot;, &quot;Port&quot;:&quot;2379&quot;, &quot;Root&quot;:&quot;/project/app/component/&quot; } }</code></li>
+</ul>
+<h2 id="httpsgithubcomalknopflergodataberusregister-a-database-backend-connectionregister-a-database-backend-connection"><a href="https://github.com/alknopfler/GoDataberus#register-a-database-backend-connection"></a>Register a Database Backend connection</h2>
+<p>First of all, you have to register the information to connect to an external database:</p>
+<pre><code>curl --request PUT \
+  --url http://localhost:8080/v0/connections/mongo \
+  --header 'content-type: application/json' \
+  --data '{
+    &quot;DBconnection&quot;:
+        {       &quot;Proto&quot;:&quot;http&quot;,
+                &quot;Ipaddress&quot;:&quot;localhost&quot;,
+                &quot;Port&quot;:&quot;27017&quot;,
+                &quot;Name&quot;:&quot;Databerus&quot;,
+                &quot;Username&quot;:&quot;&quot;,      
+                &quot;Password&quot;:&quot;&quot;,      
+                &quot;Collection&quot;:&quot;Test&quot;
+        }
+    }' 
+</code></pre><p>Output:</p>
+<pre><code>&quot;6edaa6e0-454e-11e7-88fa-3c15c2d66294&quot;
+</code></pre><p>For instance, we are going to use the driver &ldquo;mongo&rdquo; with a local Database, so we use the &ldquo;mongo&rdquo; driver, and the connection data to use a local database. It return an uuid that will be use in the next calls in order to use this connection to the database.</p>
+<h2 id="httpsgithubcomalknopflergodataberususe-the-backend-with-basic-crud-operationsuse-the-backend-with-basic-crud-operations"><a href="https://github.com/alknopfler/GoDataberus#use-the-backend-with-basic-crud-operations"></a>Use the Backend with basic CRUD operations</h2>
+<h3 id="httpsgithubcomalknopflergodataberusinsert-iteminsert-item"><a href="https://github.com/alknopfler/GoDataberus#insert-item"></a>Insert Item</h3>
+<pre><code>curl --request PUT \
+  --url http://localhost:8080/v0/databerus/mongo/resources/6edaa6e0-454e-11e7-88fa-3c15c2d66294 \
+  --header 'content-type: application/json' \
+  --data '{
+    &quot;data&quot;:
+        {
+            &quot;foo&quot;:&quot;bar&quot;,
+            &quot;foo2&quot;:&quot;bar2&quot;,      
+            &quot;set&quot;:
+                    {           
+                    &quot;pass1&quot;:&quot;password&quot;
+                    }
+        }
+        }'
+</code></pre><p>For ETCD should be:</p>
+<pre><code>curl --request PUT \
+  --url http://localhost:8080/v0/databerus/etcd/resources/ad7be5ba-46cb-11e7-bfb2-3c15c2d66294 \
+  --header 'content-type: application/json' \
+  --data '{
+    &quot;data&quot;:
+        {
+            &quot;root&quot;:&quot;root&quot;,
+            &quot;key&quot;:&quot;key1&quot;,
+            &quot;value&quot;:&quot;value1&quot;
+        }
+        }'
+</code></pre><h3 id="httpsgithubcomalknopflergodataberusget-itemget-item"><a href="https://github.com/alknopfler/GoDataberus#get-item"></a>Get Item</h3>
+<pre><code>curl --request GET \
+  --url http://localhost:8080/v0/databerus/mongo/resources/6edaa6e0-454e-11e7-88fa-3c15c2d66294/fields/foo/items/bar \
+</code></pre><p>In the case of ETCD:</p>
+<pre><code>curl --request GET \
+  --url http://localhost:8080/v0/databerus/etcd/resources/8d1c6082-478d-11e7-9396-3c15c2d66294/fields/root/items/key20 \
+
+</code></pre><p>The output depend on the database query:</p>
+<pre><code>[
+  {
+    &quot;_id&quot;: &quot;5931980038136fc848d94b23&quot;,
+    &quot;foo10&quot;: &quot;bar10&quot;,
+    &quot;foo11&quot;: &quot;bar11&quot;,
+    &quot;set&quot;: {
+      &quot;pass1&quot;: &quot;password&quot;
+    }
+  }
+]
+</code></pre><p>In the case of ETCD, for instance, if the key does not exists the output could be:</p>
+<pre><code>{
+  &quot;error&quot;: &quot;100: Key not found (/rootkey20) [25]&quot;
+}
+</code></pre><p># Build Dockerfile</p>
+<pre><code>docker build -t $REPO:$VERSION -f Dockerfile .;
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/api/" class="tag-link">api</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/driver/" class="tag-link">driver</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/"
+     data-text="GoDataberus - Database Driver API in Golang"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/"
+     data-text="GoDataberus - Database Driver API in Golang"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/"
+     data-text="GoDataberus - Database Driver API in Golang"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/"
+     data-text="GoDataberus - Database Driver API in Golang"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/"
+     data-text="GoDataberus - Database Driver API in Golang"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>

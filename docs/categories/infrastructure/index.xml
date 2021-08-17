@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>infrastructure on Alknopfler&#39;s Blog</title>
+    <link>https://alknopfler.github.io/categories/infrastructure/</link>
+    <description>Recent content in infrastructure on Alknopfler&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infrastructure as code</title>
+      <link>https://alknopfler.github.io/post/infrastructure-as-code/</link>
+      <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/infrastructure-as-code/</guid>
+      <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.</description>
+    </item>
+    
+  </channel>
+</rss>

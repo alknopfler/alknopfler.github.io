@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job">
+<meta itemprop="description" content="When you&rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month."><meta itemprop="datePublished" content="2021-01-20T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-01-20T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="532">
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job"/>
+<meta name="twitter:description" content="When you&rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month."/>
+
+
+<meta property="og:title" content="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job" />
+<meta property="og:description" content="When you&rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-01-20T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-01-20T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/#webpage",
+      "url": "https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/",
+      "name": "Scheduling shutdown aws EC2 at night - Golang \u0026 gitlab-ci schedule job",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2021-01-20T00:00:00+00:00",
+      "dateModified": "2021-01-20T00:00:00+00:00",
+      "description": "When you\u0026rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/#webpage"
+      },
+      "headline": "Scheduling shutdown aws EC2 at night - Golang \u0026 gitlab-ci schedule job",
+      "datePublished": "2021-01-20T00:00:00+00:00",
+      "dateModified": "2021-01-20T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-01-20T00:00:00Z">Jan 20, 2021</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p>When you&rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month. Obviously you could do it manually but, I will offer a very simple way to do that automatically directly running a code using just a gitlab-ci pipeline.</p>
+<p>The main components are:</p>
+<ul>
+<li>Golang code to connect to your aws account and stop the instances which are running</li>
+<li>Gitlab-ci pipeline but using and scheduled job to automate at night the script execution</li>
+</ul>
+<p><strong>Golang code</strong>:</p>
+<p>package main</p>
+<p>import (
+&ldquo;fmt&rdquo;
+&ldquo;github.com/aws/aws-sdk-go/aws&rdquo;
+&ldquo;github.com/aws/aws-sdk-go/aws/session&rdquo;
+&ldquo;github.com/aws/aws-sdk-go/service/ec2&rdquo;
+&ldquo;log&rdquo;
+)</p>
+<p>func main() {
+ec2svc := ec2.New(session.New())
+params := &amp;ec2.DescribeInstancesInput{
+Filters: []*ec2.Filter{
+{
+Name:   aws.String(&ldquo;instance-state-name&rdquo;),
+Values: []*string{aws.String(&ldquo;running&rdquo;), aws.String(&ldquo;pending&rdquo;)},
+},
+},
+}
+resp, err := ec2svc.DescribeInstances(params)
+if err != nil {
+fmt.Println(&ldquo;there was an error listing instances in&rdquo;, err.Error())
+log.Fatal(err.Error())
+}
+fmt.Println(&ldquo;Deleting instances&hellip; &ldquo;)
+for idx, res := range resp.Reservations {
+fmt.Println(&rdquo;  &gt; Reservation Id&rdquo;, *res.ReservationId, &quot; Num Instances: &ldquo;, len(res.Instances))
+for _, inst := range resp.Reservations[idx].Instances {
+fmt.Println(&rdquo;    - Stopping Instance ID: &ldquo;, *inst.InstanceId)
+input := &amp;ec2.StopInstancesInput{
+InstanceIds: []*string{
+aws.String(*inst.InstanceId),
+},
+}
+_, err := ec2svc.StopInstances(input)
+if err != nil {
+fmt.Println(&ldquo;there was an error stopping instances&rdquo;, err.Error())
+log.Fatal(err.Error())
+}</p>
+<pre><code>  }
+</code></pre>
+<p>}
+}</p>
+<p>Mainly you connect using your environment access and secret key to aws ec2 in order to get all the instances which are running or maybe pending, and with the second part of the script, you stop the instances which match with the first criteria.</p>
+<p><strong>Gitlab-ci Pipeline:</strong></p>
+<p>Just to create the pipeline, you could use the golang pipeline auto-devops tool (directly using the gitlab tool once you uploaded you first commit with the auto-devops tool).</p>
+<p>This tools will create in your repo the next file:</p>
+<p><em># This file is a template, and might need editing before it works on your project.</em>
+image: golang:latest</p>
+<p>variables:
+<em># Please edit to your GitLab project</em>
+REPO_NAME: gitlab.com/alknopfler/shutdown-alk-ec2
+BINARY_NAME: shutdownec2</p>
+<p>_# The problem is that to be able to use go get, one needs to put</p>
+<h1 id="the-repository-in-the-gopath-so-for-example-if-your-gitlab-domain">the repository in the $GOPATH. So for example if your gitlab domain</h1>
+<h1 id="is-gitlabcom-and-that-your-repository-is-namespaceproject-and">is gitlab.com, and that your repository is namespace/project, and</h1>
+<h1 id="the-default-gopath-being-go-then-youd-need-to-have-your">the default GOPATH being /go, then you&rsquo;d need to have your</h1>
+<h1 id="repository-in-gosrcgitlabcomnamespaceproject">repository in /go/src/gitlab.com/namespace/project</h1>
+<h1 id="thus-making-a-symbolic-link-corrects-this_">Thus, making a symbolic link corrects this._</h1>
+<p>before_script:</p>
+<ul>
+<li>mkdir -p $GOPATH/src/$(dirname $REPO_NAME)</li>
+<li>ln -svf $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME</li>
+<li>cd $GOPATH/src/$REPO_NAME</li>
+</ul>
+<p>stages:</p>
+<ul>
+<li>test</li>
+<li>build</li>
+<li>deploy</li>
+<li>run</li>
+</ul>
+<p>format:
+stage: test
+script:
+- go fmt $(go list ./&hellip; | grep -v /vendor/)
+- go vet $(go list ./&hellip; | grep -v /vendor/)
+- go test -race $(go list ./&hellip; | grep -v /vendor/)</p>
+<p>compile:
+stage: build
+script:
+- go build -race -ldflags &ldquo;-extldflags &lsquo;-static&rsquo;&rdquo; -o $CI_PROJECT_DIR/$BINARY_NAME
+artifacts:
+paths:
+- $BINARY_NAME</p>
+<p>run:
+stage: run
+script:
+- ./$BINARY_NAME</p>
+<p>and that&rsquo;s all!!! the next commit will trigger the pipeline job directly, buttttt, this is just to stop the instances when the pipeline is triggered.</p>
+<p>The last step we need to do is create a schedule job to launch automatically at night:</p>
+<p><a href="https://alknopfler.files.wordpress.com/2021/01/image.png"><img src="https://alknopfler.files.wordpress.com/2021/01/image.png?w=1024" alt=""></a></p>
+<p>Now, you have to modify the pipeline variables in order to add your access key and secret key as well as your aws region:</p>
+<p><a href="https://alknopfler.files.wordpress.com/2021/01/image-1.png"><img src="https://alknopfler.files.wordpress.com/2021/01/image-1.png?w=1024" alt=""></a></p>
+<p>Now, you don&rsquo;t have to be worry about this kind of things any more ;)</p>
+
+  </div>
+
+  
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/"
+     data-text="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/"
+     data-text="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/"
+     data-text="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/"
+     data-text="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/"
+     data-text="Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>

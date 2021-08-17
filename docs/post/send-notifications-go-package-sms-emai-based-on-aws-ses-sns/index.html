@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS &middot; Alknopfler&#39;s Blog</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS">
+<meta itemprop="description" content="The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&hellip;) using the AWS SNS and AWS SES services."><meta itemprop="datePublished" content="2018-10-01T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-10-01T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="521">
+<meta itemprop="keywords" content="aws,microservice,notifications,send-notifications,ses,sns," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS"/>
+<meta name="twitter:description" content="The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&hellip;) using the AWS SNS and AWS SES services."/>
+
+
+<meta property="og:title" content="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS" />
+<meta property="og:description" content="The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&hellip;) using the AWS SNS and AWS SES services." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-10-01T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2018-10-01T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My Knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Blog",
+      "description": "My Knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/#webpage",
+      "url": "https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/",
+      "name": "Send Notifications with this Go project (Sms \u0026 Email) based on AWS SES/SNS",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2018-10-01T00:00:00+00:00",
+      "dateModified": "2018-10-01T00:00:00+00:00",
+      "description": "The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc\u0026hellip;) using the AWS SNS and AWS SES services.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/#webpage"
+      },
+      "headline": "Send Notifications with this Go project (Sms \u0026 Email) based on AWS SES/SNS",
+      "datePublished": "2018-10-01T00:00:00+00:00",
+      "dateModified": "2018-10-01T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "aws",
+        "microservice",
+        "notifications",
+        "send-notifications",
+        "ses",
+        "sns"
+      ],
+      "articleSection": [
+        "golang",
+        "microservices"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Blog</h1>
+
+      
+      <p class="lead">My Knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/about/">About</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2018-10-01T00:00:00Z">Oct 1, 2018</time> <span class="readtime">&middot; 3 min read</span>
+  </div>
+
+  <div>
+  <p>The <a href="https://github.com/alknopfler/notificationapp">notificationApp</a> is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.CustomData.Name}}) and store that template in the database to be used after that by the notification endpoint.</p>
+<p>Created by Alknopfler in <a href="https://github.com/alknopfler/notificationapp">https://github.com/alknopfler/notificationapp</a></p>
+<h2 id="httpsgithubcomalknopflernotificationappfeaturesfeatures"><a href="https://github.com/alknopfler/notificationapp#features"></a>Features</h2>
+<ul>
+<li>Templates based on places holder {{.CustomData.XXXX}}</li>
+<li>Templates Management (Create, Retrieve, and Delete)</li>
+<li>Templates store based on 3 params:
+<ul>
+<li>Template Id</li>
+<li>Channel (sms, email, and so on&hellip;)</li>
+<li>Language</li>
+</ul>
+</li>
+<li>Multi-channel and Multi-recipient features (The NotificationsApp is able to send to severals users with different channels) Send Notifications to users using SNS and SES services (AWS services)</li>
+<li>Custom the message using Custom Data values to replace in the template placesholder</li>
+<li>API to use all the features</li>
+</ul>
+<h2 id="httpsgithubcomalknopflernotificationapparchitecturearchitecture"><a href="https://github.com/alknopfler/notificationapp#architecture"></a>Architecture</h2>
+<p><a href="https://github.com/alknopfler/notificationapp/blob/master/notificationapp.png"><img src="images/notificationapp.png" alt="GitHub Logo"></a></p>
+<h2 id="httpsgithubcomalknopflernotificationapphow-to-usehow-to-use"><a href="https://github.com/alknopfler/notificationapp#how-to-use"></a>How to use</h2>
+<p>There&rsquo;re two endpoints:</p>
+<ul>
+<li>Template endpoint in order to manage the different templates</li>
+<li>Notification endpoint to send notifications</li>
+</ul>
+<h2 id="httpsgithubcomalknopflernotificationappstore-a-new-templatestore-a-new-template"><a href="https://github.com/alknopfler/notificationapp#store-a-new-template"></a>Store a new Template</h2>
+<p>This part of the API offer the possibility of create, delete and get the templates available to send notifications</p>
+<h3 id="httpsgithubcomalknopflernotificationappapiapi"><a href="https://github.com/alknopfler/notificationapp#api"></a>API:</h3>
+<p><a href="http://notification-app:8080/templates">http://notification-app:8080/templates</a></p>
+<pre><code>- Method: POST
+- Json example:
+
+    ```
+    {
+    &quot;TemplateId&quot;: &quot;template1&quot;,
+    &quot;Channel&quot;: &quot;Email&quot;,
+    &quot;Lang&quot;: &quot;ES&quot;,
+    &quot;Content&quot;: &quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; Hola {{.CustomData.Name}}, Gracias por contratar {{.CustomData.ItemName}}.&lt;br&gt;&lt;br&gt;Pulse &lt;a href={{.CustomData.ActivationLink}}&gt;aquí&lt;/a&gt; para activar de su cuenta &lt;/body&gt;&lt;/html&gt;&quot;
+    }
+    ```
+</code></pre><p><a href="http://notification-app:8080/templates/%7BtemplateID%7D">http://notification-app:8080/templates/{templateID}</a></p>
+<pre><code>- Method: GET | DELETE
+- Json response:
+
+    ```
+    [
+        {
+            &quot;Template&quot;: &quot;template1&quot;,
+            &quot;Content&quot;: &quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt; Hola {{.CustomData.Name}}, Gracias por contratar {{.CustomData.ItemName}}.&lt;br&gt;&lt;br&gt;Pulse &lt;a href={{.CustomData.ActivationLink}}&gt;aquí&lt;/a&gt; para activar de su cuenta &lt;/body&gt;&lt;/html&gt;&quot;
+        }
+    ]
+    ``` 
+</code></pre><p>As you can see, the template key store in mongo will be the concatenation of:</p>
+<ul>
+<li>TemplateType</li>
+<li>Channel</li>
+<li>Language</li>
+</ul>
+<h3 id="httpsgithubcomalknopflernotificationappsend-notification-flow-descriptionsend-notification-flow-description"><a href="https://github.com/alknopfler/notificationapp#send-notification-flow-description"></a>Send Notification (Flow Description)</h3>
+<p>The main points will be:</p>
+<ul>
+<li>First, any microservice could generate the Notification Message json:</li>
+</ul>
+<p><a href="http://notification-app:8080/notifications">http://notification-app:8080/notifications</a></p>
+<pre><code>{
+&quot;AccountId&quot;:&quot;evento1&quot;,     
+&quot;Subject&quot;:&quot;Sending mail&quot;,    
+&quot;Recipient&quot;:[&quot;albertoxxxxx@mail.es&quot;,&quot;22222222&quot;],
+&quot;TemplateType&quot;:&quot;template1&quot;,
+&quot;Channel&quot;:{
+    &quot;Email&quot;: true
+},
+&quot;Language&quot;: &quot;EN&quot;,
+&quot;CustomData&quot;:{
+    &quot;Name&quot;:     &quot;Peter&quot;,
+    &quot;ItemName&quot;: &quot;Product1&quot;,
+    &quot;ActivationLink&quot;: &quot;http://www.google.es&quot;
+}
+}
+</code></pre><p>In that case the translation of this message to human language should be:</p>
+<h4 id="httpsgithubcomalknopflernotificationappaccount-idaccount-id"><a href="https://github.com/alknopfler/notificationapp#account-id"></a>Account Id:</h4>
+<p>Represent an identificator for the message</p>
+<h4 id="httpsgithubcomalknopflernotificationappsubjectsubject"><a href="https://github.com/alknopfler/notificationapp#subject"></a>Subject:</h4>
+<p>Represent the subject for the email</p>
+<h4 id="httpsgithubcomalknopflernotificationapprecipientrecipient"><a href="https://github.com/alknopfler/notificationapp#recipient"></a>Recipient:</h4>
+<p>The list of recipient to send the notification. Could be different type of recipient (email, sms, etc..) but in that case, the notification sent will be just the available if match with the channel. In the example, the notification will not be sent to the telephone number as sms, because the channel is one of the list to send the notification</p>
+<h4 id="httpsgithubcomalknopflernotificationapptemplatetypetemplatetype"><a href="https://github.com/alknopfler/notificationapp#templatetype"></a>TemplateType:</h4>
+<p>This is the name of the template loaded previously</p>
+<h4 id="httpsgithubcomalknopflernotificationappchannelchannel"><a href="https://github.com/alknopfler/notificationapp#channel"></a>Channel:</h4>
+<p>This is the way to specify the channel or channels to use in the notification (By default if a available channel not appear here, the value will be False. In the example, the sms channel will not be available)</p>
+<h4 id="httpsgithubcomalknopflernotificationapplanguagelanguage"><a href="https://github.com/alknopfler/notificationapp#language"></a>Language:</h4>
+<p>This is the language for the notification. If there are several templates available for a notification, with the language will be select the correct one.</p>
+<h4 id="httpsgithubcomalknopflernotificationappcustom-datacustom-data"><a href="https://github.com/alknopfler/notificationapp#custom-data"></a>Custom data:</h4>
+<p>This is the value of the variables in order to be matched into the {{.CustomData.XXXX}} templates placesholder</p>
+<h2 id="httpsgithubcomalknopflernotificationappbuildbuild"><a href="https://github.com/alknopfler/notificationapp#build"></a>Build</h2>
+<pre><code>docker-compose -d up .
+</code></pre><h2 id="httpsgithubcomalknopflernotificationapptestingtesting"><a href="https://github.com/alknopfler/notificationapp#testing"></a>Testing:</h2>
+<p>Need the special environment var in order to mock the mongo and email channel:</p>
+<pre><code>MOCK=MOCK
+</code></pre>
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/aws/" class="tag-link">aws</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/microservice/" class="tag-link">microservice</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/notifications/" class="tag-link">notifications</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/send-notifications/" class="tag-link">send-notifications</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/ses/" class="tag-link">ses</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/sns/" class="tag-link">sns</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/"
+     data-text="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/"
+     data-text="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/"
+     data-text="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/"
+     data-text="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/"
+     data-text="Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>
