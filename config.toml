@@ -16,12 +16,12 @@ description = "My Knowledge is yours"
 # gravatar = "soho@example.com"
 profilePicture = "/images/profile.png"
 
-copyright = "Author Name"
+copyright = "Alknopfler"
 license = "CC BY-SA 4.0"
 licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
 
 ## Set custom theme color.
-# themeColor = "#fc2803"
+# themeColor = "#cb3234"
 
 ## Set custom CSS and/or JS to override site defaults.
 customCss = ["css/blog.css"]
