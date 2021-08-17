@@ -31,17 +31,12 @@ customJs = ["js/blog.js"]
   [[params.socialIcons]]
   icon = "fa-linkedin"
   title = "Linkedin"
-  url = "#"
+  url = "https://www.linkedin.com/in/albertomorgante"
 
   [[params.socialIcons]]
   icon = "fa-github"
   title = "GitHub"
-  url = "#"
-
-  [[params.socialIcons]]
-  icon = "fa-twitter"
-  title = "Twitter"
-  url = "#"
+  url = "https://github.com/alknopfler"
 
 [menu]
 
@@ -56,6 +51,12 @@ customJs = ["js/blog.js"]
   identifier = "about"
   weight = 300
   url = "/about/"
+    
+  [[menu.main]]
+  name = "Talks"
+  identifier = "talks"
+  weight = 300
+  url = "/talks/"
 
 [taxonomies]
   category = "categories"
