@@ -1,5 +1,5 @@
 baseURL = "https://alknopfler.github.io/"
-title = "Blog"
+title = "Alknopfler's Blog"
 languageCode = "en"
 enableInlineShortcodes = true
 publishDir = "docs"
@@ -9,8 +9,8 @@ summarylength = 10
 enableEmoji = true
 
 [params]
-author = "Author Name"
-description = "My Blog"
+author = "Alberto Morgante (a.k.a alknopfler)"
+description = "My Knowledge is yours"
 
 ## Set one of:
 # gravatar = "soho@example.com"
