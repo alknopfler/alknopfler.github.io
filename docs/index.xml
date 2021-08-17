@@ -162,5 +162,14 @@ This Project is being developed in order to facilitate the Openstack deployment 
       <description>Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>https://alknopfler.github.io/talks/summit-openstack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/talks/summit-openstack/</guid>
+      <description>I attended as a speaker in the Openstack Barcelona Summit in 2016 doing a presentation about Openstack based in containers on top of Kubernetes.</description>
+    </item>
+    
   </channel>
 </rss>
