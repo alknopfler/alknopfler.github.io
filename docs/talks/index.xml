@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Summit Openstack Barcelona 2016</title>
-      <link>https://alknopfler.github.io/talks/summit-openstack/</link>
+      <link>https://alknopfler.github.io/talks/summit-openstack/summit-openstack/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/summit-openstack/</guid>
+      <guid>https://alknopfler.github.io/talks/summit-openstack/summit-openstack/</guid>
       <description>I attended as a speaker in the Openstack Barcelona Summit in 2016 doing a presentation about Openstack based in containers on top of Kubernetes.</description>
     </item>
     
