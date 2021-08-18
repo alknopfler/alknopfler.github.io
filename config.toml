@@ -21,7 +21,7 @@ license = "CC BY-SA 4.0"
 licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
 
 ## Set custom theme color.
-themeColor = "#981913"
+themeColor = "#570e0b"
 
 ## Set custom CSS and/or JS to override site defaults.
 customCss = ["css/blog.css"]
