@@ -10,7 +10,7 @@ enableEmoji = true
 
 [params]
 author = "Alberto Morgante (a.k.a alknopfler)"
-description = "My Knowledge is yours"
+description = "My knowledge is yours"
 
 ## Set one of:
 # gravatar = "soho@example.com"
