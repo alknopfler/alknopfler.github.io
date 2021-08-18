@@ -215,9 +215,7 @@
         </div>
 
         <div>
-          The Problem: When you&rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
-It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.
-The Solution: dev=&#34;nvme0n1&#34; # The device to use vg=&#34;vg1&#34; lv=&#34;lv1&#34; mountpoint=&#34;/var/lib/libvirt/images&#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs.
+          The Problem: When you&rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance.
         </div>
 
         <div class="read-more-link">
@@ -235,8 +233,6 @@ The Solution: dev=&#34;nvme0n1&#34; # The device to use vg=&#34;vg1&#34; lv=&#34
 
         <div>
           Sometimes you&rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine.
-Golang has a powerful feature known by all, based on goroutines (concurrency) and channels (messaging) that define totally the Fanin - Fanout pattern.
-The main idea is to paralelize jobs based on I/O and CPU execution doing the next tasks, but using the concurrency to launch severals goroutines to paralize the execution flow:
         </div>
 
         <div class="read-more-link">
@@ -253,9 +249,7 @@ The main idea is to paralelize jobs based on I/O and CPU execution doing the nex
         </div>
 
         <div>
-          When you&rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month. Obviously you could do it manually but, I will offer a very simple way to do that automatically directly running a code using just a gitlab-ci pipeline.
-The main components are:
- Golang code to connect to your aws account and stop the instances which are running Gitlab-ci pipeline but using and scheduled job to automate at night the script execution  Golang code: package main import ( &#34;fmt&#34; &#34;github.
+          When you&rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month.
         </div>
 
         <div class="read-more-link">
@@ -273,7 +267,6 @@ The main components are:
 
         <div>
           El ser humano siempre está en búsqueda en mayor o menor medida de nuevos retos. La mente humana se alimenta de retos, y al igual que ocurre con las personas, existen personas que necesitan una mayor cantidad de retos para poder satisfacer su hambre, y por el contrario, existen otras que viven perfectamente aceptando solo los retos justos para satisfacer sus necesidades básicas.
-Como siempre digo, cuando tienes una mente inquieta, el cerebro es tu peor enemigo. Siempre se encuentra haciéndote challenge constantemente, cuestionando lo que parece cerrado, generando dudas en la toma de decisiones, ampliando la red neuronal para imaginar posibles situaciones altamente improbables.
         </div>
 
         <div class="read-more-link">
@@ -291,7 +284,6 @@ Como siempre digo, cuando tienes una mente inquieta, el cerebro es tu peor enemi
 
         <div>
           Durante mi carrera profesional, de forma bastante inconsciente he ido pasando por diferentes compañías, aprendiendo y aportando a su cultura, aprendiendo mucho de la forma de trabajar en la compañía, aprendiendo de los profesionales muchas facetas para completar mi perfil y mejorar día a día intentando ser un buen profesional y mejor persona.
-Como fruto de ese aprendizaje creo que se ha fraguado en mi perfil un axioma que lo he bautizado como “Principio de Excelencia”. Seguramente sea algo obvio para muchas personas, o bien, sea llamado de otras muchas formas, pero es algo que durante el último año me he propuesto fomentar y que sea algo que allá donde vaya intentaré ofrecer como valor personal para la compañía.
         </div>
 
         <div class="read-more-link">
@@ -309,8 +301,6 @@ Como fruto de ese aprendizaje creo que se ha fraguado en mi perfil un axioma que
 
         <div>
           Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
-After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.
-This week, I bought a new Amazon Echo Dot, and today, the new functionality is ready to share with all of you ;)
         </div>
 
         <div class="read-more-link">
@@ -327,9 +317,7 @@ This week, I bought a new Amazon Echo Dot, and today, the new functionality is r
         </div>
 
         <div>
-          The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.CustomData.Name}}) and store that template in the database to be used after that by the notification endpoint.
-Created by Alknopfler in https://github.com/alknopfler/notificationapp
-Features  Templates based on places holder {{.CustomData.XXXX}} Templates Management (Create, Retrieve, and Delete) Templates store based on 3 params:  Template Id Channel (sms, email, and so on&hellip;) Language   Multi-channel and Multi-recipient features (The NotificationsApp is able to send to severals users with different channels) Send Notifications to users using SNS and SES services (AWS services) Custom the message using Custom Data values to replace in the template placesholder API to use all the features  Architecture
+          The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&hellip;) using the AWS SNS and AWS SES services.
         </div>
 
         <div class="read-more-link">
@@ -346,9 +334,7 @@ Features  Templates based on places holder {{.CustomData.XXXX}} Templates Manage
         </div>
 
         <div>
-          AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like: 
-The main idea of this project is based on the same kind of Alarm GSM systems, but in this case, we only have to buy the sensors and sirens, because:
- the main controller, and gsm module will be made with the raspberry (physically) the AlkAlarm code of this repo will be installed on raspberry and it will be the brain of raspberry Alarm System Sensor bought will be generic 433Mhz and will be added to the raspberry using a 433mhz receptor.
+          AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like:
         </div>
 
         <div class="read-more-link">
@@ -366,8 +352,6 @@ The main idea of this project is based on the same kind of Alarm GSM systems, bu
 
         <div>
           During my career, I&rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.
-I&rsquo;ve been working with infrastructure as code for a long time, using code to deploy and manage infrastructure. Some people, ask me a lot of questions about the concept infrastructure as code.
-Infrastructure as code, or programmable infrastructure, means writing code (which can be done using a high level language or any descriptive language) to manage configurations and automate provisioning of infrastructure in addition to deployments.
         </div>
 
         <div class="read-more-link">
@@ -385,7 +369,6 @@ Infrastructure as code, or programmable infrastructure, means writing code (whi
 
         <div>
           In my opinion, this video shows all the new features that the openstackers were usually asking for the project roadmap for several years:
-https://youtu.be/NqOFWGUvA9A
         </div>
 
         <div class="read-more-link">

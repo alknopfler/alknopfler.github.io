@@ -14,8 +14,7 @@
       
       <guid>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</guid>
       <description>Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
-This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers. The openstack distribution is based on the upstream code, and you can deploy a specific openstack version changing the &amp;ldquo;version&amp;rdquo; param in the dockerfile for each Openstack service. The project requires kubernetes and uses Rancher to deploy the k8s cluster faster.
-Requirements:  A k8s cluster ready is needed to deploy all the services (including the Etcd service) A DNS services is needed to resolve the k8s services name  Features:  Fast Openstack release upgrade: version is parameterized in Dockerfiles getting the code directly from upstream.</description>
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers.</description>
     </item>
     
   </channel>

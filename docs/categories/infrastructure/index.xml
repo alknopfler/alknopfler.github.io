@@ -13,9 +13,7 @@
       <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/infrastructure-as-code/</guid>
-      <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.
-I&amp;rsquo;ve been working with infrastructure as code for a long time, using code to deploy and manage infrastructure. Some people, ask me a lot of questions about the concept infrastructure as code.
-Infrastructure as code, or programmable infrastructure, means writing code (which can be done using a high level language or any descriptive language) to manage configurations and automate provisioning of infrastructure in addition to deployments.</description>
+      <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.</description>
     </item>
     
   </channel>

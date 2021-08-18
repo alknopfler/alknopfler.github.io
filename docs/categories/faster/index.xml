@@ -13,9 +13,7 @@
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/improve-libvirt-performance/</guid>
-      <description>The Problem: When you&amp;rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
-It&amp;rsquo;s possible to use the same root volume for all the images, but it&amp;rsquo;s not recommended due to a performance issues.
-The Solution: dev=&amp;#34;nvme0n1&amp;#34; # The device to use vg=&amp;#34;vg1&amp;#34; lv=&amp;#34;lv1&amp;#34; mountpoint=&amp;#34;/var/lib/libvirt/images&amp;#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs.</description>
+      <description>The Problem: When you&amp;rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance.</description>
     </item>
     
   </channel>

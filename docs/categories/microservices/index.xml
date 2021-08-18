@@ -13,9 +13,7 @@
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
-      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
-After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.
-This week, I bought a new Amazon Echo Dot, and today, the new functionality is ready to share with all of you ;)</description>
+      <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     
     <item>
@@ -24,9 +22,7 @@ This week, I bought a new Amazon Echo Dot, and today, the new functionality is r
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
-      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.CustomData.Name}}) and store that template in the database to be used after that by the notification endpoint.
-Created by Alknopfler in https://github.com/alknopfler/notificationapp
-Features  Templates based on places holder {{.CustomData.XXXX}} Templates Management (Create, Retrieve, and Delete) Templates store based on 3 params:  Template Id Channel (sms, email, and so on&amp;hellip;) Language   Multi-channel and Multi-recipient features (The NotificationsApp is able to send to severals users with different channels) Send Notifications to users using SNS and SES services (AWS services) Custom the message using Custom Data values to replace in the template placesholder API to use all the features  Architecture</description>
+      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services.</description>
     </item>
     
     <item>
@@ -35,8 +31,7 @@ Features  Templates based on places holder {{.CustomData.XXXX}} Templates Manage
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/working-with-microservices/</guid>
-      <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.
-At the beginning, the first contact with microservice is like a piece of cake, but when you are getting deep under the hood, sometimes, you will be able to find some commons problems that you could solve just preparing your mind, your application and your infrastructure to be successfull in your tasks.</description>
+      <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.</description>
     </item>
     
   </channel>

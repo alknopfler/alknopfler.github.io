@@ -216,7 +216,6 @@
 
         <div>
           During my professional career, I&rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&rsquo;ve learnt working with them.
-At the beginning, the first contact with microservice is like a piece of cake, but when you are getting deep under the hood, sometimes, you will be able to find some commons problems that you could solve just preparing your mind, your application and your infrastructure to be successfull in your tasks.
         </div>
 
         <div class="read-more-link">
@@ -234,8 +233,6 @@ At the beginning, the first contact with microservice is like a piece of cake, b
 
         <div>
           GoDataberus is a &ldquo;Database Driver API&rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database
-Architecture GoDataberus has been developed in Golang and contains:
- Connection Redis store: Redis to store the database&rsquo;s connection data. It return an uuid to use in the following api calls. The connection data could be a local database, external cloud provider, or whatever.
         </div>
 
         <div class="read-more-link">
@@ -253,11 +250,6 @@ Architecture GoDataberus has been developed in Golang and contains:
 
         <div>
           GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:
- Init() : initialize the logrus params Print(): Print an error with the base fields  Usage:
-Import package
-import ( &#34;github.com/alknopfler/Gologger/gologger&#34; ) Init with stdout and info level:
-gologger.Init(os.Stdout, logrus.InfoLevel) Print to show the error message:
-gologger.Print(&#34;WARN&#34;,7,&#34;Description to show&#34;,&#34;filename.go&#34;) 
         </div>
 
         <div class="read-more-link">
@@ -275,12 +267,7 @@ gologger.Print(&#34;WARN&#34;,7,&#34;Description to show&#34;,&#34;filename.go&#
 
         <div>
           Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
- AES-128, AES-192, or AES-256.  Usage:
-First of all, you need to import the module:
-import &#34;github.com/alknopfler/gocypherator/cypher&#34; Then you have to initialize the cypher module with the type of algorithm:
-func InitKeyCypher(cypherType int) { cypherType could be:
- 16 ==&gt; AES 128 24 ==&gt; AES 192 32 ==&gt; AES 256  The following example shows all the features available:
-func main (){ var cypherType = 16 var baseText = &#34;helloWorld&#34; fmt.
+ AES-128, AES-192, or AES-256.
         </div>
 
         <div class="read-more-link">
@@ -298,8 +285,7 @@ func main (){ var cypherType = 16 var baseText = &#34;helloWorld&#34; fmt.
 
         <div>
           Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
-This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers. The openstack distribution is based on the upstream code, and you can deploy a specific openstack version changing the &ldquo;version&rdquo; param in the dockerfile for each Openstack service. The project requires kubernetes and uses Rancher to deploy the k8s cluster faster.
-Requirements:  A k8s cluster ready is needed to deploy all the services (including the Etcd service) A DNS services is needed to resolve the k8s services name  Features:  Fast Openstack release upgrade: version is parameterized in Dockerfiles getting the code directly from upstream.
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers.
         </div>
 
         <div class="read-more-link">
@@ -317,8 +303,6 @@ Requirements:  A k8s cluster ready is needed to deploy all the services (includi
 
         <div>
           Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.
-Get access to the full interview article
-&ldquo;Open source is a cultural change&rdquo; Alberto Morgante, Cloud Computing Innovation Engineer at BBVA, talks about the current boom in open source. One of the key benefits of these tools, he says, is their capacity to streamline processes.
         </div>
 
         <div class="read-more-link">
