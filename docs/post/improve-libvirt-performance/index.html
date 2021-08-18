@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Improve the Libvirt Performance &middot; Alknopfler&#39;s Site</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Improve the Libvirt Performance">
+<meta itemprop="description" content="The Problem: When you&rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
+It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.
+The Solution: dev=&#34;nvme0n1&#34; # The device to use vg=&#34;vg1&#34; lv=&#34;lv1&#34; mountpoint=&#34;/var/lib/libvirt/images&#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs."><meta itemprop="datePublished" content="2021-08-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-08-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="133">
+<meta itemprop="keywords" content="libvirt,performance,faster,improvement," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Improve the Libvirt Performance"/>
+<meta name="twitter:description" content="The Problem: When you&rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
+It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.
+The Solution: dev=&#34;nvme0n1&#34; # The device to use vg=&#34;vg1&#34; lv=&#34;lv1&#34; mountpoint=&#34;/var/lib/libvirt/images&#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs."/>
+
+
+<meta property="og:title" content="Improve the Libvirt Performance" />
+<meta property="og:description" content="The Problem: When you&rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
+It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.
+The Solution: dev=&#34;nvme0n1&#34; # The device to use vg=&#34;vg1&#34; lv=&#34;lv1&#34; mountpoint=&#34;/var/lib/libvirt/images&#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/improve-libvirt-performance/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-08-18T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-08-18T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Site",
+      "description": "My knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/improve-libvirt-performance/#webpage",
+      "url": "https://alknopfler.github.io/post/improve-libvirt-performance/",
+      "name": "Improve the Libvirt Performance",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2021-08-18T00:00:00+00:00",
+      "dateModified": "2021-08-18T00:00:00+00:00",
+      "description": "The Problem: When you\u0026rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.\nIt\u0026rsquo;s possible to use the same root volume for all the images, but it\u0026rsquo;s not recommended due to a performance issues.\nThe Solution: dev=\u0026#34;nvme0n1\u0026#34; # The device to use vg=\u0026#34;vg1\u0026#34; lv=\u0026#34;lv1\u0026#34; mountpoint=\u0026#34;/var/lib/libvirt/images\u0026#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/improve-libvirt-performance/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/improve-libvirt-performance/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/improve-libvirt-performance/#webpage"
+      },
+      "headline": "Improve the Libvirt Performance",
+      "datePublished": "2021-08-18T00:00:00+00:00",
+      "dateModified": "2021-08-18T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "libvirt",
+        "performance",
+        "faster",
+        "improvement"
+      ],
+      "articleSection": [
+        "libvirt",
+        "performance",
+        "faster"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/improve-libvirt-performance/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #6d120e;
+  }
+
+  .read-more-link a {
+    border-color: #6d120e;
+  }
+
+  .read-more-link a:hover {
+    background-color: #6d120e;
+  }
+
+  .pagination li a {
+    color: #6d120e;
+    border: 1px solid #6d120e;
+  }
+
+  .pagination li.active a {
+    background-color: #6d120e;
+  }
+
+  .pagination li a:hover {
+    background-color: #6d120e;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #6d120e;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Site</h1>
+
+      
+      <p class="lead">My knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li><li>
+          <a href="/about/">About me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Improve the Libvirt Performance</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-08-18T00:00:00Z">Aug 18, 2021</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <h2 id="the-problem">The Problem:</h2>
+<p>When you&rsquo;re using having performance issues with libvirt, you can try this to improve it.
+The idea is use an specific configuration to improve the performance.
+This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.</p>
+<p>It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.</p>
+<h2 id="the-solution">The Solution:</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dev<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nvme0n1&#34;</span>  <span style="color:#75715e"># The device to use</span>
+vg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vg1&#34;</span>      
+lv<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lv1&#34;</span>
+mountpoint<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/lib/libvirt/images&#34;</span> 
+
+pvcreate /dev/$dev                 <span style="color:#75715e"># Create the physical volume</span>
+vgcreate $vg /dev/<span style="color:#66d9ef">$(</span>basename $dev<span style="color:#66d9ef">)</span> <span style="color:#75715e"># Create the volume group</span>
+lvcreate -l 100%FREE -n $lv $vg    <span style="color:#75715e"># 100% of the free space</span>
+mkfs.xfs /dev/$vg/$lv              <span style="color:#75715e"># Create the filesystem</span>
+
+
+echo <span style="color:#e6db74">&#34;/dev/</span>$vg<span style="color:#e6db74">/</span>$lv<span style="color:#e6db74"> </span>$mountpoint<span style="color:#e6db74">                    xfs    defaults        0 0&#34;</span> &gt;&gt; /etc/fstab
+mount -a
+</code></pre></div><p>With this improvement, the performance will be improved.</p>
+<h3 id="referecence">Referecence</h3>
+<p>Thanks to <a href="https://github.com/karmab">Karim</a> to share with me!!!</p>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/libvirt/" class="tag-link">libvirt</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/performance/" class="tag-link">performance</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/faster/" class="tag-link">faster</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/improvement/" class="tag-link">improvement</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/improve-libvirt-performance/"
+     data-text="Improve the Libvirt Performance"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/improve-libvirt-performance/"
+     data-text="Improve the Libvirt Performance"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/improve-libvirt-performance/"
+     data-text="Improve the Libvirt Performance"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/improve-libvirt-performance/"
+     data-text="Improve the Libvirt Performance"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/improve-libvirt-performance/"
+     data-text="Improve the Libvirt Performance"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+</body>
+</html>

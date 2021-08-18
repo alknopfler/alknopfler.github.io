@@ -65,7 +65,7 @@
       "about": {
          "@id": "https://alknopfler.github.io/#author"
       },
-      "dateModified": "2021-01-27T00:00:00+00:00",
+      "dateModified": "2021-08-18T00:00:00+00:00",
       "description": "My knowledge is yours",
       "inLanguage": "en",
       "potentialAction": [
@@ -205,6 +205,25 @@
 
   <main class="content container">
   <div class="posts">
+      <article class="post">
+        <h1 class="post-title">
+          <a href="https://alknopfler.github.io/post/improve-libvirt-performance/">Improve the Libvirt Performance</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2021-08-18T00:00:00Z">Aug 18, 2021</time> &middot; 1 min read
+        </div>
+
+        <div>
+          The Problem: When you&rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance. This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
+It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.
+The Solution: dev=&#34;nvme0n1&#34; # The device to use vg=&#34;vg1&#34; lv=&#34;lv1&#34; mountpoint=&#34;/var/lib/libvirt/images&#34; pvcreate /dev/$dev # Create the physical volume vgcreate $vg /dev/$(basename $dev) # Create the volume group lvcreate -l 100%FREE -n $lv $vg # 100% of the free space mkfs.
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://alknopfler.github.io/post/improve-libvirt-performance/">Read More</a>
+        </div>
+      </article>
       <article class="post">
         <h1 class="post-title">
           <a href="https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/">Golang Fanin - Fanout  Reading 10k files in seconds</a>
@@ -371,24 +390,6 @@ https://youtu.be/NqOFWGUvA9A
 
         <div class="read-more-link">
           <a href="https://alknopfler.github.io/post/new-features-in-openstack-ceph/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://alknopfler.github.io/post/working-with-microservices/">Working with Microservices</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2017-07-17T00:00:00Z">Jul 17, 2017</time> &middot; 4 min read
-        </div>
-
-        <div>
-          During my professional career, I&rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&rsquo;ve learnt working with them.
-At the beginning, the first contact with microservice is like a piece of cake, but when you are getting deep under the hood, sometimes, you will be able to find some commons problems that you could solve just preparing your mind, your application and your infrastructure to be successfull in your tasks.
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://alknopfler.github.io/post/working-with-microservices/">Read More</a>
         </div>
       </article>
   </div>
