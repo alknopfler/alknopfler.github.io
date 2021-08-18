@@ -14,7 +14,8 @@
       
       <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
-After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.</description>
+After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.
+This week, I bought a new Amazon Echo Dot, and today, the new functionality is ready to share with all of you ;)</description>
     </item>
     
     <item>
@@ -33,7 +34,9 @@ At the beginning, the first contact with microservice is like a piece of cake, b
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</guid>
-      <description>Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.</description>
+      <description>Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.
+Get access to the full interview article
+&amp;ldquo;Open source is a cultural change&amp;rdquo; Alberto Morgante, Cloud Computing Innovation Engineer at BBVA, talks about the current boom in open source. One of the key benefits of these tools, he says, is their capacity to streamline processes.</description>
     </item>
     
   </channel>

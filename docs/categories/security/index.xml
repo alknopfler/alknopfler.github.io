@@ -13,7 +13,9 @@
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</guid>
-      <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like:</description>
+      <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like: 
+The main idea of this project is based on the same kind of Alarm GSM systems, but in this case, we only have to buy the sensors and sirens, because:
+ the main controller, and gsm module will be made with the raspberry (physically) the AlkAlarm code of this repo will be installed on raspberry and it will be the brain of raspberry Alarm System Sensor bought will be generic 433Mhz and will be added to the raspberry using a 433mhz receptor.</description>
     </item>
     
     <item>
@@ -25,7 +27,10 @@
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
  AES-128, AES-192, or AES-256.  Usage:
 First of all, you need to import the module:
-import &amp;#34;github.com/alknopfler/gocypherator/cypher&amp;#34; Then you have to initialize the cypher module with the type of algorithm:</description>
+import &amp;#34;github.com/alknopfler/gocypherator/cypher&amp;#34; Then you have to initialize the cypher module with the type of algorithm:
+func InitKeyCypher(cypherType int) { cypherType could be:
+ 16 ==&amp;gt; AES 128 24 ==&amp;gt; AES 192 32 ==&amp;gt; AES 256  The following example shows all the features available:
+func main (){ var cypherType = 16 var baseText = &amp;#34;helloWorld&amp;#34; fmt.</description>
     </item>
     
   </channel>

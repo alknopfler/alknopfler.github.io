@@ -13,7 +13,9 @@
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</guid>
-      <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</description>
+      <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database
+Architecture GoDataberus has been developed in Golang and contains:
+ Connection Redis store: Redis to store the database&amp;rsquo;s connection data. It return an uuid to use in the following api calls. The connection data could be a local database, external cloud provider, or whatever.</description>
     </item>
     
   </channel>

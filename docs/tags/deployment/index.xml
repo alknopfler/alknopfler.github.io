@@ -14,7 +14,8 @@
       
       <guid>https://alknopfler.github.io/post/infrastructure-as-code/</guid>
       <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.
-I&amp;rsquo;ve been working with infrastructure as code for a long time, using code to deploy and manage infrastructure.</description>
+I&amp;rsquo;ve been working with infrastructure as code for a long time, using code to deploy and manage infrastructure. Some people, ask me a lot of questions about the concept infrastructure as code.
+Infrastructure as code, or programmable infrastructure, means writing code (which can be done using a high level language or any descriptive language) to manage configurations and automate provisioning of infrastructure in addition to deployments.</description>
     </item>
     
     <item>
@@ -24,7 +25,8 @@ I&amp;rsquo;ve been working with infrastructure as code for a long time, using c
       
       <guid>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</guid>
       <description>Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
-This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers. The openstack distribution is based on the upstream code, and you can deploy a specific openstack version changing the &amp;ldquo;version&amp;rdquo; param in the dockerfile for each Openstack service.</description>
+This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers. The openstack distribution is based on the upstream code, and you can deploy a specific openstack version changing the &amp;ldquo;version&amp;rdquo; param in the dockerfile for each Openstack service. The project requires kubernetes and uses Rancher to deploy the k8s cluster faster.
+Requirements:  A k8s cluster ready is needed to deploy all the services (including the Etcd service) A DNS services is needed to resolve the k8s services name  Features:  Fast Openstack release upgrade: version is parameterized in Dockerfiles getting the code directly from upstream.</description>
     </item>
     
   </channel>

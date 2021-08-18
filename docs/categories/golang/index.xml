@@ -14,7 +14,8 @@
       
       <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).
-After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.</description>
+After that, I thought that the next step for that project could be an Alexa Skill integration, in order to control and manage the Alarm System just with my voice.
+This week, I bought a new Amazon Echo Dot, and today, the new functionality is ready to share with all of you ;)</description>
     </item>
     
     <item>
@@ -23,7 +24,9 @@ After that, I thought that the next step for that project could be an Alexa Skil
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
-      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.</description>
+      <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services. One of the main features of the project, is the possibility to create templates based on places holders (for instance, {{.CustomData.Name}}) and store that template in the database to be used after that by the notification endpoint.
+Created by Alknopfler in https://github.com/alknopfler/notificationapp
+Features  Templates based on places holder {{.CustomData.XXXX}} Templates Management (Create, Retrieve, and Delete) Templates store based on 3 params:  Template Id Channel (sms, email, and so on&amp;hellip;) Language   Multi-channel and Multi-recipient features (The NotificationsApp is able to send to severals users with different channels) Send Notifications to users using SNS and SES services (AWS services) Custom the message using Custom Data values to replace in the template placesholder API to use all the features  Architecture</description>
     </item>
     
     <item>
@@ -32,7 +35,9 @@ After that, I thought that the next step for that project could be an Alexa Skil
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</guid>
-      <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like:</description>
+      <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like: 
+The main idea of this project is based on the same kind of Alarm GSM systems, but in this case, we only have to buy the sensors and sirens, because:
+ the main controller, and gsm module will be made with the raspberry (physically) the AlkAlarm code of this repo will be installed on raspberry and it will be the brain of raspberry Alarm System Sensor bought will be generic 433Mhz and will be added to the raspberry using a 433mhz receptor.</description>
     </item>
     
     <item>
@@ -41,7 +46,9 @@ After that, I thought that the next step for that project could be an Alexa Skil
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</guid>
-      <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</description>
+      <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database
+Architecture GoDataberus has been developed in Golang and contains:
+ Connection Redis store: Redis to store the database&amp;rsquo;s connection data. It return an uuid to use in the following api calls. The connection data could be a local database, external cloud provider, or whatever.</description>
     </item>
     
     <item>
@@ -51,7 +58,11 @@ After that, I thought that the next step for that project could be an Alexa Skil
       
       <guid>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</guid>
       <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:
- Init() : initialize the logrus params Print(): Print an error with the base fields  Usage:</description>
+ Init() : initialize the logrus params Print(): Print an error with the base fields  Usage:
+Import package
+import ( &amp;#34;github.com/alknopfler/Gologger/gologger&amp;#34; ) Init with stdout and info level:
+gologger.Init(os.Stdout, logrus.InfoLevel) Print to show the error message:
+gologger.Print(&amp;#34;WARN&amp;#34;,7,&amp;#34;Description to show&amp;#34;,&amp;#34;filename.go&amp;#34;) </description>
     </item>
     
     <item>
@@ -63,7 +74,10 @@ After that, I thought that the next step for that project could be an Alexa Skil
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
  AES-128, AES-192, or AES-256.  Usage:
 First of all, you need to import the module:
-import &amp;#34;github.com/alknopfler/gocypherator/cypher&amp;#34; Then you have to initialize the cypher module with the type of algorithm:</description>
+import &amp;#34;github.com/alknopfler/gocypherator/cypher&amp;#34; Then you have to initialize the cypher module with the type of algorithm:
+func InitKeyCypher(cypherType int) { cypherType could be:
+ 16 ==&amp;gt; AES 128 24 ==&amp;gt; AES 192 32 ==&amp;gt; AES 256  The following example shows all the features available:
+func main (){ var cypherType = 16 var baseText = &amp;#34;helloWorld&amp;#34; fmt.</description>
     </item>
     
   </channel>
