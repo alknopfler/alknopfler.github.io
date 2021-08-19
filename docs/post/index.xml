@@ -13,7 +13,7 @@
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/post/improve-libvirt-performance/</guid>
-      <description>The Problem: When you&amp;rsquo;re using having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance.</description>
+      <description>The Problem: When you&amp;rsquo;re having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance.</description>
     </item>
     
     <item>

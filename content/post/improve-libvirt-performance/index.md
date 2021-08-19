@@ -14,7 +14,7 @@ tags:
 
 ## The Problem: 
 
-When you're using having performance issues with libvirt, you can try this to improve it.
+When you're having performance issues with libvirt, you can try this to improve it.
 The idea is use an specific configuration to improve the performance. 
 This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.
 
