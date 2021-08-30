@@ -14,6 +14,7 @@ I’m always looking for new challenges in order to improve my skills everyday!!
 - Github: https://github.com/alknopfler
 - Linkedin: https://www.linkedin.com/in/albertomorgante/
 - E-mail: alknopfler@gmail.com
+- Resume: [Resume CV online](https://github.com/alknopfler/alknopfler/blob/0bd3ffcc77d114246106a979f4e29bdf318b2e05/resume.md)
 
 ### Experience: 
 
