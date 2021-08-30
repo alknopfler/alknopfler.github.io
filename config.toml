@@ -5,6 +5,8 @@ enableInlineShortcodes = true
 publishDir = "docs"
 theme = "soho"
 
+googleAnalytics = "G-Q2W4X5J2F1"
+
 summarylength = 20
 enableEmoji = true
 
