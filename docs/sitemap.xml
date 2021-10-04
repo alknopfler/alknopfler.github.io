@@ -3,10 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alknopfler.github.io/</loc>
-    <lastmod>2021-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/categories/</loc>
-    <lastmod>2021-08-30T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/connection/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/firewalld/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/firewalld/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/libvirtd/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/libvirtd/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/networking/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/networking/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/</loc>
+    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/tags/development/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
@@ -15,9 +45,6 @@
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/tags/git/</loc>
-    <lastmod>2021-08-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/tags/pull-request/</loc>
@@ -33,9 +60,6 @@
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/post/rebase-after-pull-request/</loc>
-    <lastmod>2021-08-30T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/</loc>
     <lastmod>2021-08-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/tags/faster/</loc>

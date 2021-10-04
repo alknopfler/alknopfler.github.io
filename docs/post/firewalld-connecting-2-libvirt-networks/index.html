@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Firewalld connecting 2 libvirt network &middot; Alknopfler&#39;s Site</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Firewalld connecting 2 libvirt network">
+<meta itemprop="description" content="Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&rsquo;re gonna deploy vm and you need to install some software from internet."><meta itemprop="datePublished" content="2021-10-04T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-10-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="325">
+<meta itemprop="keywords" content="firewalld,connection,libvirtd,networking," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Firewalld connecting 2 libvirt network"/>
+<meta name="twitter:description" content="Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&rsquo;re gonna deploy vm and you need to install some software from internet."/>
+
+
+<meta property="og:title" content="Firewalld connecting 2 libvirt network" />
+<meta property="og:description" content="Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&rsquo;re gonna deploy vm and you need to install some software from internet." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-10-04T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Site",
+      "description": "My knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/#webpage",
+      "url": "https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/",
+      "name": "Firewalld connecting 2 libvirt network",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2021-10-04T00:00:00+00:00",
+      "dateModified": "2021-10-04T00:00:00+00:00",
+      "description": "Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you\u0026rsquo;re gonna deploy vm and you need to install some software from internet.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/#webpage"
+      },
+      "headline": "Firewalld connecting 2 libvirt network",
+      "datePublished": "2021-10-04T00:00:00+00:00",
+      "dateModified": "2021-10-04T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "firewalld",
+        "connection",
+        "libvirtd",
+        "networking"
+      ],
+      "articleSection": [
+        "firewalld",
+        "libvirtd",
+        "networking"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #6d120e;
+  }
+
+  .read-more-link a {
+    border-color: #6d120e;
+  }
+
+  .read-more-link a:hover {
+    background-color: #6d120e;
+  }
+
+  .pagination li a {
+    color: #6d120e;
+    border: 1px solid #6d120e;
+  }
+
+  .pagination li.active a {
+    background-color: #6d120e;
+  }
+
+  .pagination li a:hover {
+    background-color: #6d120e;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #6d120e;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Site</h1>
+
+      
+      <p class="lead">My knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li><li>
+          <a href="/about/">About me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Firewalld connecting 2 libvirt network</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-10-04T00:00:00Z">Oct 4, 2021</time> <span class="readtime">&middot; 2 min read</span>
+  </div>
+
+  <div>
+  <h1 id="situation">Situation</h1>
+<p>You have hypervisor with libvirtd and you want to connect 2 libvirt networks.
+Also, you&rsquo;re gonna deploy vm and you need to install some software from internet. So the requirements are:</p>
+<ul>
+<li>Connection between network</li>
+<li>Connection through firewall to reach internet</li>
+</ul>
+<h1 id="scenario">Scenario</h1>
+<p>Two networks are created:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kcli list network
+Listing Networks...
++----------+--------+------------------+------+----------+------+
+| Network  |  Type  |       Cidr       | Dhcp |  Domain  | Mode |
++----------+--------+------------------+------+----------+------+
+| bare-net | routed | 192.168.150.0/24 | True | bare-net | nat  |
+| default  | routed | 192.168.122.0/24 | True | default  | nat  |
++----------+--------+------------------+------+----------+------+
+</code></pre></div><p>By default if you have firewalld active, the libvirtd rules will be active so you cannot connect both networks but the vm in each network will be able to connect to internet. So we have isolated networks.</p>
+<ul>
+<li>First try is stop firewalld:
+<pre><code>systemctl stop firewalld
+</code></pre></li>
+</ul>
+<p>The problem now is that we have access to internet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>centos@test-ci-installer ~<span style="color:#f92672">]</span>$ ping www.google.es
+PING www.google.es <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of data.
+<span style="color:#ae81ff">64</span> bytes from bh-in-f94.1e100.net <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">51</span> time<span style="color:#f92672">=</span>29.7 ms
+<span style="color:#ae81ff">64</span> bytes from bh-in-f94.1e100.net <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">51</span> time<span style="color:#f92672">=</span>29.8 ms
+</code></pre></div><p>But unfourtunately, the firewall is blocking the connection between network, so I cannot reach the other VM in the other network.</p>
+<h1 id="solution">Solution</h1>
+<p>We need to configure the firewall to allow a pass-thorugh connection between their input and output brigdes. With that configuration, firewalld will allow a passthrough connection between libvirtd to have connectivity i/o in this interfaces, so the real thing is that we could connect to internet as well as the other networks:</p>
+<pre><code>firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -i virbr0 -j ACCEPT
+firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -o virbr0 -j ACCEPT
+firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -i br0 -j ACCEPT
+firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -o br0 -j ACCEPT
+systemctl restart firewalld
+</code></pre><h1 id="security-guys">Security guys&hellip;</h1>
+<p>Don&rsquo;t look this ;)</p>
+<h1 id="tools-used-in-this-document">Tools used in this document</h1>
+<ul>
+<li><a href="https://kcli.readthedocs.io/en/latest/">kcli</a> is a very useful tool to manage libvirtd as well as other many things.</li>
+</ul>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/firewalld/" class="tag-link">firewalld</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/connection/" class="tag-link">connection</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/libvirtd/" class="tag-link">libvirtd</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/networking/" class="tag-link">networking</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/"
+     data-text="Firewalld connecting 2 libvirt network"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/"
+     data-text="Firewalld connecting 2 libvirt network"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/"
+     data-text="Firewalld connecting 2 libvirt network"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/"
+     data-text="Firewalld connecting 2 libvirt network"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/"
+     data-text="Firewalld connecting 2 libvirt network"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q2W4X5J2F1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

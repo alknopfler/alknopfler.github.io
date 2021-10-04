@@ -6,7 +6,16 @@
     <description>Recent content on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 30 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Firewalld connecting 2 libvirt network</title>
+      <link>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</link>
+      <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</guid>
+      <description>Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&amp;rsquo;re gonna deploy vm and you need to install some software from internet.</description>
+    </item>
+    
     <item>
       <title>Rebase after Pull Request</title>
       <link>https://alknopfler.github.io/post/rebase-after-pull-request/</link>
