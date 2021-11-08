@@ -21,6 +21,7 @@ Nowadays, the development of applications on kubernetes is something that any de
 Imagine that you have a kubernetes operator that you want to debug because the reconciliation process is not working properly, or the operator is not working as expected. You have a kubernetes cluster running on your local machine, and trying to debug it, you decide to deploy the operator on this local cluster in order to verify what's happening in your production k8s cluster. 
 
 At this point, in local you have a pair of possibilities to debug it:
+
 - Write some code to debug the operator, build the new debug image, and deploy it on the local cluster to verify the prints and logs.
 - Use a debugger on the fly to verify the reconciliation process creating new breakpoint to look for the expected behavior.
 
@@ -34,7 +35,7 @@ The problem in this case is the time that you need to build a new image to debug
 
 For example, with the reconcile loops of complex operators (over 1k lines per reconcile loop) could be difficult print exactly the information you need, so maybe it could take you several tries until you get the issue located and you can debug it.
 
-Definetely you need to be careful with the prints, because you can easily miss the hot points and you will miss the information you need. It could be traslated to time, saying that the time you need to use this method is high if you don't have a good understanding of the code.
+Definitely you need to be careful with the prints, because you can easily miss the hot points and you will miss the information you need. It could be traslated to time, saying that the time you need to use this method is high if you don't have a good understanding of the code.
 
 
 ## Debugging on the fly on the fly
@@ -76,7 +77,7 @@ This section will show you how to set the environment and tools that you will ne
 First, I will install the next vscode plugins that will allow me to run everything remotely:
 
 ### **Remote - SSH**
-**Description**: Remote - SSH: This pluggin allow us use our Laptop VScode to work in a remote server exactly like we use it in our local machine. It uses ssh to connect to the remote server and run commands as well as use our plugins there.
+**Description**: Remote - SSH: This plugin allow us use our Laptop VScode to work in a remote server exactly like we use it in our local machine. It uses ssh to connect to the remote server and run commands as well as use our plugins there.
 
 **Configuration**: As you can see, you could add your remote server and open a folder like a workspace to start working remotely. Just add your host info, and ensure you have ssh access to the host directly (added ssh key previously). Then you could navigate looking for the folder you want to add as you can see in the next picture:
 
@@ -149,11 +150,13 @@ $ tree .
 ```
 
 As you can see, the repository is structured as follows:
+
  - Docker folder: with the Dockerfile to generate the image which will be push to quay.io registry
  - K8S folder: which contains basically the application deployment manifest to be deployed
  - Main.go: the main file of the application
 
 Now we've got 2 special files which allow us to build, deploy and debug the application:
+
  - Skaffold.yaml: this is the configuration file to build, deploy and debug the application
  - .vscode/launch.json: this is the configuration for the cloud code plugin
 
@@ -161,7 +164,7 @@ I'm gonna get into the cloud code configuration in order to explain a little bit
 
 ## cloud code configuration
 
-First thing is oppen the file `.vscode/launch.json` and you will add new configuration:
+First thing is open the file `.vscode/launch.json` and you will add new configuration:
 
 ![add-configuration](images/06.png)
 
@@ -212,6 +215,7 @@ As you can see, with the pod selector, and the port, we could attach to the pod 
         },
 ```
 There are some points important to be explained here:
+
  - **autoStop**: if you set this to true, the debug session will be automatically stopped when the application is stopped.
  - **SkaffoldConfig**: this is the configuration file to build, deploy and debug the application we will see in the next section
  - **watch**: This is the most important option to debug on the fly. Using this option, we could debug watching changes in code in order to build, and deploy automatically to debug it without stop the debugger. Skaffold will be responsible, to build, deploy the new image while we're working on the code. It's not a real time, because the build step take some time, but the advantage is that you could debug the application without stop the debugger. Also, if you have the "auto-save" option, this process will be constantly running, so you could debug the application without stop the debugger.
@@ -387,6 +391,8 @@ COPY . .
   Delve Go debugger: [delve](https://github.com/go-delve/delve/tree/master/Documentation/installation)  
 
   Skaffold builders: [builders](https://skaffold.dev/docs/pipeline-stages/builders/)
+  
+  Full Video: [video](https://www.youtube.com/watch?v=d-P5wCdCwrQ)
 
 
 ## Thanks
