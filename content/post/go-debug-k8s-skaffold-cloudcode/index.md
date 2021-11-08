@@ -190,7 +190,7 @@ as you can see, there are 2 options which I'm gonna use in this example:
 
 As you can see, with the pod selector, and the port, we could attach to the pod in the kubernetes cluster. If you want to debug, you need to ensure that the remotePath and remoteRoot are well configured. If you make a mistake here, you could attach to the pod but not debug it, because the breakpoint will be "unverified".
 
-- **Kubernetes: Run/Debug Go: 
+- **Kubernetes: Run/Debug Go**: 
 
 ```yaml
 {
