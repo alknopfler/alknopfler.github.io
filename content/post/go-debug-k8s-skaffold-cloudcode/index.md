@@ -49,9 +49,9 @@ Just to be clear, the principles of this methods are:
 - Build and deploy the images automatically at the same time you're keeping the debuggers running.
   
 
-# Setting the environment
+# Setting up the environment
 
-This section will show you how to set the environment and tools that you will need to debug the k8s application or maybe an operator on the fly. 
+This section will cover how to set the environment and tools that you will need to debug the k8s application or maybe an operator on the fly. 
   
 ## Environment Description 
   For this post, I will use a kubernetes cluster running remotely on another server, so basically I will use a vscode plugging to run everything remotely, but let's see first the basics of the environment:
