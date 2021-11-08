@@ -359,7 +359,7 @@ Once we have all the configuration ready, the next thing is go to the plugin clo
 
 and the next one is to start the process to debug:
 
-![gif-debug-k8s-on-the-fly-skaffold-cloudcode.gif](images/gif-debug-k8s-on-the-fly-skaffold-cloudcode.gif){width='100%' height='100%'}
+![gif-debug-k8s-on-the-fly-skaffold-cloudcode.gif](images/gif-debug-k8s-on-the-fly-skaffold-cloudcode.gif)
 
 if you want to see complete there is a video to show the full process you can see here:
 
