@@ -33,7 +33,7 @@ This is the simplest way to deploy and debug an application or operator on the f
 
 The problem in this case is the time that you need to build a new image to debug each try you want to print some new information, and for sure, you need to deploy to your cluster before testing it. 
 
-For example, with the reconcile loops of complex operators (over 1k lines per reconcile loop) could be difficult print exactly the information you need, so maybe it could take you several tries until you get the issue located and you can debug it.
+For example, with the reconcile loops of complex operators (over 1k lines per reconcile loop) it could be difficult to print exactly the information you need, so maybe it could take you several tries until you get the issue located and you can debug it.
 
 Definitely you need to be careful with the prints, because you can easily miss the hot points and you will miss the information you need. It could be traslated to time, saying that the time you need to use this method is high if you don't have a good understanding of the code.
 
