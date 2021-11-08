@@ -6,7 +6,43 @@
     <description>Recent content in Categories on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debug</title>
+      <link>https://alknopfler.github.io/categories/debug/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/categories/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://alknopfler.github.io/categories/golang/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://alknopfler.github.io/categories/kubernetes/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skaffold</title>
+      <link>https://alknopfler.github.io/categories/skaffold/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/categories/skaffold/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>firewalld</title>
       <link>https://alknopfler.github.io/categories/firewalld/</link>
@@ -98,15 +134,6 @@
     </item>
     
     <item>
-      <title>golang</title>
-      <link>https://alknopfler.github.io/categories/golang/</link>
-      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://alknopfler.github.io/categories/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>microservices</title>
       <link>https://alknopfler.github.io/categories/microservices/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
@@ -157,15 +184,6 @@
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://alknopfler.github.io/categories/kubernetes/</link>
-      <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://alknopfler.github.io/categories/kubernetes/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in kubernetes on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 17 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debug k8s applications on the fly</title>
+      <link>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</guid>
+      <description>Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work.</description>
+    </item>
+    
     <item>
       <title>Working with Microservices</title>
       <link>https://alknopfler.github.io/post/working-with-microservices/</link>

@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debug</title>
+      <link>https://alknopfler.github.io/tags/debug/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/tags/debug/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://alknopfler.github.io/tags/golang/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kubernetes</title>
+      <link>https://alknopfler.github.io/tags/kubernetes/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>skaffold</title>
+      <link>https://alknopfler.github.io/tags/skaffold/</link>
+      <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/tags/skaffold/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>connection</title>
       <link>https://alknopfler.github.io/tags/connection/</link>
@@ -229,15 +265,6 @@
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/tags/ceph/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>kubernetes</title>
-      <link>https://alknopfler.github.io/tags/kubernetes/</link>
-      <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://alknopfler.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>Debug k8s applications on the fly &middot; Alknopfler&#39;s Site</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="Debug k8s applications on the fly">
+<meta itemprop="description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work."><meta itemprop="datePublished" content="2021-10-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-10-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2493">
+<meta itemprop="keywords" content="debug,golang,kubernetes,skaffold," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Debug k8s applications on the fly"/>
+<meta name="twitter:description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work."/>
+
+
+<meta property="og:title" content="Debug k8s applications on the fly" />
+<meta property="og:description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-10-08T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-10-08T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Site",
+      "description": "My knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/#webpage",
+      "url": "https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/",
+      "name": "Debug k8s applications on the fly",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2021-10-08T00:00:00+00:00",
+      "dateModified": "2021-10-08T00:00:00+00:00",
+      "description": "Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/#webpage"
+      },
+      "headline": "Debug k8s applications on the fly",
+      "datePublished": "2021-10-08T00:00:00+00:00",
+      "dateModified": "2021-10-08T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [
+        "debug",
+        "golang",
+        "kubernetes",
+        "skaffold"
+      ],
+      "articleSection": [
+        "debug",
+        "golang",
+        "kubernetes",
+        "skaffold"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #6d120e;
+  }
+
+  .read-more-link a {
+    border-color: #6d120e;
+  }
+
+  .read-more-link a:hover {
+    background-color: #6d120e;
+  }
+
+  .pagination li a {
+    color: #6d120e;
+    border: 1px solid #6d120e;
+  }
+
+  .pagination li.active a {
+    background-color: #6d120e;
+  }
+
+  .pagination li a:hover {
+    background-color: #6d120e;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #6d120e;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Site</h1>
+
+      
+      <p class="lead">My knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li><li>
+          <a href="/about/">About me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Debug k8s applications on the fly</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-10-08T00:00:00Z">Oct 8, 2021</time> <span class="readtime">&middot; 12 min read</span>
+  </div>
+
+  <div>
+  <h1 id="introduction---debug-k8s-applications-on-the-fly">Introduction - Debug k8s applications on the fly</h1>
+<p>Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work. However, to be honest, I have detected real problems debugging applications or operators that run on kubernetes, usually resorting to ineffective methods to discover bugs during the debug phase.</p>
+<p>Imagine that you have a kubernetes operator that you want to debug because the reconciliation process is not working properly, or the operator is not working as expected. You have a kubernetes cluster running on your local machine, and trying to debug it, you decide to deploy the operator on this local cluster in order to verify what&rsquo;s happening in your production k8s cluster.</p>
+<p>At this point, in local you have a pair of possibilities to debug it:</p>
+<ul>
+<li>Write some code to debug the operator, build the new debug image, and deploy it on the local cluster to verify the prints and logs.</li>
+<li>Use a debugger on the fly to verify the reconciliation process creating new breakpoint to look for the expected behavior.</li>
+</ul>
+<p>In this post, I will show you how to do this <strong>using a debugger on the fly with k8s</strong>, but let&rsquo;s first analyze and explain the basics of both methods to understand how to debug on the fly using other tools.</p>
+<h2 id="debugging-using-prints-prints">Debugging using prints prints</h2>
+<p>This is the simplest way to deploy and debug an application or operator on the fly. The process is pretty simple for developers. You just need to identify the hot points in the code, and prints the information you want to debug. Piece of cake!</p>
+<p>The problem in this case is the time that you need to build a new image to debug each try you want to print some new information, and for sure, you need to deploy to your cluster before testing it.</p>
+<p>For example, with the reconcile loops of complex operators (over 1k lines per reconcile loop) could be difficult print exactly the information you need, so maybe it could take you several tries until you get the issue located and you can debug it.</p>
+<p>Definetely you need to be careful with the prints, because you can easily miss the hot points and you will miss the information you need. It could be traslated to time, saying that the time you need to use this method is high if you don&rsquo;t have a good understanding of the code.</p>
+<h2 id="debugging-on-the-fly-on-the-fly">Debugging on the fly on the fly</h2>
+<p>This method consists in the use of classical debuggers in order to have the information as fast as possible to understand the issues, but in this time, running on the remote server (maybe on a previous environment, quite similar to the production) and creating the images at the same time you&rsquo;re fixing the code to deploying the operator again and again reducing the time waiting for.</p>
+<p>Just to be clear, the principles of this methods are:</p>
+<ul>
+<li>Running remotely (maybe previous/stage environments)</li>
+<li>Debug using a debugger (go dlv in our case to run it remotely)</li>
+<li>Build and deploy the images automatically at the same time you&rsquo;re keeping the debuggers running.</li>
+</ul>
+<h1 id="setting-the-environment">Setting the environment</h1>
+<p>This section will show you how to set the environment and tools that you will need to debug the k8s application or maybe an operator on the fly.</p>
+<h2 id="environment-description">Environment Description</h2>
+<p>For this post, I will use a kubernetes cluster running remotely on another server, so basically I will use a vscode plugging to run everything remotely, but let&rsquo;s see first the basics of the environment:</p>
+<ul>
+<li><strong>Laptop</strong>: Mac OS X Big Sur 11.6
+<ul>
+<li>vscode + plugins</li>
+</ul>
+</li>
+</ul>
+<p>This is my laptop with vscode installed, but without docker, kubectl and so on. Just with vscode. No need to install anything else.</p>
+<ul>
+<li><strong>Server (hostname alkmini)</strong>: Linux Fedora 5.11.8-200.fc33.x86_64
+<ul>
+<li>SSH server</li>
+<li>Docker daemon running</li>
+<li>Kubectl / oc</li>
+<li>dlv  (which is the debugger for golang)</li>
+<li>Kubernetes cluster running (in my case using minikube just for this post example)</li>
+</ul>
+</li>
+</ul>
+<p>This is the remote server with SSH access, Docker daemon, kubectl, dlv and the Minikube cluster k8s installed and running. In other cases could be the previous environment k8s cluster, or a local k8s cluster, actually whatever you want.
+The important thing here is that <strong>in the remote server you don&rsquo;t need anything regarding the vscode editor</strong>.</p>
+<h2 id="vscode-pluggins-and-tools">VSCODE pluggins and tools</h2>
+<p>First, I will install the next vscode plugins that will allow me to run everything remotely:</p>
+<h3 id="remote---ssh"><strong>Remote - SSH</strong></h3>
+<p><strong>Description</strong>: Remote - SSH: This pluggin allow us use our Laptop VScode to work in a remote server exactly like we use it in our local machine. It uses ssh to connect to the remote server and run commands as well as use our plugins there.</p>
+<p><strong>Configuration</strong>: As you can see, you could add your remote server and open a folder like a workspace to start working remotely. Just add your host info, and ensure you have ssh access to the host directly (added ssh key previously). Then you could navigate looking for the folder you want to add as you can see in the next picture:</p>
+<p><img src="images/03.png" alt="Remote-ssh"></p>
+<p>Once connected, basically, you will notice you&rsquo;re working remotely looking at the bottom this host:</p>
+<p><img src="images/04.png" alt="Remote-ssh-2"></p>
+<p>At this point, everything will be executed in the remote server using our Laptop VScode editor.
+Take care of the plugins you install in the remote server, because are different than the local one. It&rsquo;s something rare at the beginning but with this feature you could have only a subset of plugins installed in your remote server instead of all your local vscode set of plugins.</p>
+<p><strong>Link</strong>: <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">ms-vscode-remote.remote-ssh</a></p>
+<h3 id="cloud-code-kubernetes"><strong>cloud code kubernetes</strong></h3>
+<p><strong>Description</strong>: Cloud Code works with Google’s command-line container tools like skaffold, minikube and kubectl under the hood, providing local, continuous feedback on your project as you build, edit, run and deploy your applications locally or in the cloud. It was thought to be used with google cloud platform (gcp) but it could be used with any local kubernetes cluster. This is our use case. We&rsquo;re gonna use it with our k8s (minikube) cluster.</p>
+<p><strong>Link</strong>: <a href="https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode">cloud code</a>
+<strong>NOTE</strong>: There is a <a href="https://github.com/GoogleCloudPlatform/cloud-code-vscode/issues/486">bug</a> in the latest version so you need to install previous one: <strong>Version 1.14.1 (Sept 2021)</strong></p>
+<h3 id="delve"><strong>Delve</strong></h3>
+<p><strong>Description</strong>
+Delve (dlv) is the debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&rsquo;re using a debugger, things aren&rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.</p>
+<p>The idea is install it on your remote server and keep it running to debug from your local using the vscode editor and the remote - ssh plugin). So basically, from your laptop using vscode with the remote plugin installed, you could run the debugger on the remote server and debug the application running on the remote server.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/go-delve/delve
+$ cd delve
+$ go install github.com/go-delve/delve/cmd/dlv
+</code></pre></div><p><strong>Link</strong>: <a href="https://github.com/go-delve/delve/tree/master/Documentation/installation">delve</a></p>
+<h1 id="configuration">Configuration</h1>
+<p>In this section I&rsquo;m gonna create an example end-to-end to explain step by step the process. First, I will show you the repository and the configurations we have to do in order to debug the k8s application on the fly.</p>
+<h2 id="repository">Repository</h2>
+<p>To explain the process, I&rsquo;m gonna use the next repository:
+<a href="https://github.com/alknopfler/go-remote-debug-delve.git">https://github.com/alknopfler/go-remote-debug-delve.git</a></p>
+<p>The content of this repository is the following:</p>
+<pre><code>alknopfler:alkmini : ~/projects/src/github.com/alknopfler/go-remote-debug-delve {master} 
+$ tree .
+.
+|-- .vscode
+|   |-- settings.json
+|   |-- launch.json
+├── docker
+│   └── debug
+│       └── Dockerfile
+├── go.mod
+├── k8s
+│   └── deployment.yml
+├── main.go
+├── Makefile
+├── README.md
+└── skaffold.yaml
+
+</code></pre><p>As you can see, the repository is structured as follows:</p>
+<ul>
+<li>Docker folder: with the Dockerfile to generate the image which will be push to quay.io registry</li>
+<li>K8S folder: which contains basically the application deployment manifest to be deployed</li>
+<li>Main.go: the main file of the application</li>
+</ul>
+<p>Now we&rsquo;ve got 2 special files which allow us to build, deploy and debug the application:</p>
+<ul>
+<li>Skaffold.yaml: this is the configuration file to build, deploy and debug the application</li>
+<li>.vscode/launch.json: this is the configuration for the cloud code plugin</li>
+</ul>
+<p>I&rsquo;m gonna get into the cloud code configuration in order to explain a little bit the options we have to configure, and then, move on with our scenario to configure skaffold after that.</p>
+<h2 id="cloud-code-configuration">cloud code configuration</h2>
+<p>First thing is oppen the file <code>.vscode/launch.json</code> and you will add new configuration:</p>
+<p><img src="images/06.png" alt="add-configuration"></p>
+<p>as you can see, there are 2 options which I&rsquo;m gonna use in this example:</p>
+<ul>
+<li><strong>Attach to kubernetes Pod (Go)</strong>: Used to attach to a running pod in the kubernetes cluster in order to debug it. You could set breakpoint in code and using it, if the image has been built with Dlv (debugger) installed, you could debug the application attaching to this port.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{
+            <span style="color:#f92672">&#34;name&#34;: </span><span style="color:#e6db74">&#34;Attach to Kubernetes Pod (Go)&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;: </span><span style="color:#e6db74">&#34;cloudcode.kubernetes&#34;</span>,
+            <span style="color:#f92672">&#34;request&#34;: </span><span style="color:#e6db74">&#34;attach&#34;</span>,
+            <span style="color:#f92672">&#34;language&#34;: </span><span style="color:#e6db74">&#34;Go&#34;</span>,
+            <span style="color:#f92672">&#34;debugPort&#34;: </span><span style="color:#ae81ff">40000</span>,
+            <span style="color:#f92672">&#34;podSelector&#34;: </span>{
+                <span style="color:#f92672">&#34;app&#34;: </span><span style="color:#e6db74">&#34;server-debug&#34;</span>
+            },
+            <span style="color:#f92672">&#34;localRoot&#34;: </span><span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
+            <span style="color:#f92672">&#34;remotePath&#34;: </span><span style="color:#e6db74">&#34;&#34;</span>,
+            <span style="color:#f92672">&#34;remoteRoot&#34;: </span><span style="color:#e6db74">&#34;/&#34;</span>
+}
+</code></pre></div><p>As you can see, with the pod selector, and the port, we could attach to the pod in the kubernetes cluster. If you want to debug, you need to ensure that the remotePath and remoteRoot are well configured. If you make a mistake here, you could attach to the pod but not debug it, because the breakpoint will be &ldquo;unverified&rdquo;.</p>
+<ul>
+<li>**Kubernetes: Run/Debug Go:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{
+            <span style="color:#f92672">&#34;name&#34;: </span><span style="color:#e6db74">&#34;Kubernetes: Run/Debug&#34;</span>,
+            <span style="color:#f92672">&#34;type&#34;: </span><span style="color:#e6db74">&#34;cloudcode.kubernetes&#34;</span>,
+            <span style="color:#f92672">&#34;request&#34;: </span><span style="color:#e6db74">&#34;launch&#34;</span>,
+            <span style="color:#f92672">&#34;autoStop&#34;: </span><span style="color:#66d9ef">false</span>,
+            <span style="color:#f92672">&#34;skaffoldConfig&#34;: </span><span style="color:#e6db74">&#34;${workspaceFolder}/skaffold.yaml&#34;</span>,
+            <span style="color:#f92672">&#34;watch&#34;: </span><span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;cleanUp&#34;: </span><span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;portForward&#34;: </span><span style="color:#66d9ef">true</span>,
+            <span style="color:#f92672">&#34;imageRegistry&#34;: </span><span style="color:#e6db74">&#34;quay.io&#34;</span>,
+            <span style="color:#f92672">&#34;debug&#34;: </span>[
+                {
+                    <span style="color:#f92672">&#34;image&#34;: </span><span style="color:#e6db74">&#34;quay.io/amorgant/server-debug&#34;</span>,
+                    <span style="color:#f92672">&#34;containerName&#34;: </span><span style="color:#e6db74">&#34;server-debug&#34;</span>,
+                    <span style="color:#f92672">&#34;sourceFileMap&#34;: </span>{
+                        <span style="color:#f92672">&#34;${workspaceFolder}&#34;: </span><span style="color:#e6db74">&#34;&#34;</span>
+                    }
+                }
+            ]
+        },
+</code></pre></div><p>There are some points important to be explained here:</p>
+<ul>
+<li><strong>autoStop</strong>: if you set this to true, the debug session will be automatically stopped when the application is stopped.</li>
+<li><strong>SkaffoldConfig</strong>: this is the configuration file to build, deploy and debug the application we will see in the next section</li>
+<li><strong>watch</strong>: This is the most important option to debug on the fly. Using this option, we could debug watching changes in code in order to build, and deploy automatically to debug it without stop the debugger. Skaffold will be responsible, to build, deploy the new image while we&rsquo;re working on the code. It&rsquo;s not a real time, because the build step take some time, but the advantage is that you could debug the application without stop the debugger. Also, if you have the &ldquo;auto-save&rdquo; option, this process will be constantly running, so you could debug the application without stop the debugger.</li>
+<li><strong>cleanUp</strong>: This is the option to be clean with our session ;) It will destroy the containers and images created by skaffold after stopping the debugger.</li>
+<li><strong>portForward</strong>: This is the option to be able to make a port forward to our local environment.</li>
+<li><strong>debug/image</strong>: this is the image we&rsquo;re going to build with the debugger dlv installed.</li>
+</ul>
+<p>So as you can imagine, with this option as well as the attach to kubernetes pod option, we&rsquo;re able to debug a running pod, and if we change something in code, skaffold will build, deploy the new image to continue the debugging step.
+The combination of both option is the magic to debug on the fly k8s applications or operators.</p>
+<p>Let&rsquo;s see the skaffold configuration to see the options we could use:</p>
+<p>## skaffold configuration</p>
+<p><a href="https://skaffold.dev/docs/pipeline-stages/">Skaffold</a> is a very interesting tool in order to build, deploy your application directly using cloud code plugin. You don&rsquo;t need to install anything else. Just copy the manifest in order to create a pipeline for your application and just run the cloud-code plugin to use it.</p>
+<p>Just as a reference you could see the pipeline steps you could use with skaffold:</p>
+<p><img src="images/workflow.png" alt="workflow"></p>
+<p>I&rsquo;m gonna show you the configuration file we&rsquo;re going to use in this example, and then, I will show you some other interesting options to keep in mind if you need something else for your environment:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">skaffold/v2beta19</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
+<span style="color:#f92672">build</span>:
+  <span style="color:#f92672">artifacts</span>:
+  - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/amorgant/server-debug</span>
+    <span style="color:#f92672">buildpacks</span>:
+      <span style="color:#f92672">builder</span>: <span style="color:#ae81ff">gcr.io/buildpacks/builder:v1</span>
+    <span style="color:#f92672">context</span>: <span style="color:#ae81ff">.</span>
+    <span style="color:#f92672">sync</span>: 
+      <span style="color:#f92672">auto</span>: <span style="color:#66d9ef">true</span> 
+  <span style="color:#f92672">local</span>:
+    <span style="color:#f92672">push</span>: <span style="color:#66d9ef">true</span>
+<span style="color:#f92672">deploy</span>:
+  <span style="color:#f92672">kubectl</span>:
+    <span style="color:#f92672">manifests</span>:
+    - <span style="color:#ae81ff">k8s/deployment.yml</span>
+</code></pre></div><p>Let&rsquo;s get into the manifest in order to discover the options we are going to use:
+In our case from the reference pipeline, we are going to use 2 steps:</p>
+<ul>
+<li><strong>Build</strong>: This is the step to build the image. Skaffold supports as <a href="https://skaffold.dev/docs/pipeline-stages/builders/">builders</a> -&gt; Dockerfile, Maven, Buildpacks, and custom scripts.</li>
+</ul>
+<p>In our case, we&rsquo;re going to use buildpacks which detects automatically your Dockerfile to build it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">buildpacks</span>:  
+      <span style="color:#f92672">builder</span>: <span style="color:#ae81ff">gcr.io/buildpacks/builder:v1</span>
+</code></pre></div><p>But, for a complex project where build step has a very complex Makefile you could use something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">buildpacks</span>:
+ <span style="color:#f92672">custom</span>:
+      <span style="color:#f92672">buildCommand</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">        sudo -S skipper make update-debug-minimal
+</span><span style="color:#e6db74">        docker tag quay.io/ocpmetal/assisted-service:latest quay.io/amorgant/assisted-service:latest
+</span><span style="color:#e6db74">        docker push quay.io/amorgant/assisted-service:latest
+</span><span style="color:#e6db74">        sudo -S skipper make deploy-all</span>        
+</code></pre></div><p>Also, you could use Dockerfile as builder to build using your Dockerfile spec like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">docker</span>:
+    <span style="color:#f92672">dockerfile</span>: <span style="color:#ae81ff">deploy/Dockerfile</span>
+</code></pre></div><ul>
+<li><strong>Deploy</strong>: This is the step to deploy the image to the kubernetes cluster. Skaffold supports as <a href="https://skaffold.dev/docs/pipeline-stages/deployers/">deployers</a> -&gt; Kubernetes, Helm, Kustomize and docker.</li>
+</ul>
+<h2 id="dockerfile-configuration-to-debug">Dockerfile configuration to debug</h2>
+<p>To debug I need to build the image using dlv in order to install it and use it to run the application through dlv command entreypoint:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.16 AS build</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go get -ldflags <span style="color:#e6db74">&#34;-s -w -extldflags &#39;-static&#39;&#34;</span> github.com/go-delve/delve/cmd/dlv<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -gcflags <span style="color:#e6db74">&#34;all=-N -l&#34;</span> -o ./app<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> alpine</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build /go/bin/dlv dlv<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build /app app<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [ <span style="color:#e6db74">&#34;/dlv&#34;</span> , <span style="color:#e6db74">&#34;--listen=:40000&#34;</span>, <span style="color:#e6db74">&#34;--headless=true&#34;</span>, <span style="color:#e6db74">&#34;--api-version=2&#34;</span>, <span style="color:#e6db74">&#34;--accept-multiclient&#34;</span>, <span style="color:#e6db74">&#34;exec&#34;</span>, <span style="color:#e6db74">&#34;/app&#34;</span>]<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>As you can see the entrypoint launch the application using dlv command in oder to be debugged in the remote server.</p>
+<h2 id="k8s-deployment">k8s deployment</h2>
+<p>This is a basic deployment for the k8s application. It&rsquo;s just a simple deployment with a single container using the image we&rsquo;ve just built:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+<span style="color:#f92672">metadata</span>:
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">server-debug</span>
+<span style="color:#f92672">spec</span>:
+  <span style="color:#f92672">selector</span>:
+    <span style="color:#f92672">matchLabels</span>:
+      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">server-debug</span>
+  <span style="color:#f92672">template</span>:
+    <span style="color:#f92672">metadata</span>:
+      <span style="color:#f92672">labels</span>:
+        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">server-debug</span>
+    <span style="color:#f92672">spec</span>:
+      <span style="color:#f92672">containers</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">server-debug</span>
+        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/amorgant/server-debug</span>
+        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
+        <span style="color:#f92672">resources</span>:
+          <span style="color:#f92672">requests</span>:
+            <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;128Mi&#34;</span>
+            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#34;100m&#34;</span>
+          <span style="color:#f92672">limits</span>:
+            <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;256Mi&#34;</span>
+            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#34;500m&#34;</span>
+        <span style="color:#f92672">ports</span>:
+        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">8080</span>
+</code></pre></div><h1 id="demo-on-the-fly">Demo on the fly</h1>
+<p>Once we have all the configuration ready, the next thing is go to the plugin cloud code and follow the next steps:</p>
+<ul>
+<li>Verify the cluster is ready and you can get access to its resources from vscode and cloud code plugin:</li>
+</ul>
+<p><img src="images/07.png" alt="cluster"></p>
+<ul>
+<li>Set the breakpoint in the code:</li>
+</ul>
+<p><img src="images/08.png" alt="breakpoint"></p>
+<ul>
+<li>Click on the debug on kubernetes button to start the process</li>
+</ul>
+<p><img src="images/10.png" alt="debug"></p>
+<p>and the next one is to start the process to debug:</p>
+<p><img src="images/gif-debug-k8s-on-the-fly-skaffold-cloudcode.gif" alt="gif-debug-k8s-on-the-fly-skaffold-cloudcode.gif">{width=&lsquo;100%&rsquo; height=&lsquo;100%'}</p>
+<p>if you want to see complete there is a video to show the full process you can see here:</p>
+<p><a href="https://www.youtube.com/watch?v=d-P5wCdCwrQ"><img src="images/video-tap.png" alt="Video"></a></p>
+<h1 id="limitation-and-bugs">Limitation and bugs</h1>
+<ul>
+<li>cloud code: There is a <a href="https://github.com/GoogleCloudPlatform/cloud-code-vscode/issues/486">bug</a> in the latest version so you need to install previous one: <strong>Version 1.14.1 (Sept 2021)</strong></li>
+<li>To make it work, you need copy the project inside the Dockerfile because the debugger needs the stack to know which is the trace to debug it. you could use:</li>
+</ul>
+<pre><code>WORKDIR /
+COPY . .
+</code></pre><h1 id="references">References</h1>
+<h2 id="links">Links</h2>
+<p>VScode Remote Explorer: <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh">ms-vscode-remote.remote-ssh</a></p>
+<p>Cloud Code: <a href="https://marketplace.visualstudio.com/items?itemName=GoogleCloudTools.cloudcode">cloud code</a></p>
+<p>Delve Go debugger: <a href="https://github.com/go-delve/delve/tree/master/Documentation/installation">delve</a></p>
+<p>Skaffold builders: <a href="https://skaffold.dev/docs/pipeline-stages/builders/">builders</a></p>
+<h2 id="thanks">Thanks</h2>
+<ul>
+<li>Special thanks to <a href="https://github.com/danielchg">@dchavero</a> for the help with the configuration of the environment.</li>
+<li>Thanks also to antelman107/go-remote-debug-delve to the original repo which make me thing about this to create this post.</li>
+</ul>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/debug/" class="tag-link">debug</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/golang/" class="tag-link">golang</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/kubernetes/" class="tag-link">kubernetes</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/skaffold/" class="tag-link">skaffold</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/"
+     data-text="Debug k8s applications on the fly"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/"
+     data-text="Debug k8s applications on the fly"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/"
+     data-text="Debug k8s applications on the fly"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/"
+     data-text="Debug k8s applications on the fly"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/"
+     data-text="Debug k8s applications on the fly"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q2W4X5J2F1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>

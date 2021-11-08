@@ -3,10 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alknopfler.github.io/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/categories/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/debug/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/debug/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/golang/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/golang/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/kubernetes/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/kubernetes/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/post/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/skaffold/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/categories/skaffold/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://alknopfler.github.io/tags/</loc>
+    <lastmod>2021-10-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/tags/connection/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
@@ -30,12 +63,6 @@
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/categories/networking/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/post/</loc>
-    <lastmod>2021-10-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/tags/</loc>
     <lastmod>2021-10-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/tags/development/</loc>
@@ -122,9 +149,6 @@
     <loc>https://alknopfler.github.io/tags/aws-lambda/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alknopfler.github.io/categories/golang/</loc>
-    <lastmod>2018-11-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://alknopfler.github.io/categories/microservices/</loc>
     <lastmod>2018-11-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -173,9 +197,6 @@
     <loc>https://alknopfler.github.io/tags/ceph/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://alknopfler.github.io/tags/kubernetes/</loc>
-    <lastmod>2017-07-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://alknopfler.github.io/post/new-features-in-openstack-ceph/</loc>
     <lastmod>2017-07-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -213,9 +234,6 @@
     <lastmod>2017-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</loc>
-    <lastmod>2017-07-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://alknopfler.github.io/categories/kubernetes/</loc>
     <lastmod>2017-07-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</loc>
