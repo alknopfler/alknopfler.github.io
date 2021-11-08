@@ -40,7 +40,7 @@ Definitely you need to be careful with the prints, because you can easily miss t
 
 ## Debugging on the fly
 
-This method consists in the use of classical debuggers in order to have the information as fast as possible to understand the issues, but in this time, running on the remote server (maybe on a previous environment, quite similar to the production) and creating the images at the same time you're fixing the code to deploying the operator again and again reducing the time waiting for.
+This method consists in the use of classical debuggers in order to have the information as fast as possible to understand the issues, but this time, running on the remote server (maybe on a previous environment, quite similar to the production) and creating the images at the same time you're fixing the code to deploying the operator again and again reducing the time waiting for.
 
 Just to be clear, the principles of this methods are:
 
