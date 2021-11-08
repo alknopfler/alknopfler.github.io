@@ -218,7 +218,7 @@ There are some points important to be explained here:
 
  - **autoStop**: if you set this to true, the debug session will be automatically stopped when the application is stopped.
  - **SkaffoldConfig**: this is the configuration file to build, deploy and debug the application we will see in the next section
- - **watch**: This is the most important option to debug on the fly. Using this option, we could debug watching changes in code in order to build, and deploy automatically to debug it without stop the debugger. Skaffold will be responsible, to build, deploy the new image while we're working on the code. It's not a real time, because the build step take some time, but the advantage is that you could debug the application without stop the debugger. Also, if you have the "auto-save" option, this process will be constantly running, so you could debug the application without stop the debugger.
+ - **watch**: This is the most important option to debug on the fly. Using this option, we could debug watching changes in code in order to build, and deploy automatically to debug it without having to stop the debugger. Skaffold will be responsible, to build, deploy the new image while we're working on the code. It's not a real time, because the build step take some time, but the advantage is that you could debug the application without having to stop the debugger. Also, if you have the "auto-save" option, this process will be constantly running, so you could debug the application without having to stop the debugger.
  - **cleanUp**: This is the option to be clean with our session ;) It will destroy the containers and images created by skaffold after stopping the debugger.
  - **portForward**: This is the option to be able to make a port forward to our local environment.
  - **debug/image**: this is the image we're going to build with the debugger dlv installed.
@@ -228,7 +228,7 @@ There are some points important to be explained here:
 So as you can imagine, with this option as well as the attach to kubernetes pod option, we're able to debug a running pod, and if we change something in code, skaffold will build, deploy the new image to continue the debugging step. 
 The combination of both option is the magic to debug on the fly k8s applications or operators.
 
-Let's see the skaffold configuration to see the options we could use:
+Let's see the skaffold configuration to see the options we can use:
 
 ## skaffold configuration
 

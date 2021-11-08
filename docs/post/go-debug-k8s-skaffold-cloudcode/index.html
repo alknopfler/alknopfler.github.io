@@ -14,7 +14,7 @@
 <meta itemprop="name" content="Debug k8s applications on the fly">
 <meta itemprop="description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work."><meta itemprop="datePublished" content="2021-10-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-10-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2491">
+<meta itemprop="wordCount" content="2497">
 <meta itemprop="keywords" content="debug,golang,kubernetes,skaffold," />
 
 <meta name="twitter:card" content="summary"/>
@@ -412,14 +412,14 @@ $ tree .
 <ul>
 <li><strong>autoStop</strong>: if you set this to true, the debug session will be automatically stopped when the application is stopped.</li>
 <li><strong>SkaffoldConfig</strong>: this is the configuration file to build, deploy and debug the application we will see in the next section</li>
-<li><strong>watch</strong>: This is the most important option to debug on the fly. Using this option, we could debug watching changes in code in order to build, and deploy automatically to debug it without stop the debugger. Skaffold will be responsible, to build, deploy the new image while we&rsquo;re working on the code. It&rsquo;s not a real time, because the build step take some time, but the advantage is that you could debug the application without stop the debugger. Also, if you have the &ldquo;auto-save&rdquo; option, this process will be constantly running, so you could debug the application without stop the debugger.</li>
+<li><strong>watch</strong>: This is the most important option to debug on the fly. Using this option, we could debug watching changes in code in order to build, and deploy automatically to debug it without having to stop the debugger. Skaffold will be responsible, to build, deploy the new image while we&rsquo;re working on the code. It&rsquo;s not a real time, because the build step take some time, but the advantage is that you could debug the application without having to stop the debugger. Also, if you have the &ldquo;auto-save&rdquo; option, this process will be constantly running, so you could debug the application without having to stop the debugger.</li>
 <li><strong>cleanUp</strong>: This is the option to be clean with our session ;) It will destroy the containers and images created by skaffold after stopping the debugger.</li>
 <li><strong>portForward</strong>: This is the option to be able to make a port forward to our local environment.</li>
 <li><strong>debug/image</strong>: this is the image we&rsquo;re going to build with the debugger dlv installed.</li>
 </ul>
 <p>So as you can imagine, with this option as well as the attach to kubernetes pod option, we&rsquo;re able to debug a running pod, and if we change something in code, skaffold will build, deploy the new image to continue the debugging step.
 The combination of both option is the magic to debug on the fly k8s applications or operators.</p>
-<p>Let&rsquo;s see the skaffold configuration to see the options we could use:</p>
+<p>Let&rsquo;s see the skaffold configuration to see the options we can use:</p>
 <p>## skaffold configuration</p>
 <p><a href="https://skaffold.dev/docs/pipeline-stages/">Skaffold</a> is a very interesting tool in order to build, deploy your application directly using cloud code plugin. You don&rsquo;t need to install anything else. Just copy the manifest in order to create a pipeline for your application and just run the cloud-code plugin to use it.</p>
 <p>Just as a reference you could see the pipeline steps you could use with skaffold:</p>
