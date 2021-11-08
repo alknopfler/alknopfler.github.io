@@ -27,7 +27,7 @@ At this point, in local you have a pair of possibilities to debug it:
 
 In this post, I will show you how to do this **using a debugger on the fly with k8s**, but let's first analyze and explain the basics of both methods to understand how to debug on the fly using other tools. 
 
-## Debugging using prints prints
+## Debugging using prints
 
 This is the simplest way to deploy and debug an application or operator on the fly. The process is pretty simple for developers. You just need to identify the hot points in the code, and prints the information you want to debug. Piece of cake! 
 
@@ -38,7 +38,7 @@ For example, with the reconcile loops of complex operators (over 1k lines per re
 Definitely you need to be careful with the prints, because you can easily miss the hot points and you will miss the information you need. It could be traslated to time, saying that the time you need to use this method is high if you don't have a good understanding of the code.
 
 
-## Debugging on the fly on the fly
+## Debugging on the fly
 
 This method consists in the use of classical debuggers in order to have the information as fast as possible to understand the issues, but in this time, running on the remote server (maybe on a previous environment, quite similar to the production) and creating the images at the same time you're fixing the code to deploying the operator again and again reducing the time waiting for.
 
