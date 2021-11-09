@@ -162,7 +162,7 @@ Now we've got 2 special files which allow us to build, deploy and debug the appl
 
 I'm gonna get into the cloud code configuration in order to explain a little bit the options we have to configure, and then, move on with our scenario to configure skaffold after that. 
 
-## cloud code configuration
+## Cloud code configuration
 
 First thing is open the file `.vscode/launch.json` and you will add new configuration:
 
@@ -230,7 +230,7 @@ The combination of both option is the magic to debug on the fly k8s applications
 
 Let's see the skaffold configuration to see the options we can use:
 
-## skaffold configuration
+## Skaffold configuration
 
 [Skaffold](https://skaffold.dev/docs/pipeline-stages/) is a very interesting tool in order to build, deploy your application directly using cloud code plugin. You don't need to install anything else. Just copy the manifest in order to create a pipeline for your application and just run the cloud-code plugin to use it.
 
