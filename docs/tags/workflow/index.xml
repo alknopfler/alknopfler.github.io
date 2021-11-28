@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>workflow on Alknopfler&#39;s Site</title>
+    <link>https://alknopfler.github.io/tags/workflow/</link>
+    <description>Recent content in workflow on Alknopfler&#39;s Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/workflow/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GH Actions - Create steps dinamically</title>
+      <link>https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/</guid>
+      <description>Introduction - Create steps dinamically After using &amp;lsquo;gh actions&amp;rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.</description>
+    </item>
+    
+  </channel>
+</rss>

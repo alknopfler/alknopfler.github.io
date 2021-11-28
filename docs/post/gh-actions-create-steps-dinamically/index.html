@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.84.2" />
+
+  <title>GH Actions - Create steps dinamically &middot; Alknopfler&#39;s Site</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="GH Actions - Create steps dinamically">
+<meta itemprop="description" content="Introduction - Create steps dinamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."><meta itemprop="datePublished" content="2021-11-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-11-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="868">
+<meta itemprop="keywords" content="github actions,pipeline,workflow,steps,dinamically," />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GH Actions - Create steps dinamically"/>
+<meta name="twitter:description" content="Introduction - Create steps dinamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."/>
+
+
+<meta property="og:title" content="GH Actions - Create steps dinamically" />
+<meta property="og:description" content="Introduction - Create steps dinamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-11-28T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-11-28T00:00:00&#43;00:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://alknopfler.github.io/#author",
+      "name": "Alberto Morgante (a.k.a alknopfler)",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "https://alknopfler.github.io/images/profile.png"
+        
+      },
+      "description": "My knowledge is yours"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://alknopfler.github.io/#website",
+      "url": "https://alknopfler.github.io/",
+      "name": "Alknopfler's Site",
+      "description": "My knowledge is yours",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/#webpage",
+      "url": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/",
+      "name": "GH Actions - Create steps dinamically",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/#website"
+      },
+      "about": {
+         "@id": "https://alknopfler.github.io/#author"
+      },
+      "datePublished": "2021-11-28T00:00:00+00:00",
+      "dateModified": "2021-11-28T00:00:00+00:00",
+      "description": "Introduction - Create steps dinamically After using \u0026lsquo;gh actions\u0026rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.",
+      "inLanguage": "en",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/#webpage"
+      },
+      "headline": "GH Actions - Create steps dinamically",
+      "datePublished": "2021-11-28T00:00:00+00:00",
+      "dateModified": "2021-11-28T00:00:00+00:00",
+      "publisher": {
+        "@id": "https://alknopfler.github.io/#author"
+      },
+      "keywords": [,
+        "pipeline",
+        "workflow",
+        "steps",
+        "dinamically"
+      ],
+      "articleSection": [,
+        "pipeline",
+        "workflow"
+      ],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+<style type="text/css">
+  .sidebar {
+    background-color: #6d120e;
+  }
+
+  .read-more-link a {
+    border-color: #6d120e;
+  }
+
+  .read-more-link a:hover {
+    background-color: #6d120e;
+  }
+
+  .pagination li a {
+    color: #6d120e;
+    border: 1px solid #6d120e;
+  }
+
+  .pagination li.active a {
+    background-color: #6d120e;
+  }
+
+  .pagination li a:hover {
+    background-color: #6d120e;
+    opacity: 0.75;
+  }
+
+  footer a,
+  .content a,
+  .related-posts li a:hover {
+    color: #6d120e;
+  }
+</style>
+
+
+
+  <link type="text/css" rel="stylesheet" href="/css/blog.css">
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <a href="https://alknopfler.github.io/">
+            <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+          </a>
+        </div>
+        
+      
+
+      <h1>Alknopfler&#39;s Site</h1>
+
+      
+      <p class="lead">My knowledge is yours</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://alknopfler.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/talks/">Talks</a>
+        </li><li>
+          <a href="/about/">About me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/albertomorgante" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/alknopfler" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">GH Actions - Create steps dinamically</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2021-11-28T00:00:00Z">Nov 28, 2021</time> <span class="readtime">&middot; 5 min read</span>
+  </div>
+
+  <div>
+  <h1 id="introduction---create-steps-dinamically">Introduction - Create steps dinamically</h1>
+<p><img src="images/pic.png" alt="GH actions create dinamic steps"></p>
+<p>After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.
+With this blog post I would like to show how you can use a &lsquo;gh actions&rsquo; feature called &ldquo;matrix&rdquo; to dynamically generate steps based on a variable that we can use to generate different use cases.</p>
+<p>This feature is very useful when you need to repeat a task for different values of a variable and you want to avoid repeating the same code for each of them.
+Moreover, if you don&rsquo;t know the number of steps you need, you can use the &ldquo;matrix&rdquo; feature to generate them dynamically.</p>
+<p>For instance, imagine that you have a kubernetes cluster and you need to create some steps for each output of the command. For example, you need to validate if the public routes are accessible, or you need to verify the status of some pods/svc/deployments, but you don&rsquo;t know the number of resources you have previously.</p>
+<p>In this post I will show you the next use case:</p>
+<ul>
+<li><strong>Create steps dinamically based on a yaml file</strong>
+<ul>
+<li>If you have a yaml file with a list of items (in our case will be clusters names) you can use the &ldquo;matrix&rdquo; feature to generate steps for each of them to show the name.</li>
+</ul>
+</li>
+</ul>
+<p>To prepare the example, I&rsquo;ve created a repo with all the files needed to run the  use case:</p>
+<ul>
+<li><strong>Repository</strong>: <a href="https://github.com/alknopfler/gh-generate-steps-dinamically">gh-actions-create-steps-dinamically</a></li>
+</ul>
+<h1 id="create-steps-dinamically-based-on-a-yaml-file">Create steps dinamically based on a yaml file</h1>
+<p>Imagine we have a yaml file with a list of clusters with some information about them:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">config</span>:
+  <span style="color:#f92672">clusterimageset</span>: <span style="color:#ae81ff">openshift-v4.9.0</span>
+<span style="color:#f92672">spokes</span>:
+  - <span style="color:#f92672">spoke1-cluster</span>:
+      <span style="color:#f92672">master0</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 0&#34;</span>
+      <span style="color:#f92672">master1</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 1&#34;</span>
+      <span style="color:#f92672">master2</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 2&#34;</span>
+  - <span style="color:#f92672">spoke2-cluster</span>:
+      <span style="color:#f92672">master0</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 0&#34;</span>
+      <span style="color:#f92672">master1</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 1&#34;</span>
+      <span style="color:#f92672">master2</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 2&#34;</span>
+  - <span style="color:#f92672">spoke3-cluster</span>:
+      <span style="color:#f92672">master0</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 0&#34;</span>
+      <span style="color:#f92672">master1</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 1&#34;</span>
+      <span style="color:#f92672">master2</span>:
+        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 2&#34;</span>
+</code></pre></div><p>The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the &ldquo;matrix&rdquo; feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dinamically. I will just show the name of the cluster in the step name.</p>
+<p>To use the matrix feature we need to create a yaml file inside the directory <code>.github/workflows</code> to create a new workflow:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">example read from file</span>
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>:
+      - <span style="color:#ae81ff">master</span>
+
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">description</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest </span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
+      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
+
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Description</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;This is an example to generate steps dinamically based on a yaml file. For each line we will create a step in the pipeline dinamically &#34;</span>
+</code></pre></div><p>As you can see I&rsquo;m adding the first step just to show the example description. It&rsquo;s not necesary, but it&rsquo;s useful to know what we&rsquo;re gonna do in the example.</p>
+<p>The next thing is create a new job to extract the information from the yaml file and create the output to fill in the matrix with the data extracted.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">extract-yaml-data</span>:
+    <span style="color:#f92672">needs</span>:
+      - <span style="color:#ae81ff">description</span>
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">outputs</span>:
+      <span style="color:#f92672">myitems</span>: <span style="color:#ae81ff">${{ steps.data.outputs.myitems }}</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
+      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Extract data from yaml file</span>
+        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">data</span>
+        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          cd ${GITHUB_WORKSPACE}
+</span><span style="color:#e6db74">          echo &#34;::set-output name=myitems::$(cat ./config.yaml | yq e &#39;.spokes.[] | keys | join(&#34;,&#34;)&#39; - | jq -Rsc &#39;. / &#34;\n&#34; - [&#34;&#34;]&#39;)&#34;</span>          
+
+</code></pre></div><p>As you can see, I&rsquo;m creating three important things:</p>
+<ul>
+<li>
+<p>An Output named <code>myitems</code> which contains the information extracted from the id <code>data</code> with the variable name <code>myitems</code>. So we need to define an step named <code>data</code>and create a output named <code>myitems</code>to fill in the variable data.</p>
+</li>
+<li>
+<p>The step with id <code>data</code> which contains the <code>myitems</code>output variable and the command to extract such information.</p>
+</li>
+<li>
+<p>The command in this case is a <code>cat</code> command and some pipes to filter the information from the yaml file. Basically I&rsquo;m gonna extract the cluster name from the yaml file.</p>
+</li>
+</ul>
+<p>With this information, I&rsquo;m ready to use the matrix feature to generate the steps dinamically using this snip of code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">verify-installation</span>:
+    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">extract-yaml-data</span>
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">strategy</span>:
+      <span style="color:#f92672">matrix</span>:
+        <span style="color:#f92672">mymatrix</span>: <span style="color:#ae81ff">${{ fromJSON(needs.extract-yaml-data.outputs.myitems) }}</span>
+    <span style="color:#f92672">steps</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">${{ matrix.mymatrix }}</span>
+        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          </span>          <span style="color:#ae81ff">echo &#34;Do something with ... ${{ matrix.mymatrix }}, for example verify the installation of each cluster&#34;     </span>
+</code></pre></div><p>In this job I&rsquo;m going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be readed using <code>mymatrix</code> and reading the information from the step <code>data</code> using the previous job <code>extract-yaml-data</code>. In this case, the output we want to use is <code>myitems</code> that contains the information extracted from the yaml file as I described before.</p>
+<p>The result of this job will be a workflow with 3 steps generated dinamically for each cluster name:</p>
+<p><img src="images/step-dinamically-yaml.gif" alt="step-dinamically-yaml"></p>
+<h1 id="references">References:</h1>
+<ul>
+<li><strong>Repository</strong>: <a href="https://github.com/alknopfler/gh-generate-steps-dinamically">gh-actions-create-steps-dinamically</a></li>
+</ul>
+
+  </div>
+
+  
+<div>
+  <ul class="tags">
+  <li>
+    <a href="https://alknopfler.github.io/tags/pipeline/" class="tag-link">pipeline</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/workflow/" class="tag-link">workflow</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/steps/" class="tag-link">steps</a>
+  </li>
+  
+  <li>
+    <a href="https://alknopfler.github.io/tags/dinamically/" class="tag-link">dinamically</a>
+  </li>
+  </ul>
+</div>
+
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
+     data-text="GH Actions - Create steps dinamically"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
+     data-text="GH Actions - Create steps dinamically"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
+     data-text="GH Actions - Create steps dinamically"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
+     data-text="GH Actions - Create steps dinamically"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
+     data-text="GH Actions - Create steps dinamically"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Alknopfler 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  <script src="/js/blog.js"></script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-Q2W4X5J2F1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</body>
+</html>
