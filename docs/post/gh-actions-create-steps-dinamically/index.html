@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.84.2" />
 
-  <title>GH Actions - Create steps dinamically &middot; Alknopfler&#39;s Site</title>
+  <title>GH Actions - Create step dynamically &middot; Alknopfler&#39;s Site</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="GH Actions - Create steps dinamically">
-<meta itemprop="description" content="Introduction - Create steps dinamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."><meta itemprop="datePublished" content="2021-11-28T00:00:00&#43;00:00" />
+<meta itemprop="name" content="GH Actions - Create step dynamically">
+<meta itemprop="description" content="Introduction - Create steps dynamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."><meta itemprop="datePublished" content="2021-11-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-11-28T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="868">
-<meta itemprop="keywords" content="github actions,pipeline,workflow,steps,dinamically," />
+<meta itemprop="keywords" content="github actions,pipeline,workflow,steps,dynamically," />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="GH Actions - Create steps dinamically"/>
-<meta name="twitter:description" content="Introduction - Create steps dinamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."/>
+<meta name="twitter:title" content="GH Actions - Create step dynamically"/>
+<meta name="twitter:description" content="Introduction - Create steps dynamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."/>
 
 
-<meta property="og:title" content="GH Actions - Create steps dinamically" />
-<meta property="og:description" content="Introduction - Create steps dinamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project." />
+<meta property="og:title" content="GH Actions - Create step dynamically" />
+<meta property="og:description" content="Introduction - Create steps dynamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-11-28T00:00:00&#43;00:00" />
@@ -63,7 +63,7 @@
       "@type": "WebPage",
       "@id": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/#webpage",
       "url": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/",
-      "name": "GH Actions - Create steps dinamically",
+      "name": "GH Actions - Create step dynamically",
       "isPartOf": {
         "@id": "https://alknopfler.github.io/#website"
       },
@@ -72,7 +72,7 @@
       },
       "datePublished": "2021-11-28T00:00:00+00:00",
       "dateModified": "2021-11-28T00:00:00+00:00",
-      "description": "Introduction - Create steps dinamically After using \u0026lsquo;gh actions\u0026rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.",
+      "description": "Introduction - Create steps dynamically After using \u0026lsquo;gh actions\u0026rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.",
       "inLanguage": "en",
       "potentialAction": [
         {
@@ -91,7 +91,7 @@
       "mainEntityOfPage": {
         "@id": "https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/#webpage"
       },
-      "headline": "GH Actions - Create steps dinamically",
+      "headline": "GH Actions - Create step dynamically",
       "datePublished": "2021-11-28T00:00:00+00:00",
       "dateModified": "2021-11-28T00:00:00+00:00",
       "publisher": {
@@ -101,7 +101,7 @@
         "pipeline",
         "workflow",
         "steps",
-        "dinamically"
+        "dynamically"
       ],
       "articleSection": [,
         "pipeline",
@@ -249,7 +249,7 @@
 
   <main class="content container">
   <div class="post">
-  <h1 class="title">GH Actions - Create steps dinamically</h1>
+  <h1 class="title">GH Actions - Create step dynamically</h1>
   
 
   <div class="post-date">
@@ -257,8 +257,8 @@
   </div>
 
   <div>
-  <h1 id="introduction---create-steps-dinamically">Introduction - Create steps dinamically</h1>
-<p><img src="images/pic.png" alt="GH actions create dinamic steps"></p>
+  <h1 id="introduction---create-steps-dynamically">Introduction - Create steps dynamically</h1>
+<p><img src="images/pic.png" alt="GH actions create dynamic steps"></p>
 <p>After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.
 With this blog post I would like to show how you can use a &lsquo;gh actions&rsquo; feature called &ldquo;matrix&rdquo; to dynamically generate steps based on a variable that we can use to generate different use cases.</p>
 <p>This feature is very useful when you need to repeat a task for different values of a variable and you want to avoid repeating the same code for each of them.
@@ -266,7 +266,7 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
 <p>For instance, imagine that you have a kubernetes cluster and you need to create some steps for each output of the command. For example, you need to validate if the public routes are accessible, or you need to verify the status of some pods/svc/deployments, but you don&rsquo;t know the number of resources you have previously.</p>
 <p>In this post I will show you the next use case:</p>
 <ul>
-<li><strong>Create steps dinamically based on a yaml file</strong>
+<li><strong>Create steps dynamically based on a yaml file</strong>
 <ul>
 <li>If you have a yaml file with a list of items (in our case will be clusters names) you can use the &ldquo;matrix&rdquo; feature to generate steps for each of them to show the name.</li>
 </ul>
@@ -274,9 +274,9 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
 </ul>
 <p>To prepare the example, I&rsquo;ve created a repo with all the files needed to run the  use case:</p>
 <ul>
-<li><strong>Repository</strong>: <a href="https://github.com/alknopfler/gh-generate-steps-dinamically">gh-actions-create-steps-dinamically</a></li>
+<li><strong>Repository</strong>: <a href="https://github.com/alknopfler/gh-generate-steps-dinamically">gh-actions-create-steps-dynamically</a></li>
 </ul>
-<h1 id="create-steps-dinamically-based-on-a-yaml-file">Create steps dinamically based on a yaml file</h1>
+<h1 id="create-steps-dynamically-based-on-a-yaml-file">Create steps dynamically based on a yaml file</h1>
 <p>Imagine we have a yaml file with a list of clusters with some information about them:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">config</span>:
   <span style="color:#f92672">clusterimageset</span>: <span style="color:#ae81ff">openshift-v4.9.0</span>
@@ -302,7 +302,7 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
         <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 1&#34;</span>
       <span style="color:#f92672">master2</span>:
         <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 2&#34;</span>
-</code></pre></div><p>The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the &ldquo;matrix&rdquo; feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dinamically. I will just show the name of the cluster in the step name.</p>
+</code></pre></div><p>The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the &ldquo;matrix&rdquo; feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dynamically. I will just show the name of the cluster in the step name.</p>
 <p>To use the matrix feature we need to create a yaml file inside the directory <code>.github/workflows</code> to create a new workflow:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">example read from file</span>
 <span style="color:#f92672">on</span>:
@@ -318,8 +318,8 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
       - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
 
       - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Description</span>
-        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;This is an example to generate steps dinamically based on a yaml file. For each line we will create a step in the pipeline dinamically &#34;</span>
-</code></pre></div><p>As you can see I&rsquo;m adding the first step just to show the example description. It&rsquo;s not necesary, but it&rsquo;s useful to know what we&rsquo;re gonna do in the example.</p>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;This is an example to generate steps dynamically based on a yaml file. For each line we will create a step in the pipeline dynamically &#34;</span>
+</code></pre></div><p>As you can see I&rsquo;m adding the first step just to show the example description. It&rsquo;s not necessary, but it&rsquo;s useful to know what we&rsquo;re gonna do in the example.</p>
 <p>The next thing is create a new job to extract the information from the yaml file and create the output to fill in the matrix with the data extracted.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">extract-yaml-data</span>:
     <span style="color:#f92672">needs</span>:
@@ -348,7 +348,7 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
 <p>The command in this case is a <code>cat</code> command and some pipes to filter the information from the yaml file. Basically I&rsquo;m gonna extract the cluster name from the yaml file.</p>
 </li>
 </ul>
-<p>With this information, I&rsquo;m ready to use the matrix feature to generate the steps dinamically using this snip of code:</p>
+<p>With this information, I&rsquo;m ready to use the matrix feature to generate the steps dynamically using this snip of code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">verify-installation</span>:
     <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">extract-yaml-data</span>
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
@@ -359,12 +359,12 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
       - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">${{ matrix.mymatrix }}</span>
         <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
 </span><span style="color:#e6db74">          </span>          <span style="color:#ae81ff">echo &#34;Do something with ... ${{ matrix.mymatrix }}, for example verify the installation of each cluster&#34;     </span>
-</code></pre></div><p>In this job I&rsquo;m going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be readed using <code>mymatrix</code> and reading the information from the step <code>data</code> using the previous job <code>extract-yaml-data</code>. In this case, the output we want to use is <code>myitems</code> that contains the information extracted from the yaml file as I described before.</p>
-<p>The result of this job will be a workflow with 3 steps generated dinamically for each cluster name:</p>
-<p><img src="images/step-dinamically-yaml.gif" alt="step-dinamically-yaml"></p>
+</code></pre></div><p>In this job I&rsquo;m going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be read using <code>mymatrix</code> and reading the information from the step <code>data</code> using the previous job <code>extract-yaml-data</code>. In this case, the output we want to use is <code>myitems</code> that contains the information extracted from the yaml file as I described before.</p>
+<p>The result of this job will be a workflow with 3 steps generated dynamically for each cluster name:</p>
+<p><img src="images/step-dinamically-yaml.gif" alt="step-dynamically-yaml"></p>
 <h1 id="references">References:</h1>
 <ul>
-<li><strong>Repository</strong>: <a href="https://github.com/alknopfler/gh-generate-steps-dinamically">gh-actions-create-steps-dinamically</a></li>
+<li><strong>Repository</strong>: <a href="https://github.com/alknopfler/gh-generate-steps-dinamically">gh-actions-create-steps-dynamically</a></li>
 </ul>
 
   </div>
@@ -385,7 +385,7 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
   </li>
   
   <li>
-    <a href="https://alknopfler.github.io/tags/dinamically/" class="tag-link">dinamically</a>
+    <a href="https://alknopfler.github.io/tags/dynamically/" class="tag-link">dynamically</a>
   </li>
   </ul>
 </div>
@@ -397,31 +397,31 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
      href="#"
      title="Share on Twitter"
      data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
-     data-text="GH Actions - Create steps dinamically"><i class="fab fa-twitter"></i></a>
+     data-text="GH Actions - Create step dynamically"><i class="fab fa-twitter"></i></a>
 
   <a class="linkedin-share-button"
      href="#"
      title="Share on LinkedIn"
      data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
-     data-text="GH Actions - Create steps dinamically"><i class="fab fa-linkedin-in"></i></a>
+     data-text="GH Actions - Create step dynamically"><i class="fab fa-linkedin-in"></i></a>
 
   <a class="facebook-share-button"
      href="#"
      title="Share on Facebook"
      data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
-     data-text="GH Actions - Create steps dinamically"><i class="fab fa-facebook"></i></a>
+     data-text="GH Actions - Create step dynamically"><i class="fab fa-facebook"></i></a>
 
   <a class="telegram-share-button"
      href="#"
      title="Share on Telegram"
      data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
-     data-text="GH Actions - Create steps dinamically"><i class="fab fa-telegram"></i></a>
+     data-text="GH Actions - Create step dynamically"><i class="fab fa-telegram"></i></a>
 
   <a class="pinterest-share-button"
      href="#"
      title="Share on Pinterest"
      data-url="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/"
-     data-text="GH Actions - Create steps dinamically"><i class="fab fa-pinterest"></i></a>
+     data-text="GH Actions - Create step dynamically"><i class="fab fa-pinterest"></i></a>
 </div>
 
 

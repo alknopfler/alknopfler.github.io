@@ -1,5 +1,5 @@
 ---
-title: "GH Actions - Create steps dinamically"
+title: "GH Actions - Create step dynamically"
 date: "2021-11-28"
 categories: 
   - "github actions"
@@ -10,13 +10,13 @@ tags:
   - "pipeline"
   - "workflow"
   - "steps"
-  - "dinamically"
-coverImage: "step-dinamically-yaml.gif"
+  - "dynamically"
+coverImage: "step-dynamically-yaml.gif"
 ---
 
-# Introduction - Create steps dinamically
+# Introduction - Create steps dynamically
 
-![GH actions create dinamic steps](images/pic.png)
+![GH actions create dynamic steps](images/pic.png)
 
 After using 'gh actions' for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.
 With this blog post I would like to show how you can use a 'gh actions' feature called "matrix" to dynamically generate steps based on a variable that we can use to generate different use cases. 
@@ -29,16 +29,16 @@ For instance, imagine that you have a kubernetes cluster and you need to create 
 
 In this post I will show you the next use case: 
 
-- **Create steps dinamically based on a yaml file**
+- **Create steps dynamically based on a yaml file**
     - If you have a yaml file with a list of items (in our case will be clusters names) you can use the "matrix" feature to generate steps for each of them to show the name.
 
 
 To prepare the example, I've created a repo with all the files needed to run the  use case:
 
-- **Repository**: [gh-actions-create-steps-dinamically](https://github.com/alknopfler/gh-generate-steps-dinamically)
+- **Repository**: [gh-actions-create-steps-dynamically](https://github.com/alknopfler/gh-generate-steps-dinamically)
 
 
-# Create steps dinamically based on a yaml file
+# Create steps dynamically based on a yaml file
 
 Imagine we have a yaml file with a list of clusters with some information about them:
 
@@ -69,7 +69,7 @@ spokes:
         data: "spoke3 - master 2"
 ```
 
-The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the "matrix" feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dinamically. I will just show the name of the cluster in the step name. 
+The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the "matrix" feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dynamically. I will just show the name of the cluster in the step name. 
 
 To use the matrix feature we need to create a yaml file inside the directory `.github/workflows` to create a new workflow:
 
@@ -88,10 +88,10 @@ jobs:
       - run: git pull origin ${GITHUB_REF##*/}
 
       - name: Description
-        run: echo "This is an example to generate steps dinamically based on a yaml file. For each line we will create a step in the pipeline dinamically "
+        run: echo "This is an example to generate steps dynamically based on a yaml file. For each line we will create a step in the pipeline dynamically "
 ```
 
-As you can see I'm adding the first step just to show the example description. It's not necesary, but it's useful to know what we're gonna do in the example.
+As you can see I'm adding the first step just to show the example description. It's not necessary, but it's useful to know what we're gonna do in the example.
 
 The next thing is create a new job to extract the information from the yaml file and create the output to fill in the matrix with the data extracted.
 
@@ -120,7 +120,7 @@ As you can see, I'm creating three important things:
 
 - The command in this case is a `cat` command and some pipes to filter the information from the yaml file. Basically I'm gonna extract the cluster name from the yaml file.
 
-With this information, I'm ready to use the matrix feature to generate the steps dinamically using this snip of code:
+With this information, I'm ready to use the matrix feature to generate the steps dynamically using this snip of code:
 
 ```yaml
 verify-installation:
@@ -135,13 +135,13 @@ verify-installation:
           echo "Do something with ... ${{ matrix.mymatrix }}, for example verify the installation of each cluster"     
 ```
 
-In this job I'm going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be readed using `mymatrix` and reading the information from the step `data` using the previous job `extract-yaml-data`. In this case, the output we want to use is `myitems` that contains the information extracted from the yaml file as I described before.
+In this job I'm going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be read using `mymatrix` and reading the information from the step `data` using the previous job `extract-yaml-data`. In this case, the output we want to use is `myitems` that contains the information extracted from the yaml file as I described before.
 
-The result of this job will be a workflow with 3 steps generated dinamically for each cluster name: 
+The result of this job will be a workflow with 3 steps generated dynamically for each cluster name: 
 
-![step-dinamically-yaml](images/step-dinamically-yaml.gif)
+![step-dynamically-yaml](images/step-dinamically-yaml.gif)
 
 
 # References:
 
-- **Repository**: [gh-actions-create-steps-dinamically](https://github.com/alknopfler/gh-generate-steps-dinamically)
+- **Repository**: [gh-actions-create-steps-dynamically](https://github.com/alknopfler/gh-generate-steps-dinamically)
