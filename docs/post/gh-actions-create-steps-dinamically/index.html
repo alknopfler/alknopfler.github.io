@@ -342,12 +342,12 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
       - <span style="color:#ae81ff">description</span>
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
     <span style="color:#f92672">outputs</span>:
-      <span style="color:#f92672">myitems</span>: <span style="color:#ae81ff">${{ steps.data.outputs.myitems }}</span>
+      <span style="color:#f92672">myitems</span>: <span style="color:#ae81ff">${{ steps.images.outputs.myitems }}</span>
     <span style="color:#f92672">steps</span>:
       - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
       - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Extract data from yaml file</span>
-        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">data</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Extract images from yaml file</span>
+        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">images</span>
         <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
 </span><span style="color:#e6db74">          cd ${GITHUB_WORKSPACE}
 </span><span style="color:#e6db74">          echo &#34;::set-output name=myitems::$(cat ./config.yaml | yq e &#39;.spokes.[] | keys | join(&#34;,&#34;)&#39; - | jq -Rsc &#39;. / &#34;\n&#34; - [&#34;&#34;]&#39;)&#34;</span>          
@@ -366,11 +366,11 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
 </ul>
 <p>With this information, I&rsquo;m ready to use the matrix feature to generate the steps dynamically using this snip of code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">verify-installation</span>:
-    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">extract-yaml-data</span>
+    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">extract-yaml-images</span>
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
     <span style="color:#f92672">strategy</span>:
       <span style="color:#f92672">matrix</span>:
-        <span style="color:#f92672">mymatrix</span>: <span style="color:#ae81ff">${{ fromJSON(needs.extract-yaml-data.outputs.myitems) }}</span>
+        <span style="color:#f92672">mymatrix</span>: <span style="color:#ae81ff">${{ fromJSON(needs.extract-yaml-images.outputs.myitems) }}</span>
     <span style="color:#f92672">steps</span>:
       - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">${{ matrix.mymatrix }}</span>
         <span style="color:#f92672">run</span>: |<span style="color:#e6db74">

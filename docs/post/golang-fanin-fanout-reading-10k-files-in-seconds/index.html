@@ -327,7 +327,7 @@
       }
       <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">ReadAll</span>(<span style="color:#a6e22e">f</span>)
       <span style="color:#a6e22e">streamData</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">StreamData</span>{<span style="color:#a6e22e">data</span>: <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">fileName</span>: <span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">Name</span>()}
-      <span style="color:#a6e22e">streamOut</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">streamData</span>      <span style="color:#75715e">//send data to the channel
+      <span style="color:#a6e22e">streamOut</span> <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">streamData</span>      <span style="color:#75715e">//send images to the channel
 </span><span style="color:#75715e"></span>    }
     close(<span style="color:#a6e22e">streamOut</span>)
   }()

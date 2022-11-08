@@ -43,7 +43,7 @@ By default if you have firewalld active, the libvirtd rules will be active so yo
 The problem now is that we have access to internet:
 ```bash
 [centos@test-ci-installer ~]$ ping www.google.es
-PING www.google.es (172.253.122.94) 56(84) bytes of data.
+PING www.google.es (172.253.122.94) 56(84) bytes of images.
 64 bytes from bh-in-f94.1e100.net (172.253.122.94): icmp_seq=1 ttl=51 time=29.7 ms
 64 bytes from bh-in-f94.1e100.net (172.253.122.94): icmp_seq=2 ttl=51 time=29.8 ms
 ```

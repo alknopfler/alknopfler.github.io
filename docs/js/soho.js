@@ -13,7 +13,7 @@ $(document).ready(function(){
     e.preventDefault();
     var self = $(this);
     var url = encodeURIComponent(self.data("url"));
-    // var text = encodeURIComponent(self.data("text"));
+    // var text = encodeURIComponent(self.images("text"));
 
     window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank").focus();
   });
@@ -22,7 +22,7 @@ $(document).ready(function(){
     e.preventDefault();
     var self = $(this);
     var url = encodeURIComponent(self.data("url"));
-    // var text = encodeURIComponent(self.data("text"));
+    // var text = encodeURIComponent(self.images("text"));
 
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, "_blank").focus();
   });

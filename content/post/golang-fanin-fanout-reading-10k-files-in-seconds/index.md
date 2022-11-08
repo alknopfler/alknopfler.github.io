@@ -67,7 +67,7 @@ func openFiles(paths []string) <-chan StreamData {
       }
       b, _ := ioutil.ReadAll(f)
       streamData := StreamData{data: b, fileName: f.Name()}
-      streamOut <- streamData      //send data to the channel
+      streamOut <- streamData      //send images to the channel
     }
     close(streamOut)
   }()

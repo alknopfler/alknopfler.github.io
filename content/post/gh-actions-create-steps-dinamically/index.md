@@ -101,12 +101,12 @@ extract-yaml-data:
       - description
     runs-on: ubuntu-latest
     outputs:
-      myitems: ${{ steps.data.outputs.myitems }}
+      myitems: ${{ steps.images.outputs.myitems }}
     steps:
       - uses: actions/checkout@v2 # create a checkout (pull repository) in the runner working_dir (usually _work)
       - run: git pull origin ${GITHUB_REF##*/}
-      - name: Extract data from yaml file
-        id: data
+      - name: Extract images from yaml file
+        id: images
         run: |
           cd ${GITHUB_WORKSPACE}
           echo "::set-output name=myitems::$(cat ./config.yaml | yq e '.spokes.[] | keys | join(",")' - | jq -Rsc '. / "\n" - [""]')"
@@ -124,11 +124,11 @@ With this information, I'm ready to use the matrix feature to generate the steps
 
 ```yaml
 verify-installation:
-    needs: extract-yaml-data
+    needs: extract-yaml-images
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        mymatrix: ${{ fromJSON(needs.extract-yaml-data.outputs.myitems) }}
+        mymatrix: ${{ fromJSON(needs.extract-yaml-images.outputs.myitems) }}
     steps:
       - name: ${{ matrix.mymatrix }}
         run: |
