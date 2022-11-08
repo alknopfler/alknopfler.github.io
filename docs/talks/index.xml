@@ -25,5 +25,14 @@
       <description>I attended as a speaker in the Openstack Barcelona Summit in 2016 doing a presentation about Openstack based in containers on top of Kubernetes.</description>
     </item>
     
+    <item>
+      <title>Open Source Cultural Change</title>
+      <link>https://alknopfler.github.io/talks/opensource-bbva/opensource-bbva/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/talks/opensource-bbva/opensource-bbva/</guid>
+      <description>Open Source Cultural Change Talk</description>
+    </item>
+    
   </channel>
 </rss>
