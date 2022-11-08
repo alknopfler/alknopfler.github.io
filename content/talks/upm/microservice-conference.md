@@ -9,4 +9,4 @@ author = "Alknopfler"
 
 I attended as a teacher in the Conference about Microservices in Madrid 2021, doing a presentation in the Polytechnic University of Madrid.
 
-[![UPM University - Microservice Conference](https://github.com/alknopfler/alknopfler.github.io/blob/master/content/talks/UPM/images/image.png?raw=true)](https://docs.google.com/presentation/d/13cCb9WhF0SSKeLMYuFdBy8wSW8y-QsQINbAAa5kchH0/edit?usp=sharing)
+[UPM University - Microservice Conference](https://docs.google.com/presentation/d/13cCb9WhF0SSKeLMYuFdBy8wSW8y-QsQINbAAa5kchH0/edit?usp=sharing)
