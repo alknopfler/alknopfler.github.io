@@ -7,7 +7,4 @@ aliases = ["talks", "summit", "videos", "conferences", "speaker"]
 author = "Alknopfler"
 +++
 
-
-
-
 [Open Source Cultural Change Talk](https://www.bbvaapimarket.com/en/api-world/open-source-cultural-change/)
