@@ -19,7 +19,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.84.2" />
+  <meta name="generator" content="Hugo 0.108.0">
 
   <title>Alexa Skills with Golang &middot; Alknopfler&#39;s Site</title>
 
@@ -28,8 +28,8 @@
   
 
 <meta itemprop="name" content="Alexa Skills with Golang">
-<meta itemprop="description" content="Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here )."><meta itemprop="datePublished" content="2018-11-04T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-11-04T00:00:00&#43;00:00" />
+<meta itemprop="description" content="Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here )."><meta itemprop="datePublished" content="2018-11-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2018-11-04T00:00:00+00:00" />
 <meta itemprop="wordCount" content="1183">
 <meta itemprop="keywords" content="alexa-skills,alkalarm,aws,aws-lambda," />
 
@@ -42,9 +42,8 @@
 <meta property="og:description" content="Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here )." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/alexa-skills-with-golang/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-11-04T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2018-11-04T00:00:00&#43;00:00" />
-
+<meta property="article:published_time" content="2018-11-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-11-04T00:00:00+00:00" />
 
 
 
@@ -307,7 +306,7 @@
 <p><a href="http://github.com/ericdaugherty/alexa-skills-kit-golang">http://github.com/ericdaugherty/alexa-skills-kit-golang</a></p>
 <p>Using the library we&rsquo;re able to use all the aws-skills sdk but with golang language:</p>
 <p>From the library, we&rsquo;ve to implement the next interface functions to adapt to our needs:</p>
-<pre><code>type RequestHandler interface {
+<pre tabindex="0"><code>type RequestHandler interface {
     OnSessionStarted(context.Context, *Request, *Session, *Context, *Response) error
     OnLaunch(context.Context, *Request, *Session, *Context, *Response) error
     OnIntent(context.Context, *Request, *Session, *Context, *Response) error
@@ -315,7 +314,7 @@
 }
 </code></pre><p>For the <strong>OnSessionStarted</strong> function you could create some auth steps before anything happen with alexa. In my case, we don&rsquo;t have any special task to do</p>
 <p>For the <strong>OnLaunch</strong> function we are gonna give the user the welcome to the alarm system. Also, we&rsquo;re gonna finish the session. It that make sense because in our voice interface definition we decided join all the action in one phrase.</p>
-<pre><code>response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnLaunch, cfg.ImageSmall, cfg.ImageLong)
+<pre tabindex="0"><code>response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnLaunch, cfg.ImageSmall, cfg.ImageLong)
     response.SetOutputText(cfg.SpeechOnLaunch)
     response.SetRepromptSSML(cfg.SpeechOnLaunch)
 
@@ -326,31 +325,31 @@
 <ul>
 <li>
 <p><strong>config/message.go</strong>: With the list of messages to the speech function library</p>
-<pre><code>const (
-    SpeechOnLaunch          = &quot;Bienvenido al sistema de alarma de seguridad&quot;
-    SpeechOnActivateFull    = &quot;Alarma de Seguridad Activada Completamente. Tienes 30 segundos para salir de casa&quot;
-    SpeechOnActivatePartial = &quot;Alarma de Seguridad Activada solo para el perímetro. Dentro de 30 segundos los detectores de presencia serán desactivados&quot;
-    SpeechOnDeactivate      = &quot;Alarma de Seguridad Desactivada. Puedes entrar con seguridad en casa&quot;
-    SpeechOnStatusONFull    = &quot;La alarma está activada completamente&quot;
-    SpeechOnStatusONPartial = &quot;La alarma está activada sólo en modo perímetro&quot;
-    SpeechOnStatusOFF       = &quot;La alarma está desactivada&quot;
+<pre tabindex="0"><code>const (
+    SpeechOnLaunch          = &#34;Bienvenido al sistema de alarma de seguridad&#34;
+    SpeechOnActivateFull    = &#34;Alarma de Seguridad Activada Completamente. Tienes 30 segundos para salir de casa&#34;
+    SpeechOnActivatePartial = &#34;Alarma de Seguridad Activada solo para el perímetro. Dentro de 30 segundos los detectores de presencia serán desactivados&#34;
+    SpeechOnDeactivate      = &#34;Alarma de Seguridad Desactivada. Puedes entrar con seguridad en casa&#34;
+    SpeechOnStatusONFull    = &#34;La alarma está activada completamente&#34;
+    SpeechOnStatusONPartial = &#34;La alarma está activada sólo en modo perímetro&#34;
+    SpeechOnStatusOFF       = &#34;La alarma está desactivada&#34;
 )
 </code></pre></li>
 <li>
 <p><strong>config/config.go</strong>: With the app configuration and the alkalarm endpoint config params</p>
-<pre><code>...
-    PathActivateFull        = &quot;/activate/full&quot;
-    PathActivatePartial     = &quot;/activate/partial&quot;
-    PathDeactivate          = &quot;/deactivate&quot;
-    PathStatus              = &quot;/status&quot;
-    CardTitle               = &quot;AlkAlarm Alarma Seguridad&quot; 
+<pre tabindex="0"><code>...
+    PathActivateFull        = &#34;/activate/full&#34;
+    PathActivatePartial     = &#34;/activate/partial&#34;
+    PathDeactivate          = &#34;/deactivate&#34;
+    PathStatus              = &#34;/status&#34;
+    CardTitle               = &#34;AlkAlarm Alarma Seguridad&#34; 
 ...
 </code></pre></li>
 <li>
 <p><strong>function/functions.go</strong>: Implementation of the interface with the alkalarm endpoints logic</p>
 <p>For example, with the activation, we have to do the request to alkalarm activation api, and then, create the dialog with alexa in the response:</p>
-<pre><code>func ActivateAlarmFull(request *alexa.Request, response *alexa.Response){
-    log.Println(&quot;ActiveAlarm Full triggered&quot;)
+<pre tabindex="0"><code>func ActivateAlarmFull(request *alexa.Request, response *alexa.Response){
+    log.Println(&#34;ActiveAlarm Full triggered&#34;)
 
     respNew := doRequest(http.MethodPost, cfg.URL + cfg.PathActivateFull)
 
@@ -358,17 +357,17 @@
         response.SetStandardCard(cfg.CardTitle, cfg.SpeechOnActivateFull, cfg.ImageSmall, cfg.ImageLong)
         response.SetOutputText(cfg.SpeechOnActivateFull)
     }else{
-        response.SetSimpleCard(cfg.CardTitle, &quot;ERROR DOING THE ACTIVATION ALARM&quot;)
-        response.SetOutputText(&quot;ERROR DOING THE ACTIVATION ALARM &quot;)
+        response.SetSimpleCard(cfg.CardTitle, &#34;ERROR DOING THE ACTIVATION ALARM&#34;)
+        response.SetOutputText(&#34;ERROR DOING THE ACTIVATION ALARM &#34;)
     }
 
-    log.Printf(&quot;Set Output speech, value now: %s&quot;, response.OutputSpeech.Text)
+    log.Printf(&#34;Set Output speech, value now: %s&#34;, response.OutputSpeech.Text)
 }
 </code></pre></li>
 </ul>
 <p>Obviously, we have to join all the functions into a handler router to know which intent we have to use. This is the most important phase in order to create an effective interaction with alexa:</p>
-<pre><code>func (h *AlkAlarm) OnIntent(context context.Context, request *alexa.Request, session *alexa.Session, aContext *alexa.Context, response *alexa.Response) error {
-    log.Printf(&quot;OnIntent requestId=%s, sessionId=%s, intent=%s&quot;, request.RequestID, session.SessionID, request.Intent.Name)
+<pre tabindex="0"><code>func (h *AlkAlarm) OnIntent(context context.Context, request *alexa.Request, session *alexa.Session, aContext *alexa.Context, response *alexa.Response) error {
+    log.Printf(&#34;OnIntent requestId=%s, sessionId=%s, intent=%s&#34;, request.RequestID, session.SessionID, request.Intent.Name)
 
     switch request.Intent.Name {
     case cfg.ActiveFullIntent:
@@ -380,13 +379,13 @@
     case cfg.StatusIntent:
         f.StatusAlarm(request,response)
     default:
-        return errors.New(&quot;Invalid Intent&quot;)
+        return errors.New(&#34;Invalid Intent&#34;)
     }
 
     return nil
 }
 </code></pre><p>Now, the last step is to upload the code to lambda aws service. To do that, we use an example code using the makefile. The important part of the makefile is the way to build, create the lambda file and upload to aws service:</p>
-<pre><code>ROLE_ARN=`aws iam get-role --role-name lambda_basic_execution --query 'Role.Arn' --output text`
+<pre tabindex="0"><code>ROLE_ARN=`aws iam get-role --role-name lambda_basic_execution --query &#39;Role.Arn&#39; --output text`
 
 all: build pack
 
@@ -406,7 +405,6 @@ create:
       --role $(ROLE_ARN)                                                         \
       --runtime go1.x                                                       \
       --handler handler
-
 </code></pre><h2 id="httpsgithubcomalknopfleralkalarm-alexa-skills3---create-the-skill-in-aws-alexa-development-console3---create-the-skill-in-aws-alexa-development-console"><a href="https://github.com/alknopfler/alkalarm-alexa-skills#3---create-the-skill-in-aws-alexa-development-console"></a>3 - Create the Skill in AWS Alexa development console</h2>
 <p>The first thing that you have to do is create an account in Alexa development console (it&rsquo;s totally free):</p>
 <p>After the first point, you could create a new skill: <a href="https://github.com/alknopfler/alkalarm-alexa-skills/blob/master/images/dev1.png"><img src="images/dev1.png" alt="dev1"></a></p>
@@ -490,7 +488,7 @@ create:
   <footer>
   <div>
     <p>
-      &copy; Alknopfler 2022
+      &copy; Alknopfler 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 

@@ -19,7 +19,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.84.2" />
+  <meta name="generator" content="Hugo 0.108.0">
 
   <title>GH Actions - Create step dynamically &middot; Alknopfler&#39;s Site</title>
 
@@ -28,9 +28,9 @@
   
 
 <meta itemprop="name" content="GH Actions - Create step dynamically">
-<meta itemprop="description" content="Introduction - Create steps dynamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."><meta itemprop="datePublished" content="2021-11-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-11-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="868">
+<meta itemprop="description" content="Introduction - Create steps dynamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project."><meta itemprop="datePublished" content="2021-11-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="869">
 <meta itemprop="keywords" content="github actions,pipeline,workflow,steps,dynamically," />
 
 <meta name="twitter:card" content="summary"/>
@@ -42,9 +42,8 @@
 <meta property="og:description" content="Introduction - Create steps dynamically After using &lsquo;gh actions&rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-11-28T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-11-28T00:00:00&#43;00:00" />
-
+<meta property="article:published_time" content="2021-11-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-28T00:00:00+00:00" />
 
 
 
@@ -294,65 +293,64 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
 </ul>
 <h1 id="create-steps-dynamically-based-on-a-yaml-file">Create steps dynamically based on a yaml file</h1>
 <p>Imagine we have a yaml file with a list of clusters with some information about them:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">config</span>:
-  <span style="color:#f92672">clusterimageset</span>: <span style="color:#ae81ff">openshift-v4.9.0</span>
-<span style="color:#f92672">spokes</span>:
-  - <span style="color:#f92672">spoke1-cluster</span>:
-      <span style="color:#f92672">master0</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 0&#34;</span>
-      <span style="color:#f92672">master1</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 1&#34;</span>
-      <span style="color:#f92672">master2</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 2&#34;</span>
-  - <span style="color:#f92672">spoke2-cluster</span>:
-      <span style="color:#f92672">master0</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 0&#34;</span>
-      <span style="color:#f92672">master1</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 1&#34;</span>
-      <span style="color:#f92672">master2</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 2&#34;</span>
-  - <span style="color:#f92672">spoke3-cluster</span>:
-      <span style="color:#f92672">master0</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 0&#34;</span>
-      <span style="color:#f92672">master1</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 1&#34;</span>
-      <span style="color:#f92672">master2</span>:
-        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 2&#34;</span>
-</code></pre></div><p>The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the &ldquo;matrix&rdquo; feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dynamically. I will just show the name of the cluster in the step name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">config</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">clusterimageset</span>: <span style="color:#ae81ff">openshift-v4.9.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spokes</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">spoke1-cluster</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 0&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke1 - master 2&#34;</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">spoke2-cluster</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 0&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke2 - master 2&#34;</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">spoke3-cluster</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 0&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master1</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 1&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">master2</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">data</span>: <span style="color:#e6db74">&#34;spoke3 - master 2&#34;</span>
+</span></span></code></pre></div><p>The idea is create a step for each cluster and show the name of the cluster in the step name. This is a basic example, because I want just to show how to use the &ldquo;matrix&rdquo; feature. With this information, you could extend the example to use the yaml file information to create new tasks inside the step generated dynamically. I will just show the name of the cluster in the step name.</p>
 <p>To use the matrix feature we need to create a yaml file inside the directory <code>.github/workflows</code> to create a new workflow:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">example read from file</span>
-<span style="color:#f92672">on</span>:
-  <span style="color:#f92672">push</span>:
-    <span style="color:#f92672">branches</span>:
-      - <span style="color:#ae81ff">master</span>
-
-<span style="color:#f92672">jobs</span>:
-  <span style="color:#f92672">description</span>:
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest </span>
-    <span style="color:#f92672">steps</span>:
-      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
-      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
-
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Description</span>
-        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;This is an example to generate steps dynamically based on a yaml file. For each line we will create a step in the pipeline dynamically &#34;</span>
-</code></pre></div><p>As you can see I&rsquo;m adding the first step just to show the example description. It&rsquo;s not necessary, but it&rsquo;s useful to know what we&rsquo;re gonna do in the example.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">example read from file</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">description</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Description</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">echo &#34;This is an example to generate steps dynamically based on a yaml file. For each line we will create a step in the pipeline dynamically &#34;</span>
+</span></span></code></pre></div><p>As you can see I&rsquo;m adding the first step just to show the example description. It&rsquo;s not necessary, but it&rsquo;s useful to know what we&rsquo;re gonna do in the example.</p>
 <p>The next thing is create a new job to extract the information from the yaml file and create the output to fill in the matrix with the data extracted.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">extract-yaml-data</span>:
-    <span style="color:#f92672">needs</span>:
-      - <span style="color:#ae81ff">description</span>
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-    <span style="color:#f92672">outputs</span>:
-      <span style="color:#f92672">myitems</span>: <span style="color:#ae81ff">${{ steps.images.outputs.myitems }}</span>
-    <span style="color:#f92672">steps</span>:
-      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
-      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Extract images from yaml file</span>
-        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">images</span>
-        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">          cd ${GITHUB_WORKSPACE}
-</span><span style="color:#e6db74">          echo &#34;::set-output name=myitems::$(cat ./config.yaml | yq e &#39;.spokes.[] | keys | join(&#34;,&#34;)&#39; - | jq -Rsc &#39;. / &#34;\n&#34; - [&#34;&#34;]&#39;)&#34;</span>          
-
-</code></pre></div><p>As you can see, I&rsquo;m creating three important things:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">extract-yaml-data</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">description</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">outputs</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">myitems</span>: <span style="color:#ae81ff">${{ steps.images.outputs.myitems }}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span> <span style="color:#75715e"># create a checkout (pull repository) in the runner working_dir (usually _work)</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>: <span style="color:#ae81ff">git pull origin ${GITHUB_REF##*/}</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Extract images from yaml file</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">id</span>: <span style="color:#ae81ff">images</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          cd ${GITHUB_WORKSPACE}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          echo &#34;::set-output name=myitems::$(cat ./config.yaml | yq e &#39;.spokes.[] | keys | join(&#34;,&#34;)&#39; - | jq -Rsc &#39;. / &#34;\n&#34; - [&#34;&#34;]&#39;)&#34;</span>          
+</span></span></code></pre></div><p>As you can see, I&rsquo;m creating three important things:</p>
 <ul>
 <li>
 <p>An Output named <code>myitems</code> which contains the information extracted from the id <code>data</code> with the variable name <code>myitems</code>. So we need to define an step named <code>data</code>and create a output named <code>myitems</code>to fill in the variable data.</p>
@@ -365,17 +363,17 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
 </li>
 </ul>
 <p>With this information, I&rsquo;m ready to use the matrix feature to generate the steps dynamically using this snip of code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">verify-installation</span>:
-    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">extract-yaml-images</span>
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-    <span style="color:#f92672">strategy</span>:
-      <span style="color:#f92672">matrix</span>:
-        <span style="color:#f92672">mymatrix</span>: <span style="color:#ae81ff">${{ fromJSON(needs.extract-yaml-images.outputs.myitems) }}</span>
-    <span style="color:#f92672">steps</span>:
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">${{ matrix.mymatrix }}</span>
-        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">          </span>          <span style="color:#ae81ff">echo &#34;Do something with ... ${{ matrix.mymatrix }}, for example verify the installation of each cluster&#34;     </span>
-</code></pre></div><p>In this job I&rsquo;m going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be read using <code>mymatrix</code> and reading the information from the step <code>data</code> using the previous job <code>extract-yaml-data</code>. In this case, the output we want to use is <code>myitems</code> that contains the information extracted from the yaml file as I described before.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">verify-installation</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">extract-yaml-images</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">strategy</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">matrix</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">mymatrix</span>: <span style="color:#ae81ff">${{ fromJSON(needs.extract-yaml-images.outputs.myitems) }}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">${{ matrix.mymatrix }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          </span>          <span style="color:#ae81ff">echo &#34;Do something with ... ${{ matrix.mymatrix }}, for example verify the installation of each cluster&#34;     </span>
+</span></span></code></pre></div><p>In this job I&rsquo;m going to verify the installation of the cluster (simulating the verification because we just have an echo command), creating several steps. The number of steps created will be read using <code>mymatrix</code> and reading the information from the step <code>data</code> using the previous job <code>extract-yaml-data</code>. In this case, the output we want to use is <code>myitems</code> that contains the information extracted from the yaml file as I described before.</p>
 <p>The result of this job will be a workflow with 3 steps generated dynamically for each cluster name:</p>
 <p><img src="images/step-dinamically-yaml.gif" alt="step-dynamically-yaml"></p>
 <h1 id="references">References:</h1>
@@ -448,7 +446,7 @@ Moreover, if you don&rsquo;t know the number of steps you need, you can use the 
   <footer>
   <div>
     <p>
-      &copy; Alknopfler 2022
+      &copy; Alknopfler 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 

@@ -19,7 +19,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.84.2" />
+  <meta name="generator" content="Hugo 0.108.0">
 
   <title>Improve the Libvirt Performance &middot; Alknopfler&#39;s Site</title>
 
@@ -28,9 +28,9 @@
   
 
 <meta itemprop="name" content="Improve the Libvirt Performance">
-<meta itemprop="description" content="The Problem: When you&rsquo;re having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance."><meta itemprop="datePublished" content="2021-08-18T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-08-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="132">
+<meta itemprop="description" content="The Problem: When you&rsquo;re having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance."><meta itemprop="datePublished" content="2021-08-18T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-08-18T00:00:00+00:00" />
+<meta itemprop="wordCount" content="134">
 <meta itemprop="keywords" content="libvirt,performance,faster,improvement," />
 
 <meta name="twitter:card" content="summary"/>
@@ -42,9 +42,8 @@
 <meta property="og:description" content="The Problem: When you&rsquo;re having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/improve-libvirt-performance/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-08-18T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-08-18T00:00:00&#43;00:00" />
-
+<meta property="article:published_time" content="2021-08-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-18T00:00:00+00:00" />
 
 
 
@@ -280,20 +279,20 @@ The idea is use an specific configuration to improve the performance.
 This configuration is the creation of a new volume mounted in the /var/lib/libvirt/images directory.</p>
 <p>It&rsquo;s possible to use the same root volume for all the images, but it&rsquo;s not recommended due to a performance issues.</p>
 <h2 id="the-solution">The Solution:</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dev<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nvme0n1&#34;</span>  <span style="color:#75715e"># The device to use</span>
-vg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vg1&#34;</span>      
-lv<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lv1&#34;</span>
-mountpoint<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/lib/libvirt/images&#34;</span> 
-
-pvcreate /dev/$dev                 <span style="color:#75715e"># Create the physical volume</span>
-vgcreate $vg /dev/<span style="color:#66d9ef">$(</span>basename $dev<span style="color:#66d9ef">)</span> <span style="color:#75715e"># Create the volume group</span>
-lvcreate -l 100%FREE -n $lv $vg    <span style="color:#75715e"># 100% of the free space</span>
-mkfs.xfs /dev/$vg/$lv              <span style="color:#75715e"># Create the filesystem</span>
-
-
-echo <span style="color:#e6db74">&#34;/dev/</span>$vg<span style="color:#e6db74">/</span>$lv<span style="color:#e6db74"> </span>$mountpoint<span style="color:#e6db74">                    xfs    defaults        0 0&#34;</span> &gt;&gt; /etc/fstab
-mount -a
-</code></pre></div><p>With this improvement, the performance will be improved.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dev<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nvme0n1&#34;</span>  <span style="color:#75715e"># The device to use</span>
+</span></span><span style="display:flex;"><span>vg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vg1&#34;</span>      
+</span></span><span style="display:flex;"><span>lv<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lv1&#34;</span>
+</span></span><span style="display:flex;"><span>mountpoint<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/var/lib/libvirt/images&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pvcreate /dev/$dev                 <span style="color:#75715e"># Create the physical volume</span>
+</span></span><span style="display:flex;"><span>vgcreate $vg /dev/<span style="color:#66d9ef">$(</span>basename $dev<span style="color:#66d9ef">)</span> <span style="color:#75715e"># Create the volume group</span>
+</span></span><span style="display:flex;"><span>lvcreate -l 100%FREE -n $lv $vg    <span style="color:#75715e"># 100% of the free space</span>
+</span></span><span style="display:flex;"><span>mkfs.xfs /dev/$vg/$lv              <span style="color:#75715e"># Create the filesystem</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;/dev/</span>$vg<span style="color:#e6db74">/</span>$lv<span style="color:#e6db74"> </span>$mountpoint<span style="color:#e6db74">                    xfs    defaults        0 0&#34;</span> &gt;&gt; /etc/fstab
+</span></span><span style="display:flex;"><span>mount -a
+</span></span></code></pre></div><p>With this improvement, the performance will be improved.</p>
 <h3 id="referecence">Referecence</h3>
 <p>Thanks to <a href="https://github.com/karmab">Karim</a> to share with me!!!</p>
 
@@ -362,7 +361,7 @@ mount -a
   <footer>
   <div>
     <p>
-      &copy; Alknopfler 2022
+      &copy; Alknopfler 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 

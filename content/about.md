@@ -14,11 +14,13 @@ I’m always looking for new challenges in order to improve my skills everyday!!
 - Github: https://github.com/alknopfler
 - Linkedin: https://www.linkedin.com/in/albertomorgante/
 - E-mail: alknopfler@gmail.com
-- Resume: [Resume CV online](https://github.com/alknopfler/alknopfler/blob/0bd3ffcc77d114246106a979f4e29bdf318b2e05/resume.md)
+- Resume: [Resume CV online](https://github.com/alknopfler/alknopfler/blob/master/resume.md)
 
 ### Experience: 
 
-I’m currently working at Red Hat as a Principal Software Engineer. Previously, I worked at Orange, defining the whole architecture as well as developing End2End solutions using event based architectures with Kafka. Moreover, the challenges for the project define the way to keep the operation and management fully automated in order to integrate new third parties to get the full End2End solution much more elastic and scalable than the Telco market has right now.
+I’m currently working at Red Hat as a Principal Software Engineer involved in several projects doing integrations for AI, ACM and OCP.
+
+Previously, I worked at Orange, defining the whole architecture as well as developing End2End solutions using event based architectures with Kafka. Moreover, the challenges for the project define the way to keep the operation and management fully automated in order to integrate new third parties to get the full End2End solution much more elastic and scalable than the Telco market has right now.
 
 Before that, I worked at BBVA Bank as a Cloud Architect Lead in the Global Platform Area. I’m developing Cloud Services on top of the Global Platform, leading the SWAT technical team in order to develop as fast as posible the Technical services which are cross to the Global Platform.
 Before that, I worked as a Cloud Computing & Innovation Engineer at BBVA. I was involved in the deployment of a private cloud based on Openstack and SDN Nuage.

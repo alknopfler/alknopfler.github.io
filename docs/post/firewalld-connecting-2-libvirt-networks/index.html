@@ -19,7 +19,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.84.2" />
+  <meta name="generator" content="Hugo 0.108.0">
 
   <title>Firewalld connecting 2 libvirt network &middot; Alknopfler&#39;s Site</title>
 
@@ -28,8 +28,8 @@
   
 
 <meta itemprop="name" content="Firewalld connecting 2 libvirt network">
-<meta itemprop="description" content="Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&rsquo;re gonna deploy vm and you need to install some software from internet."><meta itemprop="datePublished" content="2021-10-04T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-10-04T00:00:00&#43;00:00" />
+<meta itemprop="description" content="Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&rsquo;re gonna deploy vm and you need to install some software from internet."><meta itemprop="datePublished" content="2021-10-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-04T00:00:00+00:00" />
 <meta itemprop="wordCount" content="325">
 <meta itemprop="keywords" content="firewalld,connection,libvirtd,networking," />
 
@@ -42,9 +42,8 @@
 <meta property="og:description" content="Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&rsquo;re gonna deploy vm and you need to install some software from internet." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-10-04T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-10-04T00:00:00&#43;00:00" />
-
+<meta property="article:published_time" content="2021-10-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-04T00:00:00+00:00" />
 
 
 
@@ -283,29 +282,29 @@ Also, you&rsquo;re gonna deploy vm and you need to install some software from in
 </ul>
 <h1 id="scenario">Scenario</h1>
 <p>Two networks are created:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ kcli list network
-Listing Networks...
-+----------+--------+------------------+------+----------+------+
-| Network  |  Type  |       Cidr       | Dhcp |  Domain  | Mode |
-+----------+--------+------------------+------+----------+------+
-| bare-net | routed | 192.168.150.0/24 | True | bare-net | nat  |
-| default  | routed | 192.168.122.0/24 | True | default  | nat  |
-+----------+--------+------------------+------+----------+------+
-</code></pre></div><p>By default if you have firewalld active, the libvirtd rules will be active so you cannot connect both networks but the vm in each network will be able to connect to internet. So we have isolated networks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ kcli list network
+</span></span><span style="display:flex;"><span>Listing Networks...
+</span></span><span style="display:flex;"><span>+----------+--------+------------------+------+----------+------+
+</span></span><span style="display:flex;"><span>| Network  |  Type  |       Cidr       | Dhcp |  Domain  | Mode |
+</span></span><span style="display:flex;"><span>+----------+--------+------------------+------+----------+------+
+</span></span><span style="display:flex;"><span>| bare-net | routed | 192.168.150.0/24 | True | bare-net | nat  |
+</span></span><span style="display:flex;"><span>| default  | routed | 192.168.122.0/24 | True | default  | nat  |
+</span></span><span style="display:flex;"><span>+----------+--------+------------------+------+----------+------+
+</span></span></code></pre></div><p>By default if you have firewalld active, the libvirtd rules will be active so you cannot connect both networks but the vm in each network will be able to connect to internet. So we have isolated networks.</p>
 <ul>
 <li>First try is stop firewalld:
-<pre><code>systemctl stop firewalld
+<pre tabindex="0"><code>systemctl stop firewalld
 </code></pre></li>
 </ul>
 <p>The problem now is that we have access to internet:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>centos@test-ci-installer ~<span style="color:#f92672">]</span>$ ping www.google.es
-PING www.google.es <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of images.
-<span style="color:#ae81ff">64</span> bytes from bh-in-f94.1e100.net <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">51</span> time<span style="color:#f92672">=</span>29.7 ms
-<span style="color:#ae81ff">64</span> bytes from bh-in-f94.1e100.net <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">51</span> time<span style="color:#f92672">=</span>29.8 ms
-</code></pre></div><p>But unfourtunately, the firewall is blocking the connection between network, so I cannot reach the other VM in the other network.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>centos@test-ci-installer ~<span style="color:#f92672">]</span>$ ping www.google.es
+</span></span><span style="display:flex;"><span>PING www.google.es <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span> 56<span style="color:#f92672">(</span>84<span style="color:#f92672">)</span> bytes of images.
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> bytes from bh-in-f94.1e100.net <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">51</span> time<span style="color:#f92672">=</span>29.7 ms
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">64</span> bytes from bh-in-f94.1e100.net <span style="color:#f92672">(</span>172.253.122.94<span style="color:#f92672">)</span>: icmp_seq<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> ttl<span style="color:#f92672">=</span><span style="color:#ae81ff">51</span> time<span style="color:#f92672">=</span>29.8 ms
+</span></span></code></pre></div><p>But unfourtunately, the firewall is blocking the connection between network, so I cannot reach the other VM in the other network.</p>
 <h1 id="solution">Solution</h1>
 <p>We need to configure the firewall to allow a pass-thorugh connection between their input and output brigdes. With that configuration, firewalld will allow a passthrough connection between libvirtd to have connectivity i/o in this interfaces, so the real thing is that we could connect to internet as well as the other networks:</p>
-<pre><code>firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -i virbr0 -j ACCEPT
+<pre tabindex="0"><code>firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -i virbr0 -j ACCEPT
 firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -o virbr0 -j ACCEPT
 firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -i br0 -j ACCEPT
 firewall-cmd --permanent --direct --passthrough ipv4 -I FORWARD -o br0 -j ACCEPT
@@ -382,7 +381,7 @@ systemctl restart firewalld
   <footer>
   <div>
     <p>
-      &copy; Alknopfler 2022
+      &copy; Alknopfler 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 

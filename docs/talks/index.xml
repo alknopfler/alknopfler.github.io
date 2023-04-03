@@ -6,7 +6,27 @@
     <description>Recent content in Talks on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM Operator to integrate latency checks</title>
+      <link>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</guid>
+      <description>ACM Operator to integrate latency checks
+Repo: Repo github</description>
+    </item>
+    
+    <item>
+      <title>Debugging K8S operators with Delve</title>
+      <link>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</link>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</guid>
+      <description>Debugging K8S Operators with Delve
+Repo: Repo github</description>
+    </item>
+    
     <item>
       <title>UPM - Microservice Conference 2021</title>
       <link>https://alknopfler.github.io/talks/upm/microservice-conference/</link>

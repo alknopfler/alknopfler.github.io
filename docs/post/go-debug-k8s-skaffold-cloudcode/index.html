@@ -19,7 +19,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.84.2" />
+  <meta name="generator" content="Hugo 0.108.0">
 
   <title>Debug k8s applications on the fly &middot; Alknopfler&#39;s Site</title>
 
@@ -28,9 +28,9 @@
   
 
 <meta itemprop="name" content="Debug k8s applications on the fly">
-<meta itemprop="description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work."><meta itemprop="datePublished" content="2021-10-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-10-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2496">
+<meta itemprop="description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work."><meta itemprop="datePublished" content="2021-10-08T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-10-08T00:00:00+00:00" />
+<meta itemprop="wordCount" content="2512">
 <meta itemprop="keywords" content="debug,golang,kubernetes,skaffold," />
 
 <meta name="twitter:card" content="summary"/>
@@ -42,9 +42,8 @@
 <meta property="og:description" content="Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-10-08T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-10-08T00:00:00&#43;00:00" />
-
+<meta property="article:published_time" content="2021-10-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-08T00:00:00+00:00" />
 
 
 
@@ -341,17 +340,17 @@ Take care of the plugins you install in the remote server, because are different
 <p><strong>Description</strong>
 Delve (dlv) is the debugger for the Go programming language. The goal of the project is to provide a simple, full featured debugging tool for Go. Delve should be easy to invoke and easy to use. Chances are if you&rsquo;re using a debugger, things aren&rsquo;t going your way. With that in mind, Delve should stay out of your way as much as possible.</p>
 <p>The idea is install it on your remote server and keep it running to debug from your local using the vscode editor and the remote - ssh plugin). So basically, from your laptop using vscode with the remote plugin installed, you could run the debugger on the remote server and debug the application running on the remote server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ git clone https://github.com/go-delve/delve
-$ cd delve
-$ go install github.com/go-delve/delve/cmd/dlv
-</code></pre></div><p><strong>Link</strong>: <a href="https://github.com/go-delve/delve/tree/master/Documentation/installation">delve</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone https://github.com/go-delve/delve
+</span></span><span style="display:flex;"><span>$ cd delve
+</span></span><span style="display:flex;"><span>$ go install github.com/go-delve/delve/cmd/dlv
+</span></span></code></pre></div><p><strong>Link</strong>: <a href="https://github.com/go-delve/delve/tree/master/Documentation/installation">delve</a></p>
 <h1 id="configuration">Configuration</h1>
 <p>In this section I&rsquo;m gonna create an example end-to-end to explain step by step the process. First, I will show you the repository and the configurations we have to do in order to debug the k8s application on the fly.</p>
 <h2 id="repository">Repository</h2>
 <p>To explain the process, I&rsquo;m gonna use the next repository:
 <a href="https://github.com/alknopfler/go-remote-debug-delve.git">https://github.com/alknopfler/go-remote-debug-delve.git</a></p>
 <p>The content of this repository is the following:</p>
-<pre><code>alknopfler:alkmini : ~/projects/src/github.com/alknopfler/go-remote-debug-delve {master} 
+<pre tabindex="0"><code>alknopfler:alkmini : ~/projects/src/github.com/alknopfler/go-remote-debug-delve {master} 
 $ tree .
 .
 |-- .vscode
@@ -367,7 +366,6 @@ $ tree .
 ├── Makefile
 ├── README.md
 └── skaffold.yaml
-
 </code></pre><p>As you can see, the repository is structured as follows:</p>
 <ul>
 <li>Docker folder: with the Dockerfile to generate the image which will be push to quay.io registry</li>
@@ -387,44 +385,44 @@ $ tree .
 <ul>
 <li><strong>Attach to kubernetes Pod (Go)</strong>: Used to attach to a running pod in the kubernetes cluster in order to debug it. You could set breakpoint in code and using it, if the image has been built with Dlv (debugger) installed, you could debug the application attaching to this port.</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{
-            <span style="color:#f92672">&#34;name&#34;: </span><span style="color:#e6db74">&#34;Attach to Kubernetes Pod (Go)&#34;</span>,
-            <span style="color:#f92672">&#34;type&#34;: </span><span style="color:#e6db74">&#34;cloudcode.kubernetes&#34;</span>,
-            <span style="color:#f92672">&#34;request&#34;: </span><span style="color:#e6db74">&#34;attach&#34;</span>,
-            <span style="color:#f92672">&#34;language&#34;: </span><span style="color:#e6db74">&#34;Go&#34;</span>,
-            <span style="color:#f92672">&#34;debugPort&#34;: </span><span style="color:#ae81ff">40000</span>,
-            <span style="color:#f92672">&#34;podSelector&#34;: </span>{
-                <span style="color:#f92672">&#34;app&#34;: </span><span style="color:#e6db74">&#34;server-debug&#34;</span>
-            },
-            <span style="color:#f92672">&#34;localRoot&#34;: </span><span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
-            <span style="color:#f92672">&#34;remotePath&#34;: </span><span style="color:#e6db74">&#34;&#34;</span>,
-            <span style="color:#f92672">&#34;remoteRoot&#34;: </span><span style="color:#e6db74">&#34;/&#34;</span>
-}
-</code></pre></div><p>As you can see, with the pod selector, and the port, we could attach to the pod in the kubernetes cluster. If you want to debug, you need to ensure that the remotePath and remoteRoot are well configured. If you make a mistake here, you could attach to the pod but not debug it, because the breakpoint will be &ldquo;unverified&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;: </span><span style="color:#e6db74">&#34;Attach to Kubernetes Pod (Go)&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;: </span><span style="color:#e6db74">&#34;cloudcode.kubernetes&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;request&#34;: </span><span style="color:#e6db74">&#34;attach&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;language&#34;: </span><span style="color:#e6db74">&#34;Go&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;debugPort&#34;: </span><span style="color:#ae81ff">40000</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;podSelector&#34;: </span>{
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;app&#34;: </span><span style="color:#e6db74">&#34;server-debug&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;localRoot&#34;: </span><span style="color:#e6db74">&#34;${workspaceFolder}&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;remotePath&#34;: </span><span style="color:#e6db74">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;remoteRoot&#34;: </span><span style="color:#e6db74">&#34;/&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see, with the pod selector, and the port, we could attach to the pod in the kubernetes cluster. If you want to debug, you need to ensure that the remotePath and remoteRoot are well configured. If you make a mistake here, you could attach to the pod but not debug it, because the breakpoint will be &ldquo;unverified&rdquo;.</p>
 <ul>
 <li><strong>Kubernetes: Run/Debug Go</strong>:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">{
-            <span style="color:#f92672">&#34;name&#34;: </span><span style="color:#e6db74">&#34;Kubernetes: Run/Debug&#34;</span>,
-            <span style="color:#f92672">&#34;type&#34;: </span><span style="color:#e6db74">&#34;cloudcode.kubernetes&#34;</span>,
-            <span style="color:#f92672">&#34;request&#34;: </span><span style="color:#e6db74">&#34;launch&#34;</span>,
-            <span style="color:#f92672">&#34;autoStop&#34;: </span><span style="color:#66d9ef">false</span>,
-            <span style="color:#f92672">&#34;skaffoldConfig&#34;: </span><span style="color:#e6db74">&#34;${workspaceFolder}/skaffold.yaml&#34;</span>,
-            <span style="color:#f92672">&#34;watch&#34;: </span><span style="color:#66d9ef">true</span>,
-            <span style="color:#f92672">&#34;cleanUp&#34;: </span><span style="color:#66d9ef">true</span>,
-            <span style="color:#f92672">&#34;portForward&#34;: </span><span style="color:#66d9ef">true</span>,
-            <span style="color:#f92672">&#34;imageRegistry&#34;: </span><span style="color:#e6db74">&#34;quay.io&#34;</span>,
-            <span style="color:#f92672">&#34;debug&#34;: </span>[
-                {
-                    <span style="color:#f92672">&#34;image&#34;: </span><span style="color:#e6db74">&#34;quay.io/amorgant/server-debug&#34;</span>,
-                    <span style="color:#f92672">&#34;containerName&#34;: </span><span style="color:#e6db74">&#34;server-debug&#34;</span>,
-                    <span style="color:#f92672">&#34;sourceFileMap&#34;: </span>{
-                        <span style="color:#f92672">&#34;${workspaceFolder}&#34;: </span><span style="color:#e6db74">&#34;&#34;</span>
-                    }
-                }
-            ]
-        },
-</code></pre></div><p>There are some points important to be explained here:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;name&#34;: </span><span style="color:#e6db74">&#34;Kubernetes: Run/Debug&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;type&#34;: </span><span style="color:#e6db74">&#34;cloudcode.kubernetes&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;request&#34;: </span><span style="color:#e6db74">&#34;launch&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;autoStop&#34;: </span><span style="color:#66d9ef">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;skaffoldConfig&#34;: </span><span style="color:#e6db74">&#34;${workspaceFolder}/skaffold.yaml&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;watch&#34;: </span><span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;cleanUp&#34;: </span><span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;portForward&#34;: </span><span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;imageRegistry&#34;: </span><span style="color:#e6db74">&#34;quay.io&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;debug&#34;: </span>[
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;image&#34;: </span><span style="color:#e6db74">&#34;quay.io/amorgant/server-debug&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;containerName&#34;: </span><span style="color:#e6db74">&#34;server-debug&#34;</span>,
+</span></span><span style="display:flex;"><span>                    <span style="color:#f92672">&#34;sourceFileMap&#34;: </span>{
+</span></span><span style="display:flex;"><span>                        <span style="color:#f92672">&#34;${workspaceFolder}&#34;: </span><span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>                    }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        },
+</span></span></code></pre></div><p>There are some points important to be explained here:</p>
 <ul>
 <li><strong>autoStop</strong>: if you set this to true, the debug session will be automatically stopped when the application is stopped.</li>
 <li><strong>SkaffoldConfig</strong>: this is the configuration file to build, deploy and debug the application we will see in the next section</li>
@@ -441,88 +439,88 @@ The combination of both option is the magic to debug on the fly k8s applications
 <p>Just as a reference you could see the pipeline steps you could use with skaffold:</p>
 <p><img src="images/workflow.png" alt="workflow"></p>
 <p>I&rsquo;m gonna show you the configuration file we&rsquo;re going to use in this example, and then, I will show you some other interesting options to keep in mind if you need something else for your environment:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">skaffold/v2beta19</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
-<span style="color:#f92672">build</span>:
-  <span style="color:#f92672">artifacts</span>:
-  - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/amorgant/server-debug</span>
-    <span style="color:#f92672">buildpacks</span>:
-      <span style="color:#f92672">builder</span>: <span style="color:#ae81ff">gcr.io/buildpacks/builder:v1</span>
-    <span style="color:#f92672">context</span>: <span style="color:#ae81ff">.</span>
-    <span style="color:#f92672">sync</span>: 
-      <span style="color:#f92672">auto</span>: <span style="color:#66d9ef">true</span> 
-  <span style="color:#f92672">local</span>:
-    <span style="color:#f92672">push</span>: <span style="color:#66d9ef">true</span>
-<span style="color:#f92672">deploy</span>:
-  <span style="color:#f92672">kubectl</span>:
-    <span style="color:#f92672">manifests</span>:
-    - <span style="color:#ae81ff">k8s/deployment.yml</span>
-</code></pre></div><p>Let&rsquo;s get into the manifest in order to discover the options we are going to use:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">skaffold/v2beta19</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Config</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">artifacts</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/amorgant/server-debug</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">buildpacks</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">builder</span>: <span style="color:#ae81ff">gcr.io/buildpacks/builder:v1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">context</span>: <span style="color:#ae81ff">.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">sync</span>: 
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">auto</span>: <span style="color:#66d9ef">true</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">local</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">push</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">kubectl</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">manifests</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">k8s/deployment.yml</span>
+</span></span></code></pre></div><p>Let&rsquo;s get into the manifest in order to discover the options we are going to use:
 In our case from the reference pipeline, we are going to use 2 steps:</p>
 <ul>
 <li><strong>Build</strong>: This is the step to build the image. Skaffold supports as <a href="https://skaffold.dev/docs/pipeline-stages/builders/">builders</a> -&gt; Dockerfile, Maven, Buildpacks, and custom scripts.</li>
 </ul>
 <p>In our case, we&rsquo;re going to use buildpacks which detects automatically your Dockerfile to build it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">buildpacks</span>:  
-      <span style="color:#f92672">builder</span>: <span style="color:#ae81ff">gcr.io/buildpacks/builder:v1</span>
-</code></pre></div><p>But, for a complex project where build step has a very complex Makefile you could use something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">buildpacks</span>:
- <span style="color:#f92672">custom</span>:
-      <span style="color:#f92672">buildCommand</span>: |<span style="color:#e6db74">
-</span><span style="color:#e6db74">        sudo -S skipper make update-debug-minimal
-</span><span style="color:#e6db74">        docker tag quay.io/ocpmetal/assisted-service:latest quay.io/amorgant/assisted-service:latest
-</span><span style="color:#e6db74">        docker push quay.io/amorgant/assisted-service:latest
-</span><span style="color:#e6db74">        sudo -S skipper make deploy-all</span>        
-</code></pre></div><p>Also, you could use Dockerfile as builder to build using your Dockerfile spec like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">  <span style="color:#f92672">docker</span>:
-    <span style="color:#f92672">dockerfile</span>: <span style="color:#ae81ff">deploy/Dockerfile</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>    <span style="color:#f92672">buildpacks</span>:  
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">builder</span>: <span style="color:#ae81ff">gcr.io/buildpacks/builder:v1</span>
+</span></span></code></pre></div><p>But, for a complex project where build step has a very complex Makefile you could use something like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">buildpacks</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">custom</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">buildCommand</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        sudo -S skipper make update-debug-minimal
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        docker tag quay.io/ocpmetal/assisted-service:latest quay.io/amorgant/assisted-service:latest
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        docker push quay.io/amorgant/assisted-service:latest
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        sudo -S skipper make deploy-all</span>        
+</span></span></code></pre></div><p>Also, you could use Dockerfile as builder to build using your Dockerfile spec like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  <span style="color:#f92672">docker</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">dockerfile</span>: <span style="color:#ae81ff">deploy/Dockerfile</span>
+</span></span></code></pre></div><ul>
 <li><strong>Deploy</strong>: This is the step to deploy the image to the kubernetes cluster. Skaffold supports as <a href="https://skaffold.dev/docs/pipeline-stages/deployers/">deployers</a> -&gt; Kubernetes, Helm, Kustomize and docker.</li>
 </ul>
 <h2 id="dockerfile-configuration-to-debug">Dockerfile configuration to debug</h2>
 <p>To debug I need to build the image using dlv in order to install it and use it to run the application through dlv command entreypoint:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.16 AS build</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go get -ldflags <span style="color:#e6db74">&#34;-s -w -extldflags &#39;-static&#39;&#34;</span> github.com/go-delve/delve/cmd/dlv<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -gcflags <span style="color:#e6db74">&#34;all=-N -l&#34;</span> -o ./app<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> alpine</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build /go/bin/dlv dlv<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build /app app<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [ <span style="color:#e6db74">&#34;/dlv&#34;</span> , <span style="color:#e6db74">&#34;--listen=:40000&#34;</span>, <span style="color:#e6db74">&#34;--headless=true&#34;</span>, <span style="color:#e6db74">&#34;--api-version=2&#34;</span>, <span style="color:#e6db74">&#34;--accept-multiclient&#34;</span>, <span style="color:#e6db74">&#34;exec&#34;</span>, <span style="color:#e6db74">&#34;/app&#34;</span>]<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>As you can see the entrypoint launch the application using dlv command in oder to be debugged in the remote server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> golang:1.16 AS build</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go get -ldflags <span style="color:#e6db74">&#34;-s -w -extldflags &#39;-static&#39;&#34;</span> github.com/go-delve/delve/cmd/dlv<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> CGO_ENABLED<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> go build -gcflags <span style="color:#e6db74">&#34;all=-N -l&#34;</span> -o ./app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> alpine</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build /go/bin/dlv dlv<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> --from<span style="color:#f92672">=</span>build /app app<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [ <span style="color:#e6db74">&#34;/dlv&#34;</span> , <span style="color:#e6db74">&#34;--listen=:40000&#34;</span>, <span style="color:#e6db74">&#34;--headless=true&#34;</span>, <span style="color:#e6db74">&#34;--api-version=2&#34;</span>, <span style="color:#e6db74">&#34;--accept-multiclient&#34;</span>, <span style="color:#e6db74">&#34;exec&#34;</span>, <span style="color:#e6db74">&#34;/app&#34;</span>]<span style="color:#f92672">]</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><p>As you can see the entrypoint launch the application using dlv command in oder to be debugged in the remote server.</p>
 <h2 id="k8s-deployment">k8s deployment</h2>
 <p>This is a basic deployment for the k8s application. It&rsquo;s just a simple deployment with a single container using the image we&rsquo;ve just built:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
-<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
-<span style="color:#f92672">metadata</span>:
-  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">server-debug</span>
-<span style="color:#f92672">spec</span>:
-  <span style="color:#f92672">selector</span>:
-    <span style="color:#f92672">matchLabels</span>:
-      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">server-debug</span>
-  <span style="color:#f92672">template</span>:
-    <span style="color:#f92672">metadata</span>:
-      <span style="color:#f92672">labels</span>:
-        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">server-debug</span>
-    <span style="color:#f92672">spec</span>:
-      <span style="color:#f92672">containers</span>:
-      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">server-debug</span>
-        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/amorgant/server-debug</span>
-        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
-        <span style="color:#f92672">resources</span>:
-          <span style="color:#f92672">requests</span>:
-            <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;128Mi&#34;</span>
-            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#34;100m&#34;</span>
-          <span style="color:#f92672">limits</span>:
-            <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;256Mi&#34;</span>
-            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#34;500m&#34;</span>
-        <span style="color:#f92672">ports</span>:
-        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">8080</span>
-</code></pre></div><h1 id="demo-on-the-fly">Demo on the fly</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">apps/v1</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Deployment</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">server-debug</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">selector</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">matchLabels</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">app</span>: <span style="color:#ae81ff">server-debug</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">template</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">metadata</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">labels</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">app</span>: <span style="color:#ae81ff">server-debug</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">spec</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">containers</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">server-debug</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">image</span>: <span style="color:#ae81ff">quay.io/amorgant/server-debug</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">imagePullPolicy</span>: <span style="color:#ae81ff">Always</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">resources</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">requests</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;128Mi&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#34;100m&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">limits</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">memory</span>: <span style="color:#e6db74">&#34;256Mi&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">cpu</span>: <span style="color:#e6db74">&#34;500m&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>        - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">8080</span>
+</span></span></code></pre></div><h1 id="demo-on-the-fly">Demo on the fly</h1>
 <p>Once we have all the configuration ready, the next thing is go to the plugin cloud code and follow the next steps:</p>
 <ul>
 <li>Verify the cluster is ready and you can get access to its resources from vscode and cloud code plugin:</li>
@@ -545,7 +543,7 @@ In our case from the reference pipeline, we are going to use 2 steps:</p>
 <li>cloud code: There is a <a href="https://github.com/GoogleCloudPlatform/cloud-code-vscode/issues/486">bug</a> in the latest version so you need to install previous one: <strong>Version 1.14.1 (Sept 2021)</strong></li>
 <li>To make it work, you need copy the project inside the Dockerfile because the debugger needs the stack to know which is the trace to debug it. you could use:</li>
 </ul>
-<pre><code>WORKDIR /
+<pre tabindex="0"><code>WORKDIR /
 COPY . .
 </code></pre><h1 id="references">References</h1>
 <h2 id="links">Links</h2>
@@ -625,7 +623,7 @@ COPY . .
   <footer>
   <div>
     <p>
-      &copy; Alknopfler 2022
+      &copy; Alknopfler 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 

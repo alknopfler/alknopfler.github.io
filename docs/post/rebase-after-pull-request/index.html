@@ -19,7 +19,7 @@
 
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.84.2" />
+  <meta name="generator" content="Hugo 0.108.0">
 
   <title>Rebase after Pull Request &middot; Alknopfler&#39;s Site</title>
 
@@ -28,8 +28,8 @@
   
 
 <meta itemprop="name" content="Rebase after Pull Request">
-<meta itemprop="description" content="Situation When you&rsquo;re working in your fork to make contributions to a open source project, you will usually have upstream and origin trying to represent the upstream (main project) and your origin (fork):"><meta itemprop="datePublished" content="2021-08-30T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-08-30T00:00:00&#43;00:00" />
+<meta itemprop="description" content="Situation When you&rsquo;re working in your fork to make contributions to a open source project, you will usually have upstream and origin trying to represent the upstream (main project) and your origin (fork):"><meta itemprop="datePublished" content="2021-08-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-08-30T00:00:00+00:00" />
 <meta itemprop="wordCount" content="272">
 <meta itemprop="keywords" content="rebase,pull request,development,git," />
 
@@ -42,9 +42,8 @@
 <meta property="og:description" content="Situation When you&rsquo;re working in your fork to make contributions to a open source project, you will usually have upstream and origin trying to represent the upstream (main project) and your origin (fork):" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alknopfler.github.io/post/rebase-after-pull-request/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-08-30T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-08-30T00:00:00&#43;00:00" />
-
+<meta property="article:published_time" content="2021-08-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-30T00:00:00+00:00" />
 
 
 
@@ -278,7 +277,7 @@
 <p><strong>upstream</strong>: github.com/openshift/xx-project-xx</p>
 <p><strong>origin</strong>: github.com/alknopfler/xx-project-xx</p>
 <p>In your fork you&rsquo;re working with a branch to develop a new feature that you want to contribute after to the upstream project:</p>
-<pre><code>git branch 
+<pre tabindex="0"><code>git branch 
 
 *my_branch
 main
@@ -306,9 +305,9 @@ Usually you could follow the git instructions which in my opinion are quite usef
 <ul>
 <li>After conflicts solved you need to commit the changes and push &ldquo;forcing&rdquo; the changes to origin and your current branch. Automatically, the PR will be updated with the changes once done the rebase to get new changes updated.</li>
 </ul>
-<pre><code>git rebase --continue
+<pre tabindex="0"><code>git rebase --continue
 </code></pre><p>When you finish to solve the conflicts:</p>
-<pre><code>git push -f origin my_branch
+<pre tabindex="0"><code>git push -f origin my_branch
 </code></pre>
   </div>
 
@@ -371,7 +370,7 @@ Usually you could follow the git instructions which in my opinion are quite usef
   <footer>
   <div>
     <p>
-      &copy; Alknopfler 2022
+      &copy; Alknopfler 2023
 
       &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
 

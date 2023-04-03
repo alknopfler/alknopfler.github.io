@@ -14,7 +14,7 @@
       
       <guid>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
- AES-128, AES-192, or AES-256.</description>
+AES-128, AES-192, or AES-256.</description>
     </item>
     
   </channel>
