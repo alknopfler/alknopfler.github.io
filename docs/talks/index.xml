@@ -13,7 +13,7 @@
       <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</guid>
-      <description>ACM Operator to integrate latency checks
+      <description>Publication: https://medium.com/open-5g-hypercore/episode-xi-latency-driven-service-orchestration-183f41e6d879
 Repo: Repo github</description>
     </item>
     
@@ -23,7 +23,7 @@ Repo: Repo github</description>
       <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</guid>
-      <description>Debugging K8S Operators with Delve
+      <description>Publication: https://developers.redhat.com/articles/2021/12/13/remote-debugging-kubernetes-using-vs-code#
 Repo: Repo github</description>
     </item>
     
