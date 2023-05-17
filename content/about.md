@@ -14,9 +14,9 @@ I’m always looking for new challenges in order to improve my skills everyday!!
 - Github: https://github.com/alknopfler
 - Linkedin: https://www.linkedin.com/in/albertomorgante/
 - E-mail: alknopfler@gmail.com
-- Resume: [Resume CV online](https://github.com/alknopfler/alknopfler/blob/master/resume.md)
+- Resume: [Resume CV online](https://alknopfler.github.io/resume/)
 
-### Experience: 
+### Experiences Summary: 
 
 - `Senior Telco Edge software Engineer at Suse` involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on Suse Edge stack.
 
