@@ -6,7 +6,16 @@
     <description>Recent content on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5G - Intel Flexran on Suse ATIP</title>
+      <link>https://alknopfler.github.io/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</link>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</guid>
+      <description>Publication: 5G - Intel Flexran on Suse ATIP</description>
+    </item>
+    
     <item>
       <title>ACM Operator to integrate latency checks</title>
       <link>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</link>
