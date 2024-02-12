@@ -42,6 +42,7 @@ author = "Alknopfler"
 - I'm working as a Senior Telco Edge Engineer working in Telco Edge projects to improve the customer experience using the Suse stack.
 - I'm working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform. The main idea is to automate the full deployment using zero touch provisioning and gitops flows.
 - Working with Intel FlexRan to deploy the 5G workloads into the edge clusters using the new Telco Edge Platform, automating the workflow using metal3, metallb, sriov, dpdk and many other technologies. The main goal is to get the best performance and the best latency for the 5G workloads, optimizing things like cpu core isolation, cpu performance profiles, huge pages, numa nodes, cpu pinning and many other things.
+- Working on the Telco profiles to define a way to define, configure and implement Telco specific profiles to optimize cpu, numa, core isolation and so on. 
 - Contributing to upstream projects like ClusterAPI RKE2 (https://github.com/rancher-sandbox/cluster-api-provider-rke2)
 - General Talks and conferences (MWC 24, Blogposts, Webinars) in order to share the knowledge and the new features available in the Telco Edge Platform.
 - Working with partners to integrate the different use cases into our stack.
