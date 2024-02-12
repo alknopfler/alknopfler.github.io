@@ -11,7 +11,7 @@ author = "Alknopfler"
 #### **alknopfler@gmail.com** - **Location: Madrid(Spain)**
 #### **[My Blog](https://alknopfler.github.io) - [Linkedin](https://www.linkedin.com/in/albertomorgante/) - [Github](https://github.com/alknopfler)**
 ## **Summary**
-- `Senior Telco Edge software Engineer at Suse` involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on Suse Edge stack.
+- `Senior Telco Edge software Engineer at Suse` involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on Suse Edge stack. Working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform.
 
 - `Principal Software Engineer at Red Hat` involved in several projects doing integrations tasks for AssistedInstaller, ACM and OCP sub-products. Developing with Golang and operator-sdk the latency k8s operator for Telco customers integrating the solution into ACM placementrules.
   Moreover, I've been working with Baremetal creating ZTPFW (Zero Touch Provisioning Factory Workflow) in order to deploy edge clusters without any manual interaction.
@@ -28,11 +28,11 @@ author = "Alknopfler"
 
 * **Architecture & Lead Skills**: Architecture Designs (from Infrastructure to Microservice architectures designs, cqrs, event sourcing, and development patterns),
 * **Team Lead Player, Team building, Team Management (+40)**
-* **Cloud Computing**: Openstack, Kubernetes, Openshift, Docker, Rancher, CoreOS, VmWare vcloud, SDN, Google Cloud, AWS, Azure.
+* **Cloud Computing**: Openstack, Kubernetes, Openshift, RKE2, K3S, Docker, Rancher, CoreOS, VmWare vcloud, SDN, Google Cloud, AWS, Azure.
 * **Devops**: Git, GH actions, Gitlab-ci, ArgoCD, Ansible, Terraform, Puppet.
 * **Development**: Golang, Bash, Python, Monkey C, GRPC, RestAPI, ProfoBuffer, KAFKA, Testing ATDD-TDD-BDD, CQRS, Event sourcing.
 * **Databases**: Mysql, PostgreSQL, MongoDB, Cassandra, ETCD, Apache Ignite Cache, Redis.
-* **Networking**: Switching/Routing (Cisco, Enterasys, Juniper), VPN, SDN, NFV, CNFs/VNFs (Nuage, OpenContrail, OpenDaylight, Ran, 5G, OVN).
+* **Networking**: Switching/Routing (Cisco, Enterasys, Juniper), VPN, SDN, NFV, CNFs/VNFs (Nuage, OpenContrail, OpenDaylight,OVN), 5G Ran, FlexRan, DPDK, SRIOV, PTP.
 * **Security**: ISO27001, Peakflow DDoS, Fortinet Gateway, Bluecoat Proxy Chain, UTM Cisco.
 
 ## **Work Experiences**
@@ -40,6 +40,11 @@ author = "Alknopfler"
 ### Senior Telco Edge Software Engineer (Mar 2023 - Current) - Full Remote
 
 - I'm working as a Senior Telco Edge Engineer working in Telco Edge projects to improve the customer experience using the Suse stack.
+- I'm working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform. The main idea is to automate the full deployment using zero touch provisioning and gitops flows.
+- Working with Intel FlexRan to deploy the 5G workloads into the edge clusters using the new Telco Edge Platform, automating the workflow using metal3, metallb, sriov, dpdk and many other technologies. The main goal is to get the best performance and the best latency for the 5G workloads, optimizing things like cpu core isolation, cpu performance profiles, huge pages, numa nodes, cpu pinning and many other things.
+- Contributing to upstream projects like ClusterAPI RKE2 (https://github.com/rancher-sandbox/cluster-api-provider-rke2)
+- General Talks and conferences (MWC 24, Blogposts, Webinars) in order to share the knowledge and the new features available in the Telco Edge Platform.
+- Working with partners to integrate the different use cases into our stack.
 
 ### **Red Hat**
 ### Principal Software Engineer (Mar 2021 - 2023) - Full Remote
