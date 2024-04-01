@@ -7,6 +7,6 @@ aliases = ["talks", "summit", "videos", "conferences", "speaker"]
 author = "Alknopfler"
 +++
 
-[![CNCF - Kubernetes Zero Touch Provisioning](https://i3.ytimg.com/vi/7tDU1tj-YQY/maxresdefault.jpg)](https://www.youtube.com/watch?v=7tDU1tj-YQY&ab_channel=CloudNativeIberia)
+[![CNCF - Kubernetes Zero Touch Provisioning](http://i3.ytimg.com/vi/7tDU1tj-YQY/hqdefault.jpg)](https://www.youtube.com/watch?v=7tDU1tj-YQY&ab_channel=CloudNativeIberia)
 
 
