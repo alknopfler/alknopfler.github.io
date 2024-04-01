@@ -2,7 +2,7 @@
 +++
 title = "CNCF - Kubernetes Zero Touch Provisioning"
 description = "CNCF Talk about how to deploy baremetal Kubernetes clusters with Zero Touch Provisioning"
-date = "2024-04-1"
+date = "2024-04-01"
 aliases = ["talks", "summit", "videos", "conferences", "speaker"]
 author = "Alknopfler"
 +++
