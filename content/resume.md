@@ -44,7 +44,7 @@ author = "Alknopfler"
 - Working with Intel FlexRan to deploy the 5G workloads into the edge clusters using the new Telco Edge Platform, automating the workflow using metal3, metallb, sriov, dpdk and many other technologies. The main goal is to get the best performance and the best latency for the 5G workloads, optimizing things like cpu core isolation, cpu performance profiles, huge pages, numa nodes, cpu pinning and many other things.
 - Working on the Telco profiles to define a way to define, configure and implement Telco specific profiles to optimize cpu, numa, core isolation and so on. 
 - Contributing to upstream projects like ClusterAPI RKE2 (https://github.com/rancher-sandbox/cluster-api-provider-rke2)
-- General Talks and conferences (MWC 24, Blogposts, Webinars) in order to share the knowledge and the new features available in the Telco Edge Platform.
+- General Talks and conferences (MWC 24, Blogposts, CNCF, Webinars) in order to share the knowledge and the new features available in the Telco Edge Platform.
 - Working with partners to integrate the different use cases into our stack.
 
 ### **Red Hat**

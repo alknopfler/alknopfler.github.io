@@ -63,5 +63,14 @@ Repo: Repo github</description>
       <description>Open Source Cultural Change Talk</description>
     </item>
     
+    <item>
+      <title>CNCF - Kubernetes Zero Touch Provisioning</title>
+      <link>https://alknopfler.github.io/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://alknopfler.github.io/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</guid>
+      <description>Publication: CNCF talk - Kubernetes Zero Touch Provisioining</description>
+    </item>
+    
   </channel>
 </rss>
