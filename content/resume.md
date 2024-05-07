@@ -7,11 +7,11 @@ author = "Alknopfler"
 +++
 
 # **Alberto Morgante Medina**
-### **Principal Telco Edge Engineer at SUSE**
+### **Senior Telco Edge Software Engineer at Suse**
 #### **alknopfler@gmail.com** - **Location: Madrid(Spain)**
 #### **[My Blog](https://alknopfler.github.io) - [Linkedin](https://www.linkedin.com/in/albertomorgante/) - [Github](https://github.com/alknopfler)**
 ## **Summary**
-- `Principal Telco Edge Engineer at SUSE` involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on SUSE Edge stack. Working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform.
+- `Senior Telco Edge software Engineer at Suse` involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on Suse Edge stack. Working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform.
 
 - `Principal Software Engineer at Red Hat` involved in several projects doing integrations tasks for AssistedInstaller, ACM and OCP sub-products. Developing with Golang and operator-sdk the latency k8s operator for Telco customers integrating the solution into ACM placementrules.
   Moreover, I've been working with Baremetal creating ZTPFW (Zero Touch Provisioning Factory Workflow) in order to deploy edge clusters without any manual interaction.
@@ -20,7 +20,7 @@ author = "Alknopfler"
 
 - `Cloud Architect Lead at BBVA Bank` working in the Global Platform Area. I’m developing Cloud Services on top of the Global Platform, leading the SWAT technical team in order to develop as fast as posible the Technical services which are cross to the Global Platform.
 
-- `Cloud Computing & Innovation Engineer at BBVA Bank` I was involved in the deployment of the first banking private cloud based on Openstack and SDN (Nuage).
+- `Cloud Computing & Innovation Engineer` I was involved in the deployment of the first banking private cloud based on Openstack and SDN (Nuage).
 
 - `Cloud Computing & Security Engineer at Telefonica`  using security platforms and Cloud platform in order to define new cloud services based on Openstack and Amazon AWS.
 
@@ -36,12 +36,8 @@ author = "Alknopfler"
 * **Security**: ISO27001, Peakflow DDoS, Fortinet Gateway, Bluecoat Proxy Chain, UTM Cisco.
 
 ## **Work Experiences**
-### **SUSE**
-### Principal Telco Edge Engineer (May 2024 - Current) - Full Remote
-
-
-### **SUSE**
-### Senior Telco Edge Software Engineer (Mar 2023 - May 2024) - Full Remote
+### **Suse**
+### Senior Telco Edge Software Engineer (Mar 2023 - Current) - Full Remote
 
 - I'm working as a Senior Telco Edge Engineer working in Telco Edge projects to improve the customer experience using the Suse stack.
 - I'm working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform. The main idea is to automate the full deployment using zero touch provisioning and gitops flows.
