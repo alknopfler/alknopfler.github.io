@@ -2,291 +2,291 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/</link>
+    <link>https://technology.amorgante.es/</link>
     <description>Recent content on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CNCF - Kubernetes Zero Touch Provisioning</title>
-      <link>https://alknopfler.github.io/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</link>
+      <link>https://technology.amorgante.es/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</guid>
+      <guid>https://technology.amorgante.es/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>5G - Intel Flexran on Suse ATIP</title>
-      <link>https://alknopfler.github.io/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</link>
+      <link>https://technology.amorgante.es/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</guid>
+      <guid>https://technology.amorgante.es/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</guid>
       <description>Publication: 5G - Intel Flexran on Suse ATIP</description>
     </item>
     
     <item>
       <title>ACM Operator to integrate latency checks</title>
-      <link>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</link>
+      <link>https://technology.amorgante.es/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</link>
       <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</guid>
+      <guid>https://technology.amorgante.es/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</guid>
       <description>Publication: https://medium.com/open-5g-hypercore/episode-xi-latency-driven-service-orchestration-183f41e6d879
 Repo: Repo github</description>
     </item>
     
     <item>
       <title>Resume</title>
-      <link>https://alknopfler.github.io/resume/</link>
+      <link>https://technology.amorgante.es/resume/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/resume/</guid>
+      <guid>https://technology.amorgante.es/resume/</guid>
       <description>Alberto Morgante Medina Principal Telco Edge Engineer at SUSE alknopfler@gmail.com - Location: Madrid(Spain) My Blog - Linkedin - Github Summary Principal Telco Edge Engineer at SUSE involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on SUSE Edge stack.</description>
     </item>
     
     <item>
       <title>Excelence Principle</title>
-      <link>https://alknopfler.github.io/post/excelence-principle/</link>
+      <link>https://technology.amorgante.es/post/excelence-principle/</link>
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/excelence-principle/</guid>
+      <guid>https://technology.amorgante.es/post/excelence-principle/</guid>
       <description>During my professional career, quite unconsciously I have been going through different companies, learning and contributing to their culture, learning a lot about the way of working in the company, learning many facets from the professionals to complete my profile and improve day by day trying be a good professional and a better person.</description>
     </item>
     
     <item>
       <title>Debugging K8S operators with Delve</title>
-      <link>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</link>
+      <link>https://technology.amorgante.es/talks/debugging-k8s-operators/debugging-k8s-operators/</link>
       <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</guid>
+      <guid>https://technology.amorgante.es/talks/debugging-k8s-operators/debugging-k8s-operators/</guid>
       <description>Publication: https://developers.redhat.com/articles/2021/12/13/remote-debugging-kubernetes-using-vs-code#
 Repo: Repo github</description>
     </item>
     
     <item>
       <title>GH Actions - Create step dynamically</title>
-      <link>https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/</link>
+      <link>https://technology.amorgante.es/post/gh-actions-create-steps-dinamically/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/gh-actions-create-steps-dinamically/</guid>
+      <guid>https://technology.amorgante.es/post/gh-actions-create-steps-dinamically/</guid>
       <description>Introduction - Create steps dynamically After using &amp;lsquo;gh actions&amp;rsquo; for a while you might feel that the workflows you use are so static, or rather, too boxed in to meet the needs of the project.</description>
     </item>
     
     <item>
       <title>Debug k8s applications on the fly</title>
-      <link>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</link>
+      <link>https://technology.amorgante.es/post/go-debug-k8s-skaffold-cloudcode/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</guid>
+      <guid>https://technology.amorgante.es/post/go-debug-k8s-skaffold-cloudcode/</guid>
       <description>Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work.</description>
     </item>
     
     <item>
       <title>Firewalld connecting 2 libvirt network</title>
-      <link>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</link>
+      <link>https://technology.amorgante.es/post/firewalld-connecting-2-libvirt-networks/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</guid>
+      <guid>https://technology.amorgante.es/post/firewalld-connecting-2-libvirt-networks/</guid>
       <description>Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&amp;rsquo;re gonna deploy vm and you need to install some software from internet.</description>
     </item>
     
     <item>
       <title>Rebase after Pull Request</title>
-      <link>https://alknopfler.github.io/post/rebase-after-pull-request/</link>
+      <link>https://technology.amorgante.es/post/rebase-after-pull-request/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/rebase-after-pull-request/</guid>
+      <guid>https://technology.amorgante.es/post/rebase-after-pull-request/</guid>
       <description>Situation When you&amp;rsquo;re working in your fork to make contributions to a open source project, you will usually have upstream and origin trying to represent the upstream (main project) and your origin (fork):</description>
     </item>
     
     <item>
       <title>Improve the Libvirt Performance</title>
-      <link>https://alknopfler.github.io/post/improve-libvirt-performance/</link>
+      <link>https://technology.amorgante.es/post/improve-libvirt-performance/</link>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/improve-libvirt-performance/</guid>
+      <guid>https://technology.amorgante.es/post/improve-libvirt-performance/</guid>
       <description>The Problem: When you&amp;rsquo;re having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance.</description>
     </item>
     
     <item>
       <title>Golang Fanin - Fanout  Reading 10k files in seconds</title>
-      <link>https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/</link>
+      <link>https://technology.amorgante.es/post/golang-fanin-fanout-reading-10k-files-in-seconds/</link>
       <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/golang-fanin-fanout-reading-10k-files-in-seconds/</guid>
+      <guid>https://technology.amorgante.es/post/golang-fanin-fanout-reading-10k-files-in-seconds/</guid>
       <description>Sometimes you&amp;rsquo;ve got some tasks which consume a lot of time to be processed, for instance, the invoice generation for a big company, NLP tasks, or any file processing tasks you could imagine.</description>
     </item>
     
     <item>
       <title>Scheduling shutdown aws EC2 at night - Golang &amp; gitlab-ci schedule job</title>
-      <link>https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/</link>
+      <link>https://technology.amorgante.es/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/</guid>
+      <guid>https://technology.amorgante.es/post/scheduling-shutdown-aws-ec2-at-night-golang-gitlab-ci-schedule-job/</guid>
       <description>When you&amp;rsquo;re working with AWS sometimes you need to keep in your mind to shutdown at night the instances in order to avoid unexpected costs at the end of the month.</description>
     </item>
     
     <item>
       <title>UPM - Microservice Conference 2021</title>
-      <link>https://alknopfler.github.io/talks/upm/microservice-conference/</link>
+      <link>https://technology.amorgante.es/talks/upm/microservice-conference/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/upm/microservice-conference/</guid>
+      <guid>https://technology.amorgante.es/talks/upm/microservice-conference/</guid>
       <description>I attended as a teacher in the Conference about Microservices in Madrid 2021, doing a presentation in the Polytechnic University of Madrid.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://alknopfler.github.io/about/</link>
+      <link>https://technology.amorgante.es/about/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/about/</guid>
+      <guid>https://technology.amorgante.es/about/</guid>
       <description>I’m an engineer passionate about cloud computing and new technologies. I’m always looking for new challenges in order to improve my skills everyday!</description>
     </item>
     
     <item>
       <title>Cómo afrontar el reto de ganar a la mente</title>
-      <link>https://alknopfler.github.io/post/como-afrontar-el-reto-de-ganar-a-la-mente/</link>
+      <link>https://technology.amorgante.es/post/como-afrontar-el-reto-de-ganar-a-la-mente/</link>
       <pubDate>Tue, 07 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/como-afrontar-el-reto-de-ganar-a-la-mente/</guid>
+      <guid>https://technology.amorgante.es/post/como-afrontar-el-reto-de-ganar-a-la-mente/</guid>
       <description>El ser humano siempre está en búsqueda en mayor o menor medida de nuevos retos. La mente humana se alimenta de retos, y al igual que ocurre con las personas, existen personas que necesitan una mayor cantidad de retos para poder satisfacer su hambre, y por el contrario, existen otras que viven perfectamente aceptando solo los retos justos para satisfacer sus necesidades básicas.</description>
     </item>
     
     <item>
       <title>Principio de Excelencia</title>
-      <link>https://alknopfler.github.io/post/principio-de-excelencia/</link>
+      <link>https://technology.amorgante.es/post/principio-de-excelencia/</link>
       <pubDate>Fri, 14 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/principio-de-excelencia/</guid>
+      <guid>https://technology.amorgante.es/post/principio-de-excelencia/</guid>
       <description>Durante mi carrera profesional, de forma bastante inconsciente he ido pasando por diferentes compañías, aprendiendo y aportando a su cultura, aprendiendo mucho de la forma de trabajar en la compañía, aprendiendo de los profesionales muchas facetas para completar mi perfil y mejorar día a día intentando ser un buen profesional y mejor persona.</description>
     </item>
     
     <item>
       <title></title>
-      <link>https://alknopfler.github.io/archives/</link>
+      <link>https://technology.amorgante.es/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/archives/</guid>
+      <guid>https://technology.amorgante.es/archives/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Alexa Skills with Golang</title>
-      <link>https://alknopfler.github.io/post/alexa-skills-with-golang/</link>
+      <link>https://technology.amorgante.es/post/alexa-skills-with-golang/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
+      <guid>https://technology.amorgante.es/post/alexa-skills-with-golang/</guid>
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     
     <item>
       <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</title>
-      <link>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
+      <link>https://technology.amorgante.es/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
+      <guid>https://technology.amorgante.es/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
       <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services.</description>
     </item>
     
     <item>
       <title>Design your own Home Alarm System using Go</title>
-      <link>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</link>
+      <link>https://technology.amorgante.es/post/design-your-own-home-alarm-system-using-go/</link>
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</guid>
+      <guid>https://technology.amorgante.es/post/design-your-own-home-alarm-system-using-go/</guid>
       <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like: The main idea of this project is based on the same kind of Alarm GSM systems, but in this case, we only have to buy the sensors and sirens, because:</description>
     </item>
     
     <item>
       <title>Infrastructure as code</title>
-      <link>https://alknopfler.github.io/post/infrastructure-as-code/</link>
+      <link>https://technology.amorgante.es/post/infrastructure-as-code/</link>
       <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/infrastructure-as-code/</guid>
+      <guid>https://technology.amorgante.es/post/infrastructure-as-code/</guid>
       <description>During my career, I&amp;rsquo;m always looking for new technologies as well as looking for the way to improve the infrastructure as we know nowadays.</description>
     </item>
     
     <item>
       <title>New features in Openstack CEPH</title>
-      <link>https://alknopfler.github.io/post/new-features-in-openstack-ceph/</link>
+      <link>https://technology.amorgante.es/post/new-features-in-openstack-ceph/</link>
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/new-features-in-openstack-ceph/</guid>
+      <guid>https://technology.amorgante.es/post/new-features-in-openstack-ceph/</guid>
       <description>In my opinion, this video shows all the new features that the openstackers were usually asking for the project roadmap for several years:</description>
     </item>
     
     <item>
       <title>Working with Microservices</title>
-      <link>https://alknopfler.github.io/post/working-with-microservices/</link>
+      <link>https://technology.amorgante.es/post/working-with-microservices/</link>
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/working-with-microservices/</guid>
+      <guid>https://technology.amorgante.es/post/working-with-microservices/</guid>
       <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.</description>
     </item>
     
     <item>
       <title>GoDataberus - Database Driver API in Golang</title>
-      <link>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</link>
+      <link>https://technology.amorgante.es/post/godataberus-database-driver-api-in-golang/</link>
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</guid>
+      <guid>https://technology.amorgante.es/post/godataberus-database-driver-api-in-golang/</guid>
       <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</description>
     </item>
     
     <item>
       <title>GoLogger - Module to Log with formatting in Golang</title>
-      <link>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</link>
+      <link>https://technology.amorgante.es/post/gologger-module-to-log-with-formatting-in-golang/</link>
       <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</guid>
+      <guid>https://technology.amorgante.es/post/gologger-module-to-log-with-formatting-in-golang/</guid>
       <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:</description>
     </item>
     
     <item>
       <title>Gocypherator - Module to cypher string in Golang easily</title>
-      <link>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</link>
+      <link>https://technology.amorgante.es/post/gocypherator-module-to-cypher-string-in-golang-easily/</link>
       <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
+      <guid>https://technology.amorgante.es/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
 AES-128, AES-192, or AES-256.</description>
     </item>
     
     <item>
       <title>Deploy Openstack in containers on top of Kubernetes</title>
-      <link>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</link>
+      <link>https://technology.amorgante.es/post/deploy-openstack-in-containers-on-top-of-kubernetes/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/deploy-openstack-in-containers-on-top-of-kubernetes/</guid>
+      <guid>https://technology.amorgante.es/post/deploy-openstack-in-containers-on-top-of-kubernetes/</guid>
       <description>Based on my repo in github: Openstack-k8s: Openstack Kubernetes deployment
 This Project is being developed in order to facilitate the Openstack deployment based on Kubernetes and docker containers.</description>
     </item>
     
     <item>
       <title>Open Source is a Cultural change</title>
-      <link>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</link>
+      <link>https://technology.amorgante.es/post/open-source-is-a-cultural-change/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</guid>
+      <guid>https://technology.amorgante.es/post/open-source-is-a-cultural-change/</guid>
       <description>Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.</description>
     </item>
     
     <item>
       <title>Summit Openstack Barcelona 2016</title>
-      <link>https://alknopfler.github.io/talks/summit-openstack/summit-openstack/</link>
+      <link>https://technology.amorgante.es/talks/summit-openstack/summit-openstack/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/summit-openstack/summit-openstack/</guid>
+      <guid>https://technology.amorgante.es/talks/summit-openstack/summit-openstack/</guid>
       <description>I attended as a speaker in the Openstack Barcelona Summit in 2016 doing a presentation about Openstack based in containers on top of Kubernetes.</description>
     </item>
     
     <item>
       <title>Open Source Cultural Change</title>
-      <link>https://alknopfler.github.io/talks/opensource-bbva/opensource-bbva/</link>
+      <link>https://technology.amorgante.es/talks/opensource-bbva/opensource-bbva/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/opensource-bbva/opensource-bbva/</guid>
+      <guid>https://technology.amorgante.es/talks/opensource-bbva/opensource-bbva/</guid>
       <description>Open Source Cultural Change Talk</description>
     </item>
     

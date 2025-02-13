@@ -9,7 +9,7 @@ author = "Alknopfler"
 # **Alberto Morgante Medina**
 ### **Principal Telco Edge Engineer at SUSE**
 #### **alknopfler@gmail.com** - **Location: Madrid(Spain)**
-#### **[My Blog](https://alknopfler.github.io) - [Linkedin](https://www.linkedin.com/in/albertomorgante/) - [Github](https://github.com/alknopfler)**
+#### **[My Blog](https://technology.amorgante.es) - [Linkedin](https://www.linkedin.com/in/albertomorgante/) - [Github](https://github.com/alknopfler)**
 ## **Summary**
 - `Principal Telco Edge Engineer at SUSE` involve into the Telco Edge projects in order to develop the new Telco Edge Platform based on SUSE Edge stack. Working with RKE2/K3S, Rancher, Cluster API (CAPI), Metal3, Metallb, Multus (Calico, cilium, flannel), SRIOV, DPDK, OVS, K8s, 5G Telco workloads like FlexRan, and many other technologies in order to develop and integrate the new Telco Edge Platform.
 

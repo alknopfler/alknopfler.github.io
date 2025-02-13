@@ -2,377 +2,377 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/tags/</link>
+    <link>https://technology.amorgante.es/tags/</link>
     <description>Recent content in Tags on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>dynamically</title>
-      <link>https://alknopfler.github.io/tags/dynamically/</link>
+      <link>https://technology.amorgante.es/tags/dynamically/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/dynamically/</guid>
+      <guid>https://technology.amorgante.es/tags/dynamically/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github actions</title>
-      <link>https://alknopfler.github.io/tags/github-actions/</link>
+      <link>https://technology.amorgante.es/tags/github-actions/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/github-actions/</guid>
+      <guid>https://technology.amorgante.es/tags/github-actions/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pipeline</title>
-      <link>https://alknopfler.github.io/tags/pipeline/</link>
+      <link>https://technology.amorgante.es/tags/pipeline/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/pipeline/</guid>
+      <guid>https://technology.amorgante.es/tags/pipeline/</guid>
       <description></description>
     </item>
     
     <item>
       <title>steps</title>
-      <link>https://alknopfler.github.io/tags/steps/</link>
+      <link>https://technology.amorgante.es/tags/steps/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/steps/</guid>
+      <guid>https://technology.amorgante.es/tags/steps/</guid>
       <description></description>
     </item>
     
     <item>
       <title>workflow</title>
-      <link>https://alknopfler.github.io/tags/workflow/</link>
+      <link>https://technology.amorgante.es/tags/workflow/</link>
       <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/workflow/</guid>
+      <guid>https://technology.amorgante.es/tags/workflow/</guid>
       <description></description>
     </item>
     
     <item>
       <title>debug</title>
-      <link>https://alknopfler.github.io/tags/debug/</link>
+      <link>https://technology.amorgante.es/tags/debug/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/debug/</guid>
+      <guid>https://technology.amorgante.es/tags/debug/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>https://alknopfler.github.io/tags/golang/</link>
+      <link>https://technology.amorgante.es/tags/golang/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/golang/</guid>
+      <guid>https://technology.amorgante.es/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kubernetes</title>
-      <link>https://alknopfler.github.io/tags/kubernetes/</link>
+      <link>https://technology.amorgante.es/tags/kubernetes/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/kubernetes/</guid>
+      <guid>https://technology.amorgante.es/tags/kubernetes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>skaffold</title>
-      <link>https://alknopfler.github.io/tags/skaffold/</link>
+      <link>https://technology.amorgante.es/tags/skaffold/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/skaffold/</guid>
+      <guid>https://technology.amorgante.es/tags/skaffold/</guid>
       <description></description>
     </item>
     
     <item>
       <title>connection</title>
-      <link>https://alknopfler.github.io/tags/connection/</link>
+      <link>https://technology.amorgante.es/tags/connection/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/connection/</guid>
+      <guid>https://technology.amorgante.es/tags/connection/</guid>
       <description></description>
     </item>
     
     <item>
       <title>firewalld</title>
-      <link>https://alknopfler.github.io/tags/firewalld/</link>
+      <link>https://technology.amorgante.es/tags/firewalld/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/firewalld/</guid>
+      <guid>https://technology.amorgante.es/tags/firewalld/</guid>
       <description></description>
     </item>
     
     <item>
       <title>libvirtd</title>
-      <link>https://alknopfler.github.io/tags/libvirtd/</link>
+      <link>https://technology.amorgante.es/tags/libvirtd/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/libvirtd/</guid>
+      <guid>https://technology.amorgante.es/tags/libvirtd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>networking</title>
-      <link>https://alknopfler.github.io/tags/networking/</link>
+      <link>https://technology.amorgante.es/tags/networking/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/networking/</guid>
+      <guid>https://technology.amorgante.es/tags/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>https://alknopfler.github.io/tags/development/</link>
+      <link>https://technology.amorgante.es/tags/development/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/development/</guid>
+      <guid>https://technology.amorgante.es/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://alknopfler.github.io/tags/git/</link>
+      <link>https://technology.amorgante.es/tags/git/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/git/</guid>
+      <guid>https://technology.amorgante.es/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pull request</title>
-      <link>https://alknopfler.github.io/tags/pull-request/</link>
+      <link>https://technology.amorgante.es/tags/pull-request/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/pull-request/</guid>
+      <guid>https://technology.amorgante.es/tags/pull-request/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rebase</title>
-      <link>https://alknopfler.github.io/tags/rebase/</link>
+      <link>https://technology.amorgante.es/tags/rebase/</link>
       <pubDate>Mon, 30 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/rebase/</guid>
+      <guid>https://technology.amorgante.es/tags/rebase/</guid>
       <description></description>
     </item>
     
     <item>
       <title>faster</title>
-      <link>https://alknopfler.github.io/tags/faster/</link>
+      <link>https://technology.amorgante.es/tags/faster/</link>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/faster/</guid>
+      <guid>https://technology.amorgante.es/tags/faster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>improvement</title>
-      <link>https://alknopfler.github.io/tags/improvement/</link>
+      <link>https://technology.amorgante.es/tags/improvement/</link>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/improvement/</guid>
+      <guid>https://technology.amorgante.es/tags/improvement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>libvirt</title>
-      <link>https://alknopfler.github.io/tags/libvirt/</link>
+      <link>https://technology.amorgante.es/tags/libvirt/</link>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/libvirt/</guid>
+      <guid>https://technology.amorgante.es/tags/libvirt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>performance</title>
-      <link>https://alknopfler.github.io/tags/performance/</link>
+      <link>https://technology.amorgante.es/tags/performance/</link>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/performance/</guid>
+      <guid>https://technology.amorgante.es/tags/performance/</guid>
       <description></description>
     </item>
     
     <item>
       <title>alexa-skills</title>
-      <link>https://alknopfler.github.io/tags/alexa-skills/</link>
+      <link>https://technology.amorgante.es/tags/alexa-skills/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/alexa-skills/</guid>
+      <guid>https://technology.amorgante.es/tags/alexa-skills/</guid>
       <description></description>
     </item>
     
     <item>
       <title>alkalarm</title>
-      <link>https://alknopfler.github.io/tags/alkalarm/</link>
+      <link>https://technology.amorgante.es/tags/alkalarm/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/alkalarm/</guid>
+      <guid>https://technology.amorgante.es/tags/alkalarm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>aws</title>
-      <link>https://alknopfler.github.io/tags/aws/</link>
+      <link>https://technology.amorgante.es/tags/aws/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/aws/</guid>
+      <guid>https://technology.amorgante.es/tags/aws/</guid>
       <description></description>
     </item>
     
     <item>
       <title>aws-lambda</title>
-      <link>https://alknopfler.github.io/tags/aws-lambda/</link>
+      <link>https://technology.amorgante.es/tags/aws-lambda/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/aws-lambda/</guid>
+      <guid>https://technology.amorgante.es/tags/aws-lambda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microservice</title>
-      <link>https://alknopfler.github.io/tags/microservice/</link>
+      <link>https://technology.amorgante.es/tags/microservice/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/microservice/</guid>
+      <guid>https://technology.amorgante.es/tags/microservice/</guid>
       <description></description>
     </item>
     
     <item>
       <title>notifications</title>
-      <link>https://alknopfler.github.io/tags/notifications/</link>
+      <link>https://technology.amorgante.es/tags/notifications/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/notifications/</guid>
+      <guid>https://technology.amorgante.es/tags/notifications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>send-notifications</title>
-      <link>https://alknopfler.github.io/tags/send-notifications/</link>
+      <link>https://technology.amorgante.es/tags/send-notifications/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/send-notifications/</guid>
+      <guid>https://technology.amorgante.es/tags/send-notifications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ses</title>
-      <link>https://alknopfler.github.io/tags/ses/</link>
+      <link>https://technology.amorgante.es/tags/ses/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/ses/</guid>
+      <guid>https://technology.amorgante.es/tags/ses/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sns</title>
-      <link>https://alknopfler.github.io/tags/sns/</link>
+      <link>https://technology.amorgante.es/tags/sns/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/sns/</guid>
+      <guid>https://technology.amorgante.es/tags/sns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>deployment</title>
-      <link>https://alknopfler.github.io/tags/deployment/</link>
+      <link>https://technology.amorgante.es/tags/deployment/</link>
       <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/deployment/</guid>
+      <guid>https://technology.amorgante.es/tags/deployment/</guid>
       <description></description>
     </item>
     
     <item>
       <title>infrastructure-as-code</title>
-      <link>https://alknopfler.github.io/tags/infrastructure-as-code/</link>
+      <link>https://technology.amorgante.es/tags/infrastructure-as-code/</link>
       <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/infrastructure-as-code/</guid>
+      <guid>https://technology.amorgante.es/tags/infrastructure-as-code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>opensource</title>
-      <link>https://alknopfler.github.io/tags/opensource/</link>
+      <link>https://technology.amorgante.es/tags/opensource/</link>
       <pubDate>Tue, 18 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/opensource/</guid>
+      <guid>https://technology.amorgante.es/tags/opensource/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ceph</title>
-      <link>https://alknopfler.github.io/tags/ceph/</link>
+      <link>https://technology.amorgante.es/tags/ceph/</link>
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/ceph/</guid>
+      <guid>https://technology.amorgante.es/tags/ceph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>api</title>
-      <link>https://alknopfler.github.io/tags/api/</link>
+      <link>https://technology.amorgante.es/tags/api/</link>
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/api/</guid>
+      <guid>https://technology.amorgante.es/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>driver</title>
-      <link>https://alknopfler.github.io/tags/driver/</link>
+      <link>https://technology.amorgante.es/tags/driver/</link>
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/driver/</guid>
+      <guid>https://technology.amorgante.es/tags/driver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>logging</title>
-      <link>https://alknopfler.github.io/tags/logging/</link>
+      <link>https://technology.amorgante.es/tags/logging/</link>
       <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/logging/</guid>
+      <guid>https://technology.amorgante.es/tags/logging/</guid>
       <description></description>
     </item>
     
     <item>
       <title>logrus</title>
-      <link>https://alknopfler.github.io/tags/logrus/</link>
+      <link>https://technology.amorgante.es/tags/logrus/</link>
       <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/logrus/</guid>
+      <guid>https://technology.amorgante.es/tags/logrus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cypher</title>
-      <link>https://alknopfler.github.io/tags/cypher/</link>
+      <link>https://technology.amorgante.es/tags/cypher/</link>
       <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/cypher/</guid>
+      <guid>https://technology.amorgante.es/tags/cypher/</guid>
       <description></description>
     </item>
     
     <item>
       <title>opensource-cultural-change</title>
-      <link>https://alknopfler.github.io/tags/opensource-cultural-change/</link>
+      <link>https://technology.amorgante.es/tags/opensource-cultural-change/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/opensource-cultural-change/</guid>
+      <guid>https://technology.amorgante.es/tags/opensource-cultural-change/</guid>
       <description></description>
     </item>
     
     <item>
       <title>index</title>
-      <link>https://alknopfler.github.io/tags/index/</link>
+      <link>https://technology.amorgante.es/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/tags/index/</guid>
+      <guid>https://technology.amorgante.es/tags/index/</guid>
       <description></description>
     </item>
     

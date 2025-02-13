@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talks on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/talks/</link>
+    <link>https://technology.amorgante.es/talks/</link>
     <description>Recent content in Talks on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/talks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CNCF - Kubernetes Zero Touch Provisioning</title>
-      <link>https://alknopfler.github.io/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</link>
+      <link>https://technology.amorgante.es/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</link>
       <pubDate>Mon, 01 Apr 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</guid>
+      <guid>https://technology.amorgante.es/talks/cncf-zerotouchprovisioning/cncf-zerotouchprovisioning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>5G - Intel Flexran on Suse ATIP</title>
-      <link>https://alknopfler.github.io/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</link>
+      <link>https://technology.amorgante.es/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</link>
       <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</guid>
+      <guid>https://technology.amorgante.es/talks/5g-intel-flexran-on-suse-atip/5g-intel-flexran-on-suse-atip/</guid>
       <description>Publication: 5G - Intel Flexran on Suse ATIP</description>
     </item>
     
     <item>
       <title>ACM Operator to integrate latency checks</title>
-      <link>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</link>
+      <link>https://technology.amorgante.es/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</link>
       <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</guid>
+      <guid>https://technology.amorgante.es/talks/acmoperator-integrate-latencychecks/acmoperator-latency-checks/</guid>
       <description>Publication: https://medium.com/open-5g-hypercore/episode-xi-latency-driven-service-orchestration-183f41e6d879
 Repo: Repo github</description>
     </item>
     
     <item>
       <title>Debugging K8S operators with Delve</title>
-      <link>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</link>
+      <link>https://technology.amorgante.es/talks/debugging-k8s-operators/debugging-k8s-operators/</link>
       <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/debugging-k8s-operators/debugging-k8s-operators/</guid>
+      <guid>https://technology.amorgante.es/talks/debugging-k8s-operators/debugging-k8s-operators/</guid>
       <description>Publication: https://developers.redhat.com/articles/2021/12/13/remote-debugging-kubernetes-using-vs-code#
 Repo: Repo github</description>
     </item>
     
     <item>
       <title>UPM - Microservice Conference 2021</title>
-      <link>https://alknopfler.github.io/talks/upm/microservice-conference/</link>
+      <link>https://technology.amorgante.es/talks/upm/microservice-conference/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/upm/microservice-conference/</guid>
+      <guid>https://technology.amorgante.es/talks/upm/microservice-conference/</guid>
       <description>I attended as a teacher in the Conference about Microservices in Madrid 2021, doing a presentation in the Polytechnic University of Madrid.</description>
     </item>
     
     <item>
       <title>Summit Openstack Barcelona 2016</title>
-      <link>https://alknopfler.github.io/talks/summit-openstack/summit-openstack/</link>
+      <link>https://technology.amorgante.es/talks/summit-openstack/summit-openstack/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/summit-openstack/summit-openstack/</guid>
+      <guid>https://technology.amorgante.es/talks/summit-openstack/summit-openstack/</guid>
       <description>I attended as a speaker in the Openstack Barcelona Summit in 2016 doing a presentation about Openstack based in containers on top of Kubernetes.</description>
     </item>
     
     <item>
       <title>Open Source Cultural Change</title>
-      <link>https://alknopfler.github.io/talks/opensource-bbva/opensource-bbva/</link>
+      <link>https://technology.amorgante.es/talks/opensource-bbva/opensource-bbva/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/talks/opensource-bbva/opensource-bbva/</guid>
+      <guid>https://technology.amorgante.es/talks/opensource-bbva/opensource-bbva/</guid>
       <description>Open Source Cultural Change Talk</description>
     </item>
     

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kubernetes on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/tags/kubernetes/</link>
+    <link>https://technology.amorgante.es/tags/kubernetes/</link>
     <description>Recent content in kubernetes on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debug k8s applications on the fly</title>
-      <link>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</link>
+      <link>https://technology.amorgante.es/post/go-debug-k8s-skaffold-cloudcode/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</guid>
+      <guid>https://technology.amorgante.es/post/go-debug-k8s-skaffold-cloudcode/</guid>
       <description>Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work.</description>
     </item>
     
     <item>
       <title>Working with Microservices</title>
-      <link>https://alknopfler.github.io/post/working-with-microservices/</link>
+      <link>https://technology.amorgante.es/post/working-with-microservices/</link>
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/working-with-microservices/</guid>
+      <guid>https://technology.amorgante.es/post/working-with-microservices/</guid>
       <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.</description>
     </item>
     

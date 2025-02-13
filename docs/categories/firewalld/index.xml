@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>firewalld on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/categories/firewalld/</link>
+    <link>https://technology.amorgante.es/categories/firewalld/</link>
     <description>Recent content in firewalld on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/firewalld/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/categories/firewalld/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Firewalld connecting 2 libvirt network</title>
-      <link>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</link>
+      <link>https://technology.amorgante.es/post/firewalld-connecting-2-libvirt-networks/</link>
       <pubDate>Mon, 04 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/firewalld-connecting-2-libvirt-networks/</guid>
+      <guid>https://technology.amorgante.es/post/firewalld-connecting-2-libvirt-networks/</guid>
       <description>Situation You have hypervisor with libvirtd and you want to connect 2 libvirt networks. Also, you&amp;rsquo;re gonna deploy vm and you need to install some software from internet.</description>
     </item>
     

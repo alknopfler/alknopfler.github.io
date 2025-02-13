@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>database on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/categories/database/</link>
+    <link>https://technology.amorgante.es/categories/database/</link>
     <description>Recent content in database on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/database/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/categories/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GoDataberus - Database Driver API in Golang</title>
-      <link>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</link>
+      <link>https://technology.amorgante.es/post/godataberus-database-driver-api-in-golang/</link>
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</guid>
+      <guid>https://technology.amorgante.es/post/godataberus-database-driver-api-in-golang/</guid>
       <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>microservice on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/tags/microservice/</link>
+    <link>https://technology.amorgante.es/tags/microservice/</link>
     <description>Recent content in microservice on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Oct 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</title>
-      <link>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
+      <link>https://technology.amorgante.es/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
+      <guid>https://technology.amorgante.es/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
       <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services.</description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>faster on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/tags/faster/</link>
+    <link>https://technology.amorgante.es/tags/faster/</link>
     <description>Recent content in faster on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/faster/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/tags/faster/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Improve the Libvirt Performance</title>
-      <link>https://alknopfler.github.io/post/improve-libvirt-performance/</link>
+      <link>https://technology.amorgante.es/post/improve-libvirt-performance/</link>
       <pubDate>Wed, 18 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/improve-libvirt-performance/</guid>
+      <guid>https://technology.amorgante.es/post/improve-libvirt-performance/</guid>
       <description>The Problem: When you&amp;rsquo;re having performance issues with libvirt, you can try this to improve it. The idea is use an specific configuration to improve the performance.</description>
     </item>
     

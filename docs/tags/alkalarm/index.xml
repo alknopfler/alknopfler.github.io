@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>alkalarm on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/tags/alkalarm/</link>
+    <link>https://technology.amorgante.es/tags/alkalarm/</link>
     <description>Recent content in alkalarm on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/tags/alkalarm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/tags/alkalarm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alexa Skills with Golang</title>
-      <link>https://alknopfler.github.io/post/alexa-skills-with-golang/</link>
+      <link>https://technology.amorgante.es/post/alexa-skills-with-golang/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
+      <guid>https://technology.amorgante.es/post/alexa-skills-with-golang/</guid>
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     

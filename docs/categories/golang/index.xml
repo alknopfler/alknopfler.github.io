@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>golang on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/categories/golang/</link>
+    <link>https://technology.amorgante.es/categories/golang/</link>
     <description>Recent content in golang on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/categories/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Debug k8s applications on the fly</title>
-      <link>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</link>
+      <link>https://technology.amorgante.es/post/go-debug-k8s-skaffold-cloudcode/</link>
       <pubDate>Fri, 08 Oct 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/go-debug-k8s-skaffold-cloudcode/</guid>
+      <guid>https://technology.amorgante.es/post/go-debug-k8s-skaffold-cloudcode/</guid>
       <description>Introduction - Debug k8s applications on the fly Nowadays, the development of applications on kubernetes is something that any developer will surely use in their work.</description>
     </item>
     
     <item>
       <title>Alexa Skills with Golang</title>
-      <link>https://alknopfler.github.io/post/alexa-skills-with-golang/</link>
+      <link>https://technology.amorgante.es/post/alexa-skills-with-golang/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
+      <guid>https://technology.amorgante.es/post/alexa-skills-with-golang/</guid>
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     
     <item>
       <title>Send Notifications with this Go project (Sms &amp; Email) based on AWS SES/SNS</title>
-      <link>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
+      <link>https://technology.amorgante.es/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</link>
       <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
+      <guid>https://technology.amorgante.es/post/send-notifications-go-package-sms-emai-based-on-aws-ses-sns/</guid>
       <description>The notificationApp is an open source project based on Go in order to send notifications by different channels (by email, sms, etc&amp;hellip;) using the AWS SNS and AWS SES services.</description>
     </item>
     
     <item>
       <title>Design your own Home Alarm System using Go</title>
-      <link>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</link>
+      <link>https://technology.amorgante.es/post/design-your-own-home-alarm-system-using-go/</link>
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/design-your-own-home-alarm-system-using-go/</guid>
+      <guid>https://technology.amorgante.es/post/design-your-own-home-alarm-system-using-go/</guid>
       <description>AlkAlarm is a open source project created to get ready a home Alarm System in few minutes using Golang. In the market you will buy a home system alarm based on 433Mhz sensors and using GSM modules to send the notifications like: The main idea of this project is based on the same kind of Alarm GSM systems, but in this case, we only have to buy the sensors and sirens, because:</description>
     </item>
     
     <item>
       <title>GoDataberus - Database Driver API in Golang</title>
-      <link>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</link>
+      <link>https://technology.amorgante.es/post/godataberus-database-driver-api-in-golang/</link>
       <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/godataberus-database-driver-api-in-golang/</guid>
+      <guid>https://technology.amorgante.es/post/godataberus-database-driver-api-in-golang/</guid>
       <description>GoDataberus is a &amp;ldquo;Database Driver API&amp;rdquo; in order to reduce the complexity of the CRUD operations in some common databases. The idea is to use Databerus in order to connect to a external DB (using an available DB driver) using the same API independently of the database</description>
     </item>
     
     <item>
       <title>GoLogger - Module to Log with formatting in Golang</title>
-      <link>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</link>
+      <link>https://technology.amorgante.es/post/gologger-module-to-log-with-formatting-in-golang/</link>
       <pubDate>Tue, 11 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/gologger-module-to-log-with-formatting-in-golang/</guid>
+      <guid>https://technology.amorgante.es/post/gologger-module-to-log-with-formatting-in-golang/</guid>
       <description>GoLogger is a logger module for golang based on logrus module. This module was created to reduce the logrus abstraction in order to use just 2 functions:</description>
     </item>
     
     <item>
       <title>Gocypherator - Module to cypher string in Golang easily</title>
-      <link>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</link>
+      <link>https://technology.amorgante.es/post/gocypherator-module-to-cypher-string-in-golang-easily/</link>
       <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
+      <guid>https://technology.amorgante.es/post/gocypherator-module-to-cypher-string-in-golang-easily/</guid>
       <description>Gocypherator is a cypher module in order to encrypt / decrypt strings based on the following algorithms:
 AES-128, AES-192, or AES-256.</description>
     </item>

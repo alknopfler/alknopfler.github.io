@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>opensource on Alknopfler&#39;s Site</title>
-    <link>https://alknopfler.github.io/categories/opensource/</link>
+    <link>https://technology.amorgante.es/categories/opensource/</link>
     <description>Recent content in opensource on Alknopfler&#39;s Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://alknopfler.github.io/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://technology.amorgante.es/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Alexa Skills with Golang</title>
-      <link>https://alknopfler.github.io/post/alexa-skills-with-golang/</link>
+      <link>https://technology.amorgante.es/post/alexa-skills-with-golang/</link>
       <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/alexa-skills-with-golang/</guid>
+      <guid>https://technology.amorgante.es/post/alexa-skills-with-golang/</guid>
       <description>Few weeks ago, I wrote a post about my personal project for a Security Home Alarm System based on Golang, Raspberry PI and 433Mhz sensors ( see again here ).</description>
     </item>
     
     <item>
       <title>Working with Microservices</title>
-      <link>https://alknopfler.github.io/post/working-with-microservices/</link>
+      <link>https://technology.amorgante.es/post/working-with-microservices/</link>
       <pubDate>Mon, 17 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/working-with-microservices/</guid>
+      <guid>https://technology.amorgante.es/post/working-with-microservices/</guid>
       <description>During my professional career, I&amp;rsquo;ve been working with microservices for a long time, and I would like to share with you the experiences and knowledge that I&amp;rsquo;ve learnt working with them.</description>
     </item>
     
     <item>
       <title>Open Source is a Cultural change</title>
-      <link>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</link>
+      <link>https://technology.amorgante.es/post/open-source-is-a-cultural-change/</link>
       <pubDate>Tue, 04 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://alknopfler.github.io/post/open-source-is-a-cultural-change/</guid>
+      <guid>https://technology.amorgante.es/post/open-source-is-a-cultural-change/</guid>
       <description>Few months ago, I attended to an international OpenSource Event in Madrid in order to discuss, as an Engineer at BBVA, with other collegues (from other kind of companies) about the open source and the relevance of that philosophy for enterprises to change the culture to be more agile.</description>
     </item>
     
